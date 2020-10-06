@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/neo4j/neo4j-go-driver/neo4j"
 	"github.com/nextmetaphor/cloud-taxonomy/graph"
+	"github.com/nextmetaphor/cloud-taxonomy/model"
 )
 
 func main() {
@@ -29,16 +30,15 @@ func main() {
 
 	graph.DeleteAll(session)
 
-	//result, err := session.Run("CREATE (n:Item { id: $id, name: $name }) RETURN n.id, n.name", map[string]interface{}{
-	//	"id":   1,
-	//	"name": "Item 1",
-	//})
-	//if err != nil {
-	//	fmt.Println(err)
-	//	return
-	//}
-	//
-	//for result.Next() {
-	//	fmt.Printf("Created Item with Id = '%d' and Name = '%s'\n", result.Record().GetByIndex(0).(int64), result.Record().GetByIndex(1).(string))
-	//}
+	m := make(map[string]model.Category)
+	m["compute"] = model.Category{
+		ID:          "compute 2",
+		Title:       "Compute",
+		Description: "Compute service",
+	}
+
+	err = graph.CreateCategories(session, m)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
