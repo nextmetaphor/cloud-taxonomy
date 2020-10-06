@@ -2,8 +2,8 @@ package graph
 
 import (
 	"fmt"
-	"github.com/neo4j/neo4j-go-driver/neo4j"
 	"github.com/fatih/structs"
+	"github.com/neo4j/neo4j-go-driver/neo4j"
 )
 
 const (

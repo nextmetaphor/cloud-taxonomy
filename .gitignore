@@ -1,3 +1,4 @@
 .idea
 .DS_Store
 NEO4J_HOME
+parser/cloud-taxonomy
