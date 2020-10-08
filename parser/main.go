@@ -33,5 +33,11 @@ func main() {
 	e := definition.LoadCategories(session, graph.CreateCategory)
 	if e != nil {
 		fmt.Println(e)
+		return
+	}
+	e = definition.LoadProviders(session, graph.CreateProvider)
+	if e != nil {
+		fmt.Println(e)
+		return
 	}
 }
