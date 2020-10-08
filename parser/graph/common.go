@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"github.com/fatih/structs"
 	"github.com/neo4j/neo4j-go-driver/neo4j"
-	"github.com/nextmetaphor/cloud-taxonomy/model"
 )
 
 const (
@@ -34,13 +33,13 @@ func DeleteAll(session neo4j.Session) error {
 	return executeCypher(session, deleteAllCypher, nil)
 }
 
-func CreateCategories(session neo4j.Session, cm map[string]model.Category) (err error) {
-	for _, e := range cm {
-		if err = createCategory(session, e); err != nil {
-			return err
-		}
-	}
-
-	err = createCategoryRoot(session)
-	return err
-}
+//func CreateCategories(session neo4j.Session, cm map[string]model.Category) (err error) {
+//	for _, e := range cm {
+//		if err = CreateCategory(session, e); err != nil {
+//			return err
+//		}
+//	}
+//
+//	err = createCategoryRoot(session)
+//	return err
+//}

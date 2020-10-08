@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"github.com/neo4j/neo4j-go-driver/neo4j"
+	"github.com/nextmetaphor/cloud-taxonomy/definition"
 	"github.com/nextmetaphor/cloud-taxonomy/graph"
-	"github.com/nextmetaphor/cloud-taxonomy/model"
 )
 
 func main() {
@@ -30,15 +30,8 @@ func main() {
 
 	graph.DeleteAll(session)
 
-	m := make(map[string]model.Category)
-	m["compute"] = model.Category{
-		ID:          "compute 2",
-		Title:       "Compute",
-		Description: "Compute service",
-	}
-
-	err = graph.CreateCategories(session, m)
-	if err != nil {
-		fmt.Println(err)
+	e := definition.LoadCategories(session, graph.CreateCategory)
+	if e != nil {
+		fmt.Println(e)
 	}
 }

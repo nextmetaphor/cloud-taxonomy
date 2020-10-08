@@ -14,16 +14,16 @@ const (
 		SET c.title=$Title, c.description=$Description`
 
 	createCategoryRootCypher = `
-		CREATE (cr:` + categoryRootNode + ` {id:'category-root', title: 'Category Root Node'})
+		CREATE (cr:` + categoryRootNode + ` {id:'category-root', title: 'Category'})
 		WITH cr
 		MATCH (c:Category)
 		MERGE (cr)<-[:IS_A]-(c)`
 )
 
-func createCategoryRoot(session neo4j.Session) error {
+func CreateCategoryRoot(session neo4j.Session) error {
 	return executeCypher(session, createCategoryRootCypher, nil)
 }
 
-func createCategory(session neo4j.Session, c model.Category) error {
+func CreateCategory(session neo4j.Session, c model.Category) error {
 	return executeCypher(session, createCategoryCypher, c)
 }
