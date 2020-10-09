@@ -15,27 +15,36 @@ const (
 	categoryPath = "category"
 	providerPath = "provider"
 	servicePath  = "service"
+	tenancyPath  = "tenancy"
 )
 
-func loadCategory(path string) (c model.Category, err error) {
+func loadCategory(path string) (category model.Category, err error) {
 	if yamlFile, err := ioutil.ReadFile(path); err == nil {
-		err = yaml.Unmarshal(yamlFile, &c)
+		err = yaml.Unmarshal(yamlFile, &category)
 	}
 
 	return
 }
 
-func loadProvider(path string) (p model.Provider, err error) {
+func loadProvider(path string) (provider model.Provider, err error) {
 	if yamlFile, err := ioutil.ReadFile(path); err == nil {
-		err = yaml.Unmarshal(yamlFile, &p)
+		err = yaml.Unmarshal(yamlFile, &provider)
 	}
 
 	return
 }
 
-func loadService(path string) (p model.Service, err error) {
+func loadService(path string) (service model.Service, err error) {
 	if yamlFile, err := ioutil.ReadFile(path); err == nil {
-		err = yaml.Unmarshal(yamlFile, &p)
+		err = yaml.Unmarshal(yamlFile, &service)
+	}
+
+	return
+}
+
+func loadTenancy(path string) (tenancy model.Tenancy, err error) {
+	if yamlFile, err := ioutil.ReadFile(path); err == nil {
+		err = yaml.Unmarshal(yamlFile, &tenancy)
 	}
 
 	return
@@ -114,6 +123,32 @@ func LoadServices(session neo4j.Session, createNode func(session neo4j.Session, 
 
 	if err == nil {
 		err = graph.CreateServiceRoot(session)
+	}
+
+	return err
+}
+
+func LoadTenancies(session neo4j.Session, createNode func(session neo4j.Session, t model.Tenancy) error) error {
+	err := filepath.Walk(taxonomyRoot+string(filepath.Separator)+tenancyPath, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+
+		if info.IsDir() {
+			return nil
+		}
+
+		s, e := loadTenancy(path)
+		if e != nil {
+			return e
+		}
+
+		e = createNode(session, s)
+		return e
+	})
+
+	if err == nil {
+		err = graph.CreateTenancyRoot(session)
 	}
 
 	return err

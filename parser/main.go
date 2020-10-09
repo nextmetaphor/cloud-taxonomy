@@ -46,4 +46,10 @@ func main() {
 		fmt.Println(e)
 		return
 	}
+
+	e = definition.LoadTenancies(session, graph.CreateTenancy)
+	if e != nil {
+		fmt.Println(e)
+		return
+	}
 }
