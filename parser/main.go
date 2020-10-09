@@ -40,4 +40,10 @@ func main() {
 		fmt.Println(e)
 		return
 	}
+
+	e = definition.LoadServices(session, graph.CreateService)
+	if e != nil {
+		fmt.Println(e)
+		return
+	}
 }
