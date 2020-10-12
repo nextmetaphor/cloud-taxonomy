@@ -52,4 +52,10 @@ func main() {
 		fmt.Println(e)
 		return
 	}
+
+	e = definition.LoadAttributes(session, graph.CreateAttribute)
+	if e != nil {
+		fmt.Println(e)
+		return
+	}
 }

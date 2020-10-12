@@ -11,11 +11,12 @@ import (
 )
 
 const (
-	taxonomyRoot = "../taxonomy"
-	categoryPath = "category"
-	providerPath = "provider"
-	servicePath  = "service"
-	tenancyPath  = "tenancy"
+	taxonomyRoot  = "../taxonomy"
+	categoryPath  = "category"
+	providerPath  = "provider"
+	servicePath   = "service"
+	tenancyPath   = "tenancy"
+	attributePath = "attribute"
 )
 
 func loadCategory(path string) (category model.Category, err error) {
@@ -45,6 +46,14 @@ func loadService(path string) (service model.Service, err error) {
 func loadTenancy(path string) (tenancy model.Tenancy, err error) {
 	if yamlFile, err := ioutil.ReadFile(path); err == nil {
 		err = yaml.Unmarshal(yamlFile, &tenancy)
+	}
+
+	return
+}
+
+func loadAttribute(path string) (attribute model.Attribute, err error) {
+	if yamlFile, err := ioutil.ReadFile(path); err == nil {
+		err = yaml.Unmarshal(yamlFile, &attribute)
 	}
 
 	return
@@ -149,6 +158,32 @@ func LoadTenancies(session neo4j.Session, createNode func(session neo4j.Session,
 
 	if err == nil {
 		err = graph.CreateTenancyRoot(session)
+	}
+
+	return err
+}
+
+func LoadAttributes(session neo4j.Session, createNode func(session neo4j.Session, attribute model.Attribute) error) error {
+	err := filepath.Walk(taxonomyRoot+string(filepath.Separator)+attributePath, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+
+		if info.IsDir() {
+			return nil
+		}
+
+		s, e := loadAttribute(path)
+		if e != nil {
+			return e
+		}
+
+		e = createNode(session, s)
+		return e
+	})
+
+	if err == nil {
+		err = graph.CreateAttributeRoot(session)
 	}
 
 	return err
