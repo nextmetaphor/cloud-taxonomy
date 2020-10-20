@@ -41,7 +41,7 @@ func main() {
 		return
 	}
 
-	e = definition.LoadServices(session, graph.CreateService)
+	e = definition.LoadServices(session, graph.CreateCapability)
 	if e != nil {
 		fmt.Println(e)
 		return

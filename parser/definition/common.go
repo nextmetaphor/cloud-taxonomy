@@ -14,7 +14,7 @@ const (
 	taxonomyRoot  = "../taxonomy"
 	categoryPath  = "category"
 	providerPath  = "provider"
-	servicePath   = "service"
+	servicePath   = "capability"
 	tenancyPath   = "tenancy"
 	attributePath = "attribute"
 )
@@ -35,7 +35,7 @@ func loadProvider(path string) (provider model.Provider, err error) {
 	return
 }
 
-func loadService(path string) (service model.Service, err error) {
+func loadService(path string) (service model.Capability, err error) {
 	if yamlFile, err := ioutil.ReadFile(path); err == nil {
 		err = yaml.Unmarshal(yamlFile, &service)
 	}
@@ -111,7 +111,7 @@ func LoadProviders(session neo4j.Session, createNode func(session neo4j.Session,
 	return err
 }
 
-func LoadServices(session neo4j.Session, createNode func(session neo4j.Session, s model.Service) error) error {
+func LoadServices(session neo4j.Session, createNode func(session neo4j.Session, s model.Capability) error) error {
 	err := filepath.Walk(taxonomyRoot+string(filepath.Separator)+servicePath, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
@@ -131,7 +131,7 @@ func LoadServices(session neo4j.Session, createNode func(session neo4j.Session, 
 	})
 
 	if err == nil {
-		err = graph.CreateServiceRoot(session)
+		err = graph.CreateCapabilityRoot(session)
 	}
 
 	return err

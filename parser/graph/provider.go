@@ -14,7 +14,7 @@ const (
 		SET p.title=$Title, p.description=$Description`
 
 	createProviderRootCypher = `
-		CREATE (pr:` + providerRootNode + ` {id:'provider-root', title: 'Cloud Service Provider'})
+		CREATE (pr:` + providerRootNode + ` {id:'provider-root', title: 'Cloud Capability Provider'})
 		WITH pr
 		MATCH (p:Provider)
 		MERGE (pr)<-[:IS_A]-(p)`
