@@ -1,3 +1,4 @@
-id: ec2
+ID: ec2
+provider-ID: aws
 title: AWS EC2
 description: AWS EC2
