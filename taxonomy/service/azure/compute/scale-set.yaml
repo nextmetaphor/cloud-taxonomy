@@ -1,6 +1,4 @@
 ID: scale-set
-provider-ID: azure
-category-ID: compute
 title: Scale Set
 description: Azure Virtual Machine Scale Set
 link: https://azure.microsoft.com/en-gb/services/virtual-machine-scale-sets/

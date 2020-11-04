@@ -1,6 +1,4 @@
 ID: virtual-machine
-provider-ID: azure
-category-ID: compute
 title: Virtual Machine
 description: Azure Virtual Machine
 link: https://azure.microsoft.com/en-gb/services/virtual-machines/
