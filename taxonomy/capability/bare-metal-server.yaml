@@ -1,4 +1,4 @@
 ID: bare-metal-server
-category-ID: compute
-title: Bare Metal Server
+categoryID: compute
+Name: Bare Metal Server
 description: Bare metal server

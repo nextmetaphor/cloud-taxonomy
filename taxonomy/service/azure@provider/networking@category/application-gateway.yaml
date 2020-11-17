@@ -1,0 +1,4 @@
+ID: application-gateway
+Name: Application Gateway
+description: Azure Application Gateway
+link: https://azure.microsoft.com/en-gb/services/application-gateway/

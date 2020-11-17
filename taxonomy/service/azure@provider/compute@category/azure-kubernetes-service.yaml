@@ -1,0 +1,4 @@
+ID: azure-kubernetes-service
+Name: Azure Kubernetes Service (AKS)
+description: Azure Kubernetes Service
+link: https://azure.microsoft.com/en-gb/services/kubernetes-service/

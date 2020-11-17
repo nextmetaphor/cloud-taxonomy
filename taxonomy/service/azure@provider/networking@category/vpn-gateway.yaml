@@ -1,0 +1,4 @@
+ID: vpn-gateway
+Name: VPN Gateway
+description: Azure VPN Gateway
+link: https://azure.microsoft.com/en-gb/services/vpn-gateway/
