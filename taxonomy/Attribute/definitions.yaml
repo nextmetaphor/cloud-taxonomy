@@ -3,59 +3,64 @@ Definitions:
   agility:
     Fields:
       Name: "agility"
-      Description: "Get what you need when you need it"
-
-  disaster-recovery:
-    Fields:
-      Name: "Disaster Recovery"
-      Description: "TODO"
+      Tag: "...get what you need when you need it"
+      Descripton: "on-demand resourcing; removes the need to provision hardware up-front"
 
   efficiency:
     Fields:
       Name: "efficiency"
-      Description: "Pay only for what you use"
+      Tag: "...pay only for what you use"
+      Description: "no long-term commitments: create and destroy environments only when required (but only use what
+        you really need...)"
 
   elasticity:
     Fields:
       Name: "elasticity"
-      Description: "Architected to scale on demand"
-
-  fault-tolerant:
-    Fields:
-      Name: "Fault Tolerant"
-      Description: "TODO"
-
-  global-presence:
-    Fields:
-      Name: "Global Presence"
-      Description: "Deployed to world-wide points of presence"
-
-  high-availability:
-    Fields:
-      Name: "High Availability"
-      Description: "built to withstand local and regional failure"
-
-  managed-services:
-    Fields:
-      Name: "Managed Services"
-      Description: "Use already-supported architectural building blocks"
-
-  observability:
-    Fields:
-      Name: "Observability"
-      Description: "Provides clear visibility into operational status"
+      Tag: "...no need to architect for peak load"
+      Description: "scale on demand with autoscaling; prefer decoupled asynchronous serverless architectures over IaaS
+        for scalability"
 
   repeatability:
     Fields:
       Name: "repeatability"
-      Description: "Automate everything as code"
+      Tag: "...automate everything as code"
+      Description: "automate everything using the provided API interface"
 
-  scalabilty:
+  managed-services:
     Fields:
-      Name: "Scalability"
-      Description: "TODO"
+      Name: "managed services"
+      Tag: "...use the already-supported architectural building blocks provided"
+      Description: "standard services (e.g. database, queue, notification, email...) plus specialist services
+        (e.g. security, big data, machine learning...) are all provided, complete with inherent high-availability,
+        security, durability, operational support..."
+
+  global-presence:
+    Fields:
+      Name: "global presence"
+      Tag: "...access to deploy worldwide"
+      Description: "cloud-providers have points of presence all over the world"
+
+  resiliency:
+    Fields:
+      Name: "resiliency"
+      Tag: "...built to withstand local failure"
+      Description: "multiple zones provided within a geographic region"
+
+  redundancy:
+    Fields:
+      Name: "redundancy"
+      Tag: "...built to withstand regional failure"
+      Description: "multiple geographic regions provided"
 
   security:
     Fields:
-      Name: "Security"
-      Description: "Multiple levels of protection build into every layer"
+      Name: "security"
+      Tag: "...provides multiple levels of protection"
+      Description: "built into every layer (e.g. data in transit, data at rest, intrusion protection...), plus advanced
+        tooling underpinned by specialist security departments"
+
+  observability:
+    Fields:
+      Name: "observability"
+      Tag: "...enables clear visibility into operational status"
+      Description: "logging, monitoring, alerting and auditing all provided"

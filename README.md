@@ -1,35 +1,17 @@
 # cloud-taxonomy
-Project to model Cloud Computing Taxonomy definitions within a local Docker graph database.
+Project to model the Cloud Computing taxonomy in a graph representation using [yaml-graph](https://github.com/nextmetaphor/yaml-graph) definitions.
 
 ## Installation
-### Start a Local Graph Database
-First, from the root of the cloned repository, get the latest version of `apoc-x.x.x.x-all.jar
-` from https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases and place into `NEO4J_HOME/plugins`.
-
-Secondly, again from the root of the cloned repository, run the following command to start the local graph Docker container
-```bash
-docker run \
-    --publish=7474:7474 \
-    --publish=7687:7687 \
-    --volume=`pwd`/NEO4J_HOME/data:/data \
-    --volume=`pwd`/NEO4J_HOME/plugins:/plugins \
-    --volume=`pwd`:/import \
-    --env=NEO4J_AUTH=none \
-    --env=NEO4J_apoc_export_file_enabled=true \
-    --env=NEO4J_apoc_import_file_enabled=true \
-    --env=NEO4J_apoc_import_file_use__neo4j__config=true \
-    --env=NEO4J_dbms_security_procedures_unrestricted=apoc.\\\* \
-    neo4j
-```
+### Install `yaml-graph`
+First, follow the [installation instructions](https://github.com/nextmetaphor/yaml-graph/blob/main/README.md) to build `yaml-graph`. Once this is done, ensure that the `yaml-graph` executable is in the shell path.
 
 ## Usage
-### Building the Project
+### Building the Cloud Taxonomy Graph
 ```bash
-go build -i
-./data-graph
+yaml-graph parse -s taxonomy
 ```
 
 ## Licence
-[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-This project is licenced under the terms of the [Mozilla Public License Version 2.0](LICENCE.md) licence.
+This project is licenced under the terms of the [Apache 2.0 License](LICENCE.md) licence.
