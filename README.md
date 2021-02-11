@@ -3,12 +3,31 @@ Project to model the Cloud Computing taxonomy in a graph representation using [y
 
 ## Installation
 ### Install `yaml-graph`
-First, follow the [installation instructions](https://github.com/nextmetaphor/yaml-graph/blob/main/README.md) to build `yaml-graph`. Once this is done, ensure that the `yaml-graph` executable is in the shell path.
-
+First, follow the [installation instructions](https://github.com/nextmetaphor/yaml-graph/blob/main/README.md) to build `yaml-graph`. 
+Once this is complete, at the root of the `cloud-taxonomy` repository execute the following to create a `yaml-graph`
+container:
+```bash
+docker run -it -p7474:7474 -p7687:7687 -v $(PWD)/taxonomy:/home/ymlgraph/definition -v $(PWD)/report:/home/ymlgraph/report nextmetaphor/yaml-graph
+```
 ## Usage
+All of the following commands should be executed from within the `yaml-graph` container.
+### Validate the Cloud Taxonomy Definitions
+```bash
+yaml-graph validate -f definition/definition-format.yml
+```
 ### Building the Cloud Taxonomy Graph
 ```bash
-yaml-graph parse -s taxonomy
+yaml-graph load
+```
+Once this is complete, the graph can be examined in the local browser at http://localhost:7474/browser/ using the
+following cypher:
+```sql
+match (n) return n
+```
+
+### Building a Static HTML Report
+```bash
+yaml-graph template -f report/template-format.yaml -t report/output-template.gohtml > report/cloud-taxonomy.html
 ```
 
 ## Licence

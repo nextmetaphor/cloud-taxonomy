@@ -1,0 +1,118 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Provider, Service and Categories</title>
+</head>
+
+<style>
+    body {
+        margin: auto;
+        width: 1160px;
+        padding-top: 80px;
+        font-family: "RobotoDraft", "Roboto", "Helvetica", sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    input {
+        display: none;
+    }
+
+    label {
+        display: block;
+        padding: 8px 22px;
+        margin: 0 0 1px 0;
+        cursor: pointer;
+        background: #000066;
+        border-radius: 3px;
+        color: #FFF;
+        transition: ease .5s;
+    }
+
+    label:hover {
+        background: #000033;
+    }
+
+    .content {
+        background: #CCFFFF;
+        padding: 10px 25px;
+        border: 1px solid #00CCFF;
+        margin: 0 0 1px 0;
+        border-radius: 3px;
+    }
+
+    input + label + .content {
+        display: none;
+    }
+
+    input:checked + label + .content {
+        display: block;
+    }
+
+    .definition {
+        color: lightblue;
+        margin-bottom: 3px;
+        font-size: x-small;
+        border: black;
+    }
+
+    .level1 {
+        display: flex;
+        justify-content: space-between;
+        background: #003366;
+        color: white;
+    }
+
+    .level1:hover {
+        background: #003333;
+    }
+
+</style>
+
+<body>
+{{- range $provider := . -}}
+    {{- $providerClass := $provider.Class -}}
+    {{- $providerID := $provider.ID -}}
+    {{- $providerUID := (print $providerClass "-" $providerID)}}
+    {{- $providerName := index $provider.Fields "Provider.Name"}}
+    {{- $providerDescription := index $provider.Fields "Provider.Description"}}
+
+    <input type="checkbox" id="{{$providerUID}}"/>
+    <label for="{{$providerUID}}">{{$providerName}}</label>
+
+    <div class="content">
+        <p>{{$providerDescription}}</p>
+        {{- range $key,$value := $provider.CompositeSectionDefinitions -}}
+            {{- if eq $key "PROVIDED_BY" -}}
+                {{- range $service := $value -}}
+                    {{- $serviceClass := $service.Class -}}
+                    {{- $serviceID := $service.ID -}}
+                    {{- $serviceUID := (printf "%s-%s" $serviceClass $serviceID)}}
+                    {{- $serviceName := index $service.Fields "Service.Name" -}}
+                    {{- $serviceDescription := index $service.Fields "Service.Description" -}}
+                    {{- $serviceLink := index $service.Fields "Service.Link" -}}
+                    {{- $categoryName := index $service.Fields "Category.Name"}}
+                    <input type="checkbox" id="{{$serviceUID}}"/>
+                    <label for="{{$serviceUID}}" class="level1">
+                        <div>
+                            <div class="definition">{{$serviceClass}}</div>
+                            <span>{{$serviceName}}</span>
+                        </div>
+                        <div class="indicator">{{$categoryName}}</div>
+                    </label>
+
+                    <div class="content">
+                        <p>{{$serviceDescription}}</p>
+                        Refer to <a href="{{$serviceLink}}" target="_blank">{{$serviceLink}}</a> for more details.
+                    </div>
+                {{end -}}
+            {{- end -}}
+        {{- end -}}
+    </div>
+{{end}}
+
+</body>
+
+</html>

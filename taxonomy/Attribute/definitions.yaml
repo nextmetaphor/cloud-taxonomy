@@ -4,7 +4,7 @@ Definitions:
     Fields:
       Name: "agility"
       Tag: "...get what you need when you need it"
-      Descripton: "on-demand resourcing; removes the need to provision hardware up-front"
+      Description: "on-demand resourcing; removes the need to provision hardware up-front"
 
   efficiency:
     Fields:
