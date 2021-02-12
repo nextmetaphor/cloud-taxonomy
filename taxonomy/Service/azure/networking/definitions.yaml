@@ -1,7 +1,6 @@
 Class: "Service"
 References: [
   { Class: "Provider", ID: "azure", Relationship: "PROVIDED_BY" },
-  { Class: "Category", ID: "networking", Relationship: "TYPE_OF" }
 ]
 Definitions:
   application-gateway:
@@ -9,27 +8,42 @@ Definitions:
       Name: "Application Gateway"
       Description: "Azure Application Gateway"
       Link: "https://azure.microsoft.com/en-gb/services/application-gateway/"
+    References: [
+      { Class: "Capability", ID: "load-balancer", Relationship: "PROVIDES" }
+    ]
 
   content-delivery-network:
     Fields:
       Name: "Content Delivery Network"
       Description: "Azure Content Delivery Network"
       Link: "https://azure.microsoft.com/en-gb/services/cdn/"
+    References: [
+      { Class: "Capability", ID: "content-delivery-network", Relationship: "PROVIDES" }
+    ]
 
   load-balancer:
     Fields:
       Name: "Load Balancer"
       Description: "Azure Load Balancer"
       Link: "https://azure.microsoft.com/en-gb/services/load-balancer/"
+    References: [
+      { Class: "Capability", ID: "load-balancer", Relationship: "PROVIDES" }
+    ]
 
   virtual-network:
     Fields:
       Name: "Virtual Network"
       Description: "Virtual Network"
       Link: "https://azure.microsoft.com/en-gb/services/virtual-network/"
+    References: [
+      { Class: "Capability", ID: "virtual-network", Relationship: "PROVIDES" }
+    ]
 
   vpn-gateway:
     Fields:
       Name: "VPN Gateway"
       Description: "Azure VPN Gateway"
       Link: "https://azure.microsoft.com/en-gb/services/vpn-gateway/"
+    References: [
+      { Class: "Capability", ID: "network-gateway", Relationship: "PROVIDES" }
+    ]
