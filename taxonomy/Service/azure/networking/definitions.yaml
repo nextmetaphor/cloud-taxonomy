@@ -9,7 +9,8 @@ Definitions:
       Description: "Azure Application Gateway"
       Link: "https://azure.microsoft.com/en-gb/services/application-gateway/"
     References: [
-      { Class: "Capability", ID: "load-balancer", Relationship: "PROVIDES" }
+      { Class: "Capability", ID: "load-balancer", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
     ]
 
   content-delivery-network:
@@ -18,7 +19,8 @@ Definitions:
       Description: "Azure Content Delivery Network"
       Link: "https://azure.microsoft.com/en-gb/services/cdn/"
     References: [
-      { Class: "Capability", ID: "content-delivery-network", Relationship: "PROVIDES" }
+      { Class: "Capability", ID: "content-delivery-network", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]
 
   load-balancer:
@@ -27,7 +29,8 @@ Definitions:
       Description: "Azure Load Balancer"
       Link: "https://azure.microsoft.com/en-gb/services/load-balancer/"
     References: [
-      { Class: "Capability", ID: "load-balancer", Relationship: "PROVIDES" }
+      { Class: "Capability", ID: "load-balancer", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
     ]
 
   virtual-network:
@@ -36,7 +39,9 @@ Definitions:
       Description: "Virtual Network"
       Link: "https://azure.microsoft.com/en-gb/services/virtual-network/"
     References: [
-      { Class: "Capability", ID: "virtual-network", Relationship: "PROVIDES" }
+      { Class: "Capability", ID: "virtual-network", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
+
     ]
 
   vpn-gateway:
@@ -45,5 +50,6 @@ Definitions:
       Description: "Azure VPN Gateway"
       Link: "https://azure.microsoft.com/en-gb/services/vpn-gateway/"
     References: [
-      { Class: "Capability", ID: "network-gateway", Relationship: "PROVIDES" }
+      { Class: "Capability", ID: "network-gateway", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
     ]

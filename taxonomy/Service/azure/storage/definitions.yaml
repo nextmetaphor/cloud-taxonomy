@@ -9,7 +9,8 @@ Definitions:
       Description: "Azure Archive Storage"
       Link: "https://azure.microsoft.com/en-gb/services/storage/archive/"
     References: [
-      { Class: "Capability", ID: "long-term-cold-storage", Relationship: "PROVIDES" }
+      { Class: "Capability", ID: "long-term-cold-storage", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
     ]
 
   blob-storage:
@@ -18,7 +19,8 @@ Definitions:
       Description: "Azure Blob Storage"
       Link: "https://azure.microsoft.com/en-gb/services/storage/blobs/"
     References: [
-      { Class: "Capability", ID: "object-storage", Relationship: "PROVIDES" }
+      { Class: "Capability", ID: "object-storage", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
     ]
 
   disk-storage:
@@ -27,7 +29,8 @@ Definitions:
       Description: "Azure Disk Storage"
       Link: "https://azure.microsoft.com/en-gb/services/storage/disks/"
     References: [
-      { Class: "Capability", ID: "block-storage", Relationship: "PROVIDES" }
+      { Class: "Capability", ID: "block-storage", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
     ]
 
   file-storage:
@@ -36,5 +39,6 @@ Definitions:
       Description: "Azure File Storage"
       Link: "https://azure.microsoft.com/en-gb/services/storage/files/"
     References: [
-      { Class: "Capability", ID: "file-storage", Relationship: "PROVIDES" }
+      { Class: "Capability", ID: "file-storage", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
     ]
