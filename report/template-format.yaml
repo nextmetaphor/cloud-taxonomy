@@ -32,3 +32,12 @@ CompositeSections:
             Relationship: PROVIDED_BY
             OrderFields:
               - Name
+          - Class: Tenancy
+            Fields:
+              - Name
+              - Description
+              - BackgroundColour
+              - FontColour
+            Relationship: HAS_TENANCY
+            OrderFields:
+              - Name

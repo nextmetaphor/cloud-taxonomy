@@ -58,6 +58,21 @@
         border: black;
     }
 
+    .provider {
+        text-align: center;
+    }
+
+    .indicator {
+        border: inset 1px;
+        font-weight: normal;
+        font-size: small;
+        text-align: center;
+        width: fit-content;
+        float: right;
+        padding: 5px;
+        justify-content: center;
+    }
+
     .level1 {
         display: flex;
         justify-content: space-between;
@@ -122,18 +137,28 @@
                                     {{- $serviceUID := (printf "%s-%s" $serviceClass $serviceID)}}
                                     {{- $serviceName := index $service.Fields "Service.Name" -}}
                                     {{- $serviceDescription := index $service.Fields "Service.Description" -}}
+                                    {{- $serviceLink := index $service.Fields "Service.Link" -}}
                                     {{- $providerName := index $service.Fields "Provider.Name" -}}
+                                    {{- $tenancyName := index $service.Fields "Tenancy.Name" -}}
+                                    {{- $tenancyBackgroundColour := index $service.Fields "Tenancy.BackgroundColour" -}}
+                                    {{- $tenancyFontColour := index $service.Fields "Tenancy.FontColour" -}}
+
                                     <input type="checkbox" id="{{$serviceUID}}"/>
                                     <label for="{{$serviceUID}}" class="level2">
                                         <div>
                                             <div class="definition">{{$serviceClass}}</div>
                                             <span>{{$serviceName}}</span>
                                         </div>
-                                        <div class="indicator">{{$providerName}}</div>
+                                        <div>
+                                            <div class="definition provider">{{$providerName}}</div>
+                                            <div class="indicator"
+                                                 style="background: {{$tenancyBackgroundColour}}; color: {{$tenancyFontColour}}">{{$tenancyName}}</div>
+                                        </div>
                                     </label>
 
                                     <div class="content">
                                         <p>{{$serviceDescription}}</p>
+                                        <p>Refer to <a href="{{$serviceLink}}" target="_blank">{{$serviceLink}} for further information</a></p>
                                     </div>
                                 {{end -}}
                             {{- end -}}

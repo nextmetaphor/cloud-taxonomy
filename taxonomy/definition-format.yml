@@ -35,4 +35,6 @@ Class:
     MandatoryFields:
       Name:
       Description:
+      BackgroundColour:
+      FontColour:
     OptionalFields:
