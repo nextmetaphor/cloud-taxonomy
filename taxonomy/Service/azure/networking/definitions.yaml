@@ -3,7 +3,7 @@ References: [
   { Class: "Provider", ID: "azure", Relationship: "PROVIDED_BY" },
 ]
 Definitions:
-  application-gateway:
+  azure-application-gateway:
     Fields:
       Name: "Application Gateway"
       Description: "Azure Application Gateway"
@@ -13,7 +13,7 @@ Definitions:
       { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
     ]
 
-  content-delivery-network:
+  azure-content-delivery-network:
     Fields:
       Name: "Content Delivery Network"
       Description: "Azure Content Delivery Network"
@@ -23,7 +23,7 @@ Definitions:
       { Class: "Tenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]
 
-  load-balancer:
+  azure-load-balancer:
     Fields:
       Name: "Load Balancer"
       Description: "Azure Load Balancer"
@@ -33,7 +33,7 @@ Definitions:
       { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
     ]
 
-  virtual-network:
+  azure-virtual-network:
     Fields:
       Name: "Virtual Network"
       Description: "Virtual Network"
@@ -44,7 +44,7 @@ Definitions:
 
     ]
 
-  vpn-gateway:
+  azure-vpn-gateway:
     Fields:
       Name: "VPN Gateway"
       Description: "Azure VPN Gateway"

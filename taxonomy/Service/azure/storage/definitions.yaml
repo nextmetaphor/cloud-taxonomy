@@ -3,7 +3,7 @@ References: [
   { Class: "Provider", ID: "azure", Relationship: "PROVIDED_BY" }
 ]
 Definitions:
-  archive-storage:
+  azure-archive-storage:
     Fields:
       Name: "Archive Storage"
       Description: "Azure Archive Storage"
@@ -13,7 +13,7 @@ Definitions:
       { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
     ]
 
-  blob-storage:
+  azure-blob-storage:
     Fields:
       Name: "Blob Storage"
       Description: "Azure Blob Storage"
@@ -23,7 +23,7 @@ Definitions:
       { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
     ]
 
-  disk-storage:
+  azure-disk-storage:
     Fields:
       Name: "Disk Storage"
       Description: "Azure Disk Storage"
@@ -33,7 +33,7 @@ Definitions:
       { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
     ]
 
-  file-storage:
+  azure-file-storage:
     Fields:
       Name: "File Storage"
       Description: "Azure File Storage"
