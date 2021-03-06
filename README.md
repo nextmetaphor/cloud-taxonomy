@@ -27,7 +27,7 @@ match (n) return n
 
 ### Building a Static HTML Report
 ```bash
-yaml-graph template -f report/template-format.yaml -t report/output-template.gohtml > report/cloud-taxonomy.html
+yaml-graph report -f report/template-format.yaml -t report/output-template.gohtml > report/cloud-taxonomy.html
 ```
 
 ## Licence
