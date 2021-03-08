@@ -104,12 +104,17 @@
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
         border-radius: 5px;
-        width: 33%;
+        width: 30%;
         background: beige;
+        margin: 10px;
     }
 
     .card:hover {
         box-shadow: 0 12px 24px 0 rgba(0,0,0,0.2);
+    }
+
+    .card-container {
+        display: flex;
     }
 
     .container {
@@ -171,39 +176,42 @@
                     <div class="content">
                         <p>{{$capabilityDescription}}</p>
 
-                        {{- range $key,$value := $capability.CompositeSectionDefinitions -}}
-                            {{- if eq $key "PROVIDES" -}}
-                                {{- range $service := $value -}}
-                                    {{- $serviceClass := $service.Class -}}
-                                    {{- $serviceID := $service.ID -}}
-                                    {{- $serviceUID := (printf "%s-%s" $serviceClass $serviceID)}}
-                                    {{- $serviceName := index $service.Fields "Service.Name" -}}
-                                    {{- $serviceDescription := index $service.Fields "Service.Description" -}}
-                                    {{- $serviceLink := index $service.Fields "Service.Link" -}}
-                                    {{- $providerName := index $service.Fields "Provider.Name" -}}
-                                    {{- $tenancyName := index $service.Fields "Tenancy.Name" -}}
-                                    {{- $tenancyBackgroundColour := index $service.Fields "Tenancy.BackgroundColour" -}}
-                                    {{- $tenancyFontColour := index $service.Fields "Tenancy.FontColour" -}}
+                        <div class="card-container">
+                            {{- range $key,$value := $capability.CompositeSectionDefinitions -}}
+                                {{- if eq $key "PROVIDES" -}}
+                                    {{- range $service := $value -}}
+                                        {{- $serviceClass := $service.Class -}}
+                                        {{- $serviceID := $service.ID -}}
+                                        {{- $serviceUID := (printf "%s-%s" $serviceClass $serviceID)}}
+                                        {{- $serviceName := index $service.Fields "Service.Name" -}}
+                                        {{- $serviceDescription := index $service.Fields "Service.Description" -}}
+                                        {{- $serviceLink := index $service.Fields "Service.Link" -}}
+                                        {{- $providerName := index $service.Fields "Provider.Name" -}}
+                                        {{- $tenancyName := index $service.Fields "Tenancy.Name" -}}
+                                        {{- $tenancyBackgroundColour := index $service.Fields "Tenancy.BackgroundColour" -}}
+                                        {{- $tenancyFontColour := index $service.Fields "Tenancy.FontColour" -}}
 
-                                    <div class="card">
-                                        <div class="container">
-                                            <div class="title-bar">
+                                        <div class="card">
+                                            <div class="container">
+                                                <div class="title-bar">
 
-                                                <div class="service-title"><a href="{{$serviceLink}}" target="_blank">{{$serviceName}}</a></div>
-                                                <div class="indicator provider">{{$providerName}}</div>
+                                                    <div class="service-title"><a href="{{$serviceLink}}" target="_blank">{{$serviceName}}</a></div>
+                                                    <div class="indicator provider">{{$providerName}}</div>
+                                                </div>
+                                                <div class="service-description">
+                                                    {{$serviceDescription}}
+                                                </div>
                                             </div>
-                                            <div class="service-description">
-                                                {{$serviceDescription}}
+                                            <div class="indicators">
+                                                <div class="indicator" style="background: {{$tenancyBackgroundColour}}; color: {{$tenancyFontColour}}">{{$tenancyName}}</div>
                                             </div>
                                         </div>
-                                        <div class="indicators">
-                                            <div class="indicator" style="background: {{$tenancyBackgroundColour}}; color: {{$tenancyFontColour}}">{{$tenancyName}}</div>
-                                        </div>
-                                    </div>
 
-                                {{end -}}
+                                    {{end -}}
+                                {{- end -}}
                             {{- end -}}
-                        {{- end -}}
+
+                        </div>
                     </div>
                 {{end -}}
             {{- end -}}

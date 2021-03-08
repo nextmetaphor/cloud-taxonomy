@@ -1,0 +1,34 @@
+Class: "Service"
+References: [
+  { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
+]
+Definitions:
+  aws-classic-load-balancer:
+    Fields:
+      Name: "Classic Load Balancer"
+      Description: "AWS Classic Load Balancer"
+      Link: "https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/introduction.html"
+    References: [
+      { Class: "Capability", ID: "load-balancer", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
+    ]
+
+  aws-application-load-balancer:
+    Fields:
+      Name: "Application Load Balancer"
+      Description: "AWS Application Load Balancer"
+      Link: "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html"
+    References: [
+      { Class: "Capability", ID: "load-balancer", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
+    ]
+
+  aws-network-load-balancer:
+    Fields:
+      Name: "Network Load Balancer"
+      Description: "AWS Network Load Balancer"
+      Link: "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html"
+    References: [
+      { Class: "Capability", ID: "load-balancer", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
+    ]
