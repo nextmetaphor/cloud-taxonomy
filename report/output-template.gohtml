@@ -5,6 +5,8 @@
 <head>
     <meta charset="utf-8">
     <title>Provider, Service and Categories</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <style>
@@ -73,9 +75,13 @@
         padding: 5px;
         justify-content: center;
 
-        border-radius: 2px;
+        border-radius: 5px;
         border: inset 1px;
         margin-left: 5px;
+    }
+
+    .indicators a {
+        text-decoration: none
     }
 
     .level1 {
@@ -115,6 +121,9 @@
 
     .card-container {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
     }
 
     .container {
@@ -135,6 +144,14 @@
     .service-description {
         color: darkslategrey;
         font-size: small;
+    }
+
+    .service-link {
+    }
+
+    .service-link:hover {
+        box-shadow: 1px 1px 3px gray;
+        border-radius: 5px;
     }
 
     .indicators {
@@ -195,7 +212,7 @@
                                             <div class="container">
                                                 <div class="title-bar">
 
-                                                    <div class="service-title"><a href="{{$serviceLink}}" target="_blank">{{$serviceName}}</a></div>
+                                                    <div class="service-title">{{$serviceName}}</div>
                                                     <div class="indicator provider">{{$providerName}}</div>
                                                 </div>
                                                 <div class="service-description">
@@ -203,6 +220,7 @@
                                                 </div>
                                             </div>
                                             <div class="indicators">
+                                                <div class="material-icons service-link"><a href="{{$serviceLink}}" target="_blank">link</a></div>
                                                 <div class="indicator" style="background: {{$tenancyBackgroundColour}}; color: {{$tenancyFontColour}}">{{$tenancyName}}</div>
                                             </div>
                                         </div>
