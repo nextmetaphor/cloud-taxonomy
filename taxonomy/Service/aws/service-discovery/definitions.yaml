@@ -1,0 +1,14 @@
+Class: "Service"
+References: [
+  { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
+]
+Definitions:
+  aws-app-mesh:
+    Fields:
+      Name: "AWS App Mesh"
+      Description: "AWS App Mesh"
+      Link: "https://docs.aws.amazon.com/app-mesh/?id=docs_gateway"
+    References: [
+      { Class: "Capability", ID: "service-mesh", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
+    ]

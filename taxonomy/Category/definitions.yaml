@@ -19,3 +19,8 @@ Definitions:
     Fields:
       Name: "storage"
       Description: "Storage"
+
+  service-discovery:
+    Fields:
+      Name: "service discovery"
+      Description: "Service Discovery"
