@@ -24,3 +24,8 @@ Definitions:
     Fields:
       Name: "service discovery"
       Description: "Service Discovery"
+
+  migration:
+    Fields:
+      Name: "migration"
+      Description: "Migration"
