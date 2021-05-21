@@ -10,7 +10,7 @@ Definitions:
       Link: "https://azure.microsoft.com/en-gb/services/application-gateway/"
     References: [
       { Class: "Capability", ID: "load-balancer", Relationship: "PROVIDES" },
-      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
+      { Class: "Tenancy", ID: "managed", Relationship: "HAS_TENANCY" }
     ]
 
   azure-content-delivery-network:
@@ -30,7 +30,7 @@ Definitions:
       Link: "https://azure.microsoft.com/en-gb/services/load-balancer/"
     References: [
       { Class: "Capability", ID: "load-balancer", Relationship: "PROVIDES" },
-      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
+      { Class: "Tenancy", ID: "managed", Relationship: "HAS_TENANCY" }
     ]
 
   azure-virtual-network:
@@ -51,5 +51,5 @@ Definitions:
       Link: "https://azure.microsoft.com/en-gb/services/vpn-gateway/"
     References: [
       { Class: "Capability", ID: "network-gateway", Relationship: "PROVIDES" },
-      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
+      { Class: "Tenancy", ID: "managed", Relationship: "HAS_TENANCY" }
     ]

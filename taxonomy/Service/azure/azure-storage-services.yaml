@@ -10,7 +10,7 @@ Definitions:
       Link: "https://azure.microsoft.com/en-gb/services/storage/archive/"
     References: [
       { Class: "Capability", ID: "long-term-cold-storage", Relationship: "PROVIDES" },
-      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
+      { Class: "Tenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]
 
   azure-blob-storage:
@@ -20,7 +20,7 @@ Definitions:
       Link: "https://azure.microsoft.com/en-gb/services/storage/blobs/"
     References: [
       { Class: "Capability", ID: "object-storage", Relationship: "PROVIDES" },
-      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
+      { Class: "Tenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]
 
   azure-disk-storage:
@@ -30,7 +30,7 @@ Definitions:
       Link: "https://azure.microsoft.com/en-gb/services/storage/disks/"
     References: [
       { Class: "Capability", ID: "block-storage", Relationship: "PROVIDES" },
-      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
+      { Class: "Tenancy", ID: "managed", Relationship: "HAS_TENANCY" }
     ]
 
   azure-file-storage:
@@ -40,5 +40,5 @@ Definitions:
       Link: "https://azure.microsoft.com/en-gb/services/storage/files/"
     References: [
       { Class: "Capability", ID: "file-storage", Relationship: "PROVIDES" },
-      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
+      { Class: "Tenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]

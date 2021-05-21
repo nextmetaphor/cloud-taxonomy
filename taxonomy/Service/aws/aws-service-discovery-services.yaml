@@ -7,7 +7,7 @@ Definitions:
     Fields:
       Name: "AWS App Mesh"
       Description: "AWS App Mesh"
-      Link: "https://docs.aws.amazon.com/app-mesh/?id=docs_gateway"
+      Link: "https://aws.amazon.com/app-mesh"
     References: [
       { Class: "Capability", ID: "service-mesh", Relationship: "PROVIDES" },
       { Class: "Tenancy", ID: "serverless", Relationship: "HAS_TENANCY" }

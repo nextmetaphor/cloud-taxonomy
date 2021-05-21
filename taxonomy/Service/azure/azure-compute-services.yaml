@@ -10,7 +10,7 @@ Definitions:
       Link: "https://azure.microsoft.com/en-gb/services/app-service/"
     References: [
       { Class: "Capability", ID: "shared-web-hosting", Relationship: "PROVIDES" },
-      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
+      { Class: "Tenancy", ID: "managed", Relationship: "HAS_TENANCY" }
     ]
 
   azure-function:
@@ -30,7 +30,7 @@ Definitions:
       Link: "https://azure.microsoft.com/en-gb/services/kubernetes-service/"
     References: [
       { Class: "Capability", ID: "kubernetes-management", Relationship: "PROVIDES" },
-      { Class: "Tenancy", ID: "paas", Relationship: "HAS_TENANCY" }
+      { Class: "Tenancy", ID: "managed", Relationship: "HAS_TENANCY" }
     ]
 
   azure-container-instance:
@@ -50,7 +50,7 @@ Definitions:
       Link: "https://azure.microsoft.com/en-gb/services/virtual-machines/"
     References: [
       { Class: "Capability", ID: "shared-virtual-server", Relationship: "PROVIDES" },
-      { Class: "Tenancy", ID: "iaas", Relationship: "HAS_TENANCY" }
+      { Class: "Tenancy", ID: "hosted", Relationship: "HAS_TENANCY" }
     ]
 
   azure-virtual-machine-scale-set:

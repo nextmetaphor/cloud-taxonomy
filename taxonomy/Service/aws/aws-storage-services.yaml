@@ -1,0 +1,14 @@
+Class: "Service"
+References: [
+  { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
+]
+Definitions:
+  aws-s3:
+    Fields:
+      Name: "AWS S3"
+      Description: "Object storage built to store and retrieve any amount of data from anywhere"
+      Link: "https://aws.amazon.com/s3/"
+    References: [
+      { Class: "Capability", ID: "object-storage", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
+    ]

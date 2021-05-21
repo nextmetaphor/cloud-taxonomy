@@ -1,29 +1,29 @@
 Class: "Tenancy"
 Definitions:
-  iaas:
-    Fields:
-      Name: "Infrastructure as a Service"
-      Description: "Infrastructure as a Service"
-      BackgroundColour: "DarkSlateGray"
-      FontColour: "White"
-
-  paas:
-    Fields:
-      Name: "Platform as a Service"
-      Description: "Platform as a Service"
-      BackgroundColour: "SlateBlue"
-      FontColour: "White"
-
   serverless:
     Fields:
       Name: "Serverless"
-      Description: "Purely serverless technology"
+      Description: "Purely serverless service; only pay for what you use and nothing more"
       BackgroundColour: "Green"
       FontColour: "White"
 
-  saas:
+  managed:
     Fields:
-      Name: "Saas"
-      Description: "Software as a Service"
-      BackgroundColour: "LightYellow"
-      FontColour: "Black"
+      Name: "Managed"
+      Description: "Service hosted on and Managed by the CSP; operational support is provided by the CSP but is charged for on an ongoing basis"
+      BackgroundColour: "SlateBlue"
+      FontColour: "White"
+
+  hosted:
+    Fields:
+      Name: "Hosted"
+      Description: "Service hosted on the CSP; operational support is NOT provided by the CSP and running costs are charged for on an ongoing basis"
+      BackgroundColour: "DarkSlateGray"
+      FontColour: "White"
+#
+#  saas:
+#    Fields:
+#      Name: "Saas"
+#      Description: "Software as a Service"
+#      BackgroundColour: "LightYellow"
+#      FontColour: "Black"
