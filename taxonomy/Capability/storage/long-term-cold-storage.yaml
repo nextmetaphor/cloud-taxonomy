@@ -1,0 +1,7 @@
+Class: "Capability"
+References: [ { Class: "Category", ID: "storage", Relationship: "TYPE_OF" } ]
+Definitions:
+  long-term-cold-storage:
+    Fields:
+      Name: "Long Term Cold Storage"
+      Description: "Long Term Cold Storage"

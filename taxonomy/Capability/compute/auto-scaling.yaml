@@ -1,0 +1,7 @@
+Class: "Capability"
+References: [ { Class: "Category", ID: "compute", Relationship: "TYPE_OF" } ]
+Definitions:
+  auto-scaling:
+    Fields:
+      Name: "Auto Scaling"
+      Description: "Auto Scaling"

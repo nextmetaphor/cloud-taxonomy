@@ -1,0 +1,14 @@
+Class: "Service"
+Definitions:
+  aws-ebs:
+    Fields:
+      Name: "AWS EBS"
+      Description: "Amazon Elastic Block Store (EBS) is an easy to use, high-performance, block-storage service
+          designed for use with Amazon Elastic Compute Cloud (EC2) for both throughput and transaction intensive
+          workloads at any scale."
+      Link: "https://aws.amazon.com/ebs"
+    References: [
+      { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "Capability", ID: "block-storage", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "managed", Relationship: "HAS_TENANCY" }
+    ]

@@ -1,0 +1,6 @@
+Class: "Category"
+Definitions:
+  database:
+    Fields:
+      Name: "database"
+      Description: "Database"

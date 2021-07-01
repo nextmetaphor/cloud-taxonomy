@@ -1,7 +1,4 @@
 Class: "Service"
-References: [
-  { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
-]
 Definitions:
   aws-data-sync:
     Fields:
@@ -9,6 +6,7 @@ Definitions:
       Description: "Simplify, automate, and accelerate moving data to and from AWS Storage, as well as between AWS Storage services."
       Link: "https://aws.amazon.com/datasync"
     References: [
+      { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
       { Class: "Capability", ID: "data-transfer", Relationship: "PROVIDES" },
       { Class: "Tenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]

@@ -1,0 +1,6 @@
+Class: "Category"
+Definitions:
+  compute:
+    Fields:
+      Name: "compute"
+      Description: "Compute"

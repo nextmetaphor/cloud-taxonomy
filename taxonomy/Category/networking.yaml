@@ -1,0 +1,6 @@
+Class: "Category"
+Definitions:
+  networking:
+    Fields:
+      Name: "networking"
+      Description: "Networking"

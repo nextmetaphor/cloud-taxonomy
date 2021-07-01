@@ -1,0 +1,12 @@
+Class: "Service"
+Definitions:
+  aws-classic-load-balancer:
+    Fields:
+      Name: "Classic Load Balancer"
+      Description: "AWS Classic Load Balancer"
+      Link: "https://aws.amazon.com/elasticloadbalancing/classic-load-balancer/"
+    References: [
+      { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "Capability", ID: "load-balancer", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "managed", Relationship: "HAS_TENANCY" }
+    ]

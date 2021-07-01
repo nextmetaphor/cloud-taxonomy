@@ -1,0 +1,8 @@
+Class: "Tenancy"
+Definitions:
+  serverless:
+    Fields:
+      Name: "Serverless"
+      Description: "Purely serverless service; only pay for what you use and nothing more"
+      BackgroundColour: "Green"
+      FontColour: "White"

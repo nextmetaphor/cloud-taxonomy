@@ -1,0 +1,12 @@
+Class: "Service"
+Definitions:
+  aws-network-load-balancer:
+    Fields:
+      Name: "Network Load Balancer"
+      Description: "AWS Network Load Balancer"
+      Link: "https://aws.amazon.com/elasticloadbalancing/network-load-balancer/"
+    References: [
+      { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "Capability", ID: "load-balancer", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "managed", Relationship: "HAS_TENANCY" }
+    ]

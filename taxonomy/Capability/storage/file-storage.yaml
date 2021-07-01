@@ -1,0 +1,7 @@
+Class: "Capability"
+References: [ { Class: "Category", ID: "storage", Relationship: "TYPE_OF" } ]
+Definitions:
+  file-storage:
+    Fields:
+      Name: "File Storage"
+      Description: "File Storage"

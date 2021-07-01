@@ -1,0 +1,7 @@
+Class: "Capability"
+References: [ { Class: "Category", ID: "compute", Relationship: "TYPE_OF" } ]
+Definitions:
+  dedicated-virtual-server:
+    Fields:
+      Name: "Dedicated Virtual Server"
+      Description: "Dedicated virtual server"

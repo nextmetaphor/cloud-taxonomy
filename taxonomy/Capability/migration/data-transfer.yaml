@@ -1,7 +1,5 @@
 Class: "Capability"
-References: [
-  { Class: "Category", ID: "migration", Relationship: "TYPE_OF" }
-]
+References: [ { Class: "Category", ID: "migration", Relationship: "TYPE_OF" } ]
 Definitions:
   data-transfer:
     Fields:

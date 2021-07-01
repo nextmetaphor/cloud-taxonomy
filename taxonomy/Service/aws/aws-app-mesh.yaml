@@ -1,7 +1,4 @@
 Class: "Service"
-References: [
-  { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
-]
 Definitions:
   aws-app-mesh:
     Fields:
@@ -9,6 +6,7 @@ Definitions:
       Description: "AWS App Mesh"
       Link: "https://aws.amazon.com/app-mesh"
     References: [
+      { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
       { Class: "Capability", ID: "service-mesh", Relationship: "PROVIDES" },
       { Class: "Tenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]
