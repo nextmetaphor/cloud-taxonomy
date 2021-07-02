@@ -1,0 +1,13 @@
+Class: "Service"
+Definitions:
+  aws-rds:
+    Fields:
+      Name: "Amazon Relational Database Service (RDS)"
+      Description: "Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a
+        relational database in the cloud."
+      Link: "https://aws.amazon.com/rds/"
+    References: [
+      { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "Capability", ID: "rdbms", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "managed", Relationship: "HAS_TENANCY" }
+    ]
