@@ -1,0 +1,7 @@
+Class: "Capability"
+References: [ { Class: "Category", ID: "database", Relationship: "TYPE_OF" } ]
+Definitions:
+  non-rdbms:
+    Fields:
+      Name: "Non-Relational Database Management Service"
+      Description: "Non-Relational Database Management Service"

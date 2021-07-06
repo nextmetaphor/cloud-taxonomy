@@ -1,0 +1,12 @@
+Class: "Service"
+Definitions:
+  aws-dynamodb:
+    Fields:
+      Name: "Amazon DynamoDB"
+      Description: "Amazon DynamoDB is a key-value and document database that delivers single-digit millisecond performance at any scale. It's a fully managed, multi-region, multi-active, durable database with built-in security, backup and restore, and in-memory caching for internet-scale applications."
+      Link: "https://aws.amazon.com/dynamodb/"
+    References: [
+      { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "Capability", ID: "non-rdbms", Relationship: "PROVIDES" },
+      { Class: "Tenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
+    ]
