@@ -1,0 +1,7 @@
+Class: "Capability"
+References: [ { Class: "Category", ID: "database", Relationship: "TYPE_OF" } ]
+Definitions:
+  document-dbms:
+    Fields:
+      Name: "Document Database Management Service"
+      Description: "Document Database Management Service"

@@ -7,6 +7,7 @@ Definitions:
       Link: "https://aws.amazon.com/dynamodb/"
     References: [
       { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "Capability", ID: "non-rdbms", Relationship: "PROVIDES" },
+      { Class: "Capability", ID: "document-dbms", Relationship: "PROVIDES" },
+      { Class: "Capability", ID: "key-value-dbms", Relationship: "PROVIDES" },
       { Class: "Tenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]
