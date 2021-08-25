@@ -1,0 +1,1 @@
+icon set downloaded from https://docs.microsoft.com/en-us/azure/architecture/icons/

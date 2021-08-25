@@ -48,6 +48,10 @@ Definitions:
       Name: "Virtual Machine"
       Description: "Azure Virtual Machine"
       Link: "https://azure.microsoft.com/en-gb/services/virtual-machines/"
+
+    FileFields:
+      ImgSrc: {Path: "../icons/Azure_Public_Service_Icons/Icons/Compute/10021-icon-service-Virtual-Machine.svg", Prefix: "base64,"}
+
     References: [
       { Class: "Capability", ID: "shared-virtual-server", Relationship: "PROVIDES" },
       { Class: "Tenancy", ID: "hosted", Relationship: "HAS_TENANCY" }
