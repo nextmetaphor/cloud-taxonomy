@@ -1,5 +1,5 @@
 Class: "ServiceCategory"
-References: [ { Class: "ServiceCategory", ID: "migration", Relationship: "TYPE_OF" } ]
+References: [ { Class: "ServiceCapability", ID: "migration", Relationship: "TYPE_OF" } ]
 Definitions:
   data-transfer:
     Fields:

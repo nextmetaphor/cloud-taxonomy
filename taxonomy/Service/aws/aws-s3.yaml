@@ -7,6 +7,6 @@ Definitions:
       Link: "https://aws.amazon.com/s3/"
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceCapability", ID: "object-storage", Relationship: "PROVIDES" },
+      { Class: "ServiceCategory", ID: "object-storage", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]

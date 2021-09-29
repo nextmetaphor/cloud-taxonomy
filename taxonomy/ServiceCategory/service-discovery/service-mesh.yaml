@@ -1,5 +1,5 @@
 Class: "ServiceCategory"
-References: [ { Class: "ServiceCategory", ID: "service-discovery", Relationship: "TYPE_OF" } ]
+References: [ { Class: "ServiceCapability", ID: "service-discovery", Relationship: "TYPE_OF" } ]
 Definitions:
   service-mesh:
     Fields:

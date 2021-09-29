@@ -1,5 +1,5 @@
 Class: "ServiceCategory"
-References: [ { Class: "ServiceCategory", ID: "networking", Relationship: "TYPE_OF" } ]
+References: [ { Class: "ServiceCapability", ID: "networking", Relationship: "TYPE_OF" } ]
 Definitions:
   network-gateway:
     Fields:

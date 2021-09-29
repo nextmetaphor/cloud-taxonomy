@@ -9,7 +9,7 @@ Definitions:
       Description: "Azure Archive Storage"
       Link: "https://azure.microsoft.com/en-gb/services/storage/archive/"
     References: [
-      { Class: "ServiceCapability", ID: "long-term-cold-storage", Relationship: "PROVIDES" },
+      { Class: "ServiceCategory", ID: "long-term-cold-storage", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]
 
@@ -19,7 +19,7 @@ Definitions:
       Description: "Azure Blob Storage"
       Link: "https://azure.microsoft.com/en-gb/services/storage/blobs/"
     References: [
-      { Class: "ServiceCapability", ID: "object-storage", Relationship: "PROVIDES" },
+      { Class: "ServiceCategory", ID: "object-storage", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]
 
@@ -29,7 +29,7 @@ Definitions:
       Description: "Azure Disk Storage"
       Link: "https://azure.microsoft.com/en-gb/services/storage/disks/"
     References: [
-      { Class: "ServiceCapability", ID: "block-storage", Relationship: "PROVIDES" },
+      { Class: "ServiceCategory", ID: "block-storage", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
     ]
 
@@ -39,6 +39,6 @@ Definitions:
       Description: "Azure File Storage"
       Link: "https://azure.microsoft.com/en-gb/services/storage/files/"
     References: [
-      { Class: "ServiceCapability", ID: "file-storage", Relationship: "PROVIDES" },
+      { Class: "ServiceCategory", ID: "file-storage", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]

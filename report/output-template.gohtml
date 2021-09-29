@@ -166,8 +166,8 @@
     {{- $categoryClass := $category.Class -}}
     {{- $categoryID := $category.ID -}}
     {{- $categoryUID := (print $categoryClass "-" $categoryID)}}
-    {{- $categoryName := index $category.Fields "Category.Name"}}
-    {{- $categoryDescription := index $category.Fields "Category.Description"}}
+    {{- $categoryName := index $category.Fields "ServiceCapability.Name"}}
+    {{- $categoryDescription := index $category.Fields "ServiceCapability.Description"}}
 
     <input type="checkbox" id="{{$categoryUID}}"/>
     <label for="{{$categoryUID}}">{{$categoryName}}</label>
@@ -180,8 +180,8 @@
                     {{- $capabilityClass := $capability.Class -}}
                     {{- $capabilityID := $capability.ID -}}
                     {{- $capabilityUID := (printf "%s-%s" $capabilityClass $capabilityID)}}
-                    {{- $capabilityName := index $capability.Fields "Capability.Name" -}}
-                    {{- $capabilityDescription := index $capability.Fields "Capability.Description" -}}
+                    {{- $capabilityName := index $capability.Fields "ServiceCategory.Name" -}}
+                    {{- $capabilityDescription := index $capability.Fields "ServiceCategory.Description" -}}
                     <input type="checkbox" id="{{$capabilityUID}}"/>
                     <label for="{{$capabilityUID}}" class="level1">
                         <div>
@@ -203,10 +203,10 @@
                                         {{- $serviceName := index $service.Fields "Service.Name" -}}
                                         {{- $serviceDescription := index $service.Fields "Service.Description" -}}
                                         {{- $serviceLink := index $service.Fields "Service.Link" -}}
-                                        {{- $providerName := index $service.Fields "Provider.Name" -}}
-                                        {{- $tenancyName := index $service.Fields "Tenancy.Name" -}}
-                                        {{- $tenancyBackgroundColour := index $service.Fields "Tenancy.BackgroundColour" -}}
-                                        {{- $tenancyFontColour := index $service.Fields "Tenancy.FontColour" -}}
+                                        {{- $providerName := index $service.Fields "ServiceProvider.Name" -}}
+                                        {{- $tenancyName := index $service.Fields "ServiceTenancy.Name" -}}
+                                        {{- $tenancyBackgroundColour := index $service.Fields "ServiceTenancy.BackgroundColour" -}}
+                                        {{- $tenancyFontColour := index $service.Fields "ServiceTenancy.FontColour" -}}
 
                                         <div class="card">
                                             <div class="container">

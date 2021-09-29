@@ -9,6 +9,6 @@ Definitions:
       Link: "https://aws.amazon.com/ebs"
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceCapability", ID: "block-storage", Relationship: "PROVIDES" },
+      { Class: "ServiceCategory", ID: "block-storage", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
     ]

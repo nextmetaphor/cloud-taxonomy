@@ -1,5 +1,5 @@
 SectionClass:
-  Class: Category
+  Class: ServiceCapability
   Fields:
     - Name
     - Description
@@ -7,7 +7,7 @@ SectionClass:
     - Name
 CompositeSections:
   - SectionClass:
-      Class: Capability
+      Class: ServiceCategory
       Fields:
         - Name
         - Description
@@ -25,14 +25,14 @@ CompositeSections:
           OrderFields:
             - Name
         AggregateClasses:
-          - Class: Provider
+          - Class: ServiceProvider
             Fields:
               - Name
               - Description
             Relationship: PROVIDED_BY
             OrderFields:
               - Name
-          - Class: Tenancy
+          - Class: ServiceTenancy
             Fields:
               - Name
               - Description

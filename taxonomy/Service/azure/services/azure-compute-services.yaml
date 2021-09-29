@@ -9,7 +9,7 @@ Definitions:
       Description: "A fully managed platform for building, deploying and scaling your web apps"
       Link: "https://azure.microsoft.com/en-gb/services/app-service/"
     References: [
-      { Class: "ServiceCapability", ID: "shared-web-hosting", Relationship: "PROVIDES" },
+      { Class: "ServiceCategory", ID: "shared-web-hosting", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
     ]
 
@@ -19,7 +19,7 @@ Definitions:
       Description: "Azure Function"
       Link: "https://azure.microsoft.com/en-gb/services/functions/"
     References: [
-      { Class: "ServiceCapability", ID: "faas", Relationship: "PROVIDES" },
+      { Class: "ServiceCategory", ID: "faas", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]
 
@@ -29,7 +29,7 @@ Definitions:
       Description: "Azure Kubernetes Service"
       Link: "https://azure.microsoft.com/en-gb/services/kubernetes-service/"
     References: [
-      { Class: "ServiceCapability", ID: "kubernetes-management", Relationship: "PROVIDES" },
+      { Class: "ServiceCategory", ID: "kubernetes-management", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
     ]
 
@@ -39,7 +39,7 @@ Definitions:
       Description: "Azure Container Instance"
       Link: "https://azure.microsoft.com/en-gb/services/container-instances/"
     References: [
-      { Class: "ServiceCapability", ID: "container-management", Relationship: "PROVIDES" },
+      { Class: "ServiceCategory", ID: "container-management", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]
 
@@ -53,7 +53,7 @@ Definitions:
       ImgSrc: {Path: "../icons/Azure_Public_Service_Icons/Icons/Compute/10021-icon-service-Virtual-Machine.svg", Prefix: "base64,"}
 
     References: [
-      { Class: "ServiceCapability", ID: "shared-virtual-server", Relationship: "PROVIDES" },
+      { Class: "ServiceCategory", ID: "shared-virtual-server", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "hosted", Relationship: "HAS_TENANCY" }
     ]
 
@@ -63,6 +63,6 @@ Definitions:
       Description: "Azure Virtual Machine Scale Set"
       Link: "https://azure.microsoft.com/en-gb/services/virtual-machine-scale-sets/"
     References: [
-      { Class: "ServiceCapability", ID: "auto-scaling", Relationship: "PROVIDES" },
+      { Class: "ServiceCategory", ID: "auto-scaling", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]
