@@ -1,0 +1,7 @@
+Class: "Attribute"
+Definitions:
+  observability:
+    Fields:
+      Name: "observability"
+      Tag: "...enables clear visibility into operational status"
+      Description: "logging, monitoring, alerting and auditing all provided"

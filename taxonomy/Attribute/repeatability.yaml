@@ -1,0 +1,7 @@
+Class: "Attribute"
+Definitions:
+  repeatability:
+    Fields:
+      Name: "repeatability"
+      Tag: "...automate everything as code"
+      Description: "automate everything using the provided API interface"

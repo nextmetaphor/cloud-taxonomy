@@ -1,0 +1,7 @@
+Class: "Attribute"
+Definitions:
+  global-presence:
+    Fields:
+      Name: "global presence"
+      Tag: "...access to deploy worldwide"
+      Description: "cloud-providers have points of presence all over the world"
