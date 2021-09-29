@@ -1,0 +1,7 @@
+Class: "ServiceCategory"
+References: [ { Class: "ServiceCategory", ID: "networking", Relationship: "TYPE_OF" } ]
+Definitions:
+  load-balancer:
+    Fields:
+      Name: "Load Balancer"
+      Description: "Load Balancer"

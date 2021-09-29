@@ -1,9 +1,0 @@
-Class: "Attribute"
-Definitions:
-  managed-services:
-    Fields:
-      Name: "managed services"
-      Tag: "...use the already-supported architectural building blocks provided"
-      Description: "standard services (e.g. database, queue, notification, email...) plus specialist services
-        (e.g. security, big data, machine learning...) are all provided, complete with inherent high-availability,
-        security, durability, operational support..."

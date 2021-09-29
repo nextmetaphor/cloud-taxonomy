@@ -6,7 +6,7 @@ Definitions:
       Description: "AWS App Mesh"
       Link: "https://aws.amazon.com/app-mesh"
     References: [
-      { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "Capability", ID: "service-mesh", Relationship: "PROVIDES" },
-      { Class: "Tenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceCapability", ID: "service-mesh", Relationship: "PROVIDES" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]

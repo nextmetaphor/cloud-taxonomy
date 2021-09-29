@@ -1,7 +1,0 @@
-Class: "Attribute"
-Definitions:
-  resiliency:
-    Fields:
-      Name: "resiliency"
-      Tag: "...built to withstand local failure"
-      Description: "multiple zones provided within a geographic region"

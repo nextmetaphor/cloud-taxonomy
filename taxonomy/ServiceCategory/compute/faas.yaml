@@ -1,0 +1,7 @@
+Class: "ServiceCategory"
+References: [ { Class: "ServiceCategory", ID: "compute", Relationship: "TYPE_OF" } ]
+Definitions:
+  faas:
+    Fields:
+      Name: "Function-as-a-Service"
+      Description: "Function-as-a-Service"

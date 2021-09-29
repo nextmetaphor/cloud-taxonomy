@@ -1,6 +1,8 @@
 # cloud-taxonomy
 Project to model the Cloud Computing taxonomy in a graph representation using [yaml-graph](https://github.com/nextmetaphor/yaml-graph) definitions.
 
+![Azure Virtual Machine](terraform-azure-vm.jpg)
+
 ## Installation
 ### Install `yaml-graph`
 First, follow the [installation instructions](https://github.com/nextmetaphor/yaml-graph/blob/main/README.md) to build `yaml-graph`. 

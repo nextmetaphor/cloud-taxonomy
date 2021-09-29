@@ -1,24 +1,17 @@
 Class:
-  Attribute:
-    MandatoryFields:
-      Name:
-      Tag:
-      Description:
-    OptionalFields:
-
-  Capability:
+  ServiceCapability:
     MandatoryFields:
       Name:
       Description:
     OptionalFields:
 
-  Category:
+  ServiceCategory:
     MandatoryFields:
       Name:
       Description:
     OptionalFields:
 
-  Provider:
+  ServiceProvider:
     MandatoryFields:
       Name:
       Description:
@@ -32,7 +25,7 @@ Class:
     OptionalFields:
       ImgSrc:
 
-  Tenancy:
+  ServiceTenancy:
     MandatoryFields:
       Name:
       Description:

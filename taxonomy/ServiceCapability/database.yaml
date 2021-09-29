@@ -1,0 +1,6 @@
+Class: "ServiceCapability"
+Definitions:
+  database:
+    Fields:
+      Name: "database"
+      Description: "Database"

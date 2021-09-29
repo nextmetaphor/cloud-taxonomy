@@ -1,7 +1,0 @@
-Class: "Capability"
-References: [ { Class: "Category", ID: "networking", Relationship: "TYPE_OF" } ]
-Definitions:
-  virtual-network:
-    Fields:
-      Name: "Virtual Network"
-      Description: "Virtual Network"

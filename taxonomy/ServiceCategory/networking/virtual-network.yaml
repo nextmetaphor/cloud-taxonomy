@@ -1,0 +1,7 @@
+Class: "ServiceCategory"
+References: [ { Class: "ServiceCategory", ID: "networking", Relationship: "TYPE_OF" } ]
+Definitions:
+  virtual-network:
+    Fields:
+      Name: "Virtual Network"
+      Description: "Virtual Network"

@@ -7,7 +7,7 @@ Definitions:
         system that lets you share file data without provisioning or managing storage."
       Link: "https://aws.amazon.com/efs/"
     References: [
-      { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "Capability", ID: "file-storage", Relationship: "PROVIDES" },
-      { Class: "Tenancy", ID: "managed", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceCapability", ID: "file-storage", Relationship: "PROVIDES" },
+      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
     ]

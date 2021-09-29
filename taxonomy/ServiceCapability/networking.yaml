@@ -1,0 +1,6 @@
+Class: "ServiceCapability"
+Definitions:
+  networking:
+    Fields:
+      Name: "networking"
+      Description: "Networking"

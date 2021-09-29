@@ -1,0 +1,7 @@
+Class: "ServiceCategory"
+References: [ { Class: "ServiceCategory", ID: "database", Relationship: "TYPE_OF" } ]
+Definitions:
+  rdbms:
+    Fields:
+      Name: "Relational Database Management Service"
+      Description: "Relational Database Management Service"

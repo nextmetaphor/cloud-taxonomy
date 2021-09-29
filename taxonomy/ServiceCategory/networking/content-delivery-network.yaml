@@ -1,0 +1,7 @@
+Class: "ServiceCategory"
+References: [ { Class: "ServiceCategory", ID: "networking", Relationship: "TYPE_OF" } ]
+Definitions:
+  content-delivery-network:
+    Fields:
+      Name: "Content Delivery Network"
+      Description: "Content Delivery Network"

@@ -6,7 +6,7 @@ Definitions:
       Description: "Object storage built to store and retrieve any amount of data from anywhere"
       Link: "https://aws.amazon.com/s3/"
     References: [
-      { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "Capability", ID: "object-storage", Relationship: "PROVIDES" },
-      { Class: "Tenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceCapability", ID: "object-storage", Relationship: "PROVIDES" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]

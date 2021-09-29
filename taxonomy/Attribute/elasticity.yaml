@@ -1,8 +1,0 @@
-Class: "Attribute"
-Definitions:
-  elasticity:
-    Fields:
-      Name: "elasticity"
-      Tag: "...no need to architect for peak load"
-      Description: "scale on demand with autoscaling; prefer decoupled asynchronous serverless architectures over IaaS
-        for scalability"

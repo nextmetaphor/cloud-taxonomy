@@ -8,7 +8,7 @@ Definitions:
           workloads at any scale."
       Link: "https://aws.amazon.com/ebs"
     References: [
-      { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "Capability", ID: "block-storage", Relationship: "PROVIDES" },
-      { Class: "Tenancy", ID: "managed", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceCapability", ID: "block-storage", Relationship: "PROVIDES" },
+      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
     ]

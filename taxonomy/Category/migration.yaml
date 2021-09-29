@@ -1,6 +1,0 @@
-Class: "Category"
-Definitions:
-  migration:
-    Fields:
-      Name: "migration"
-      Description: "Migration"

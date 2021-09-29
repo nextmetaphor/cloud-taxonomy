@@ -6,8 +6,8 @@ Definitions:
       Description: "Amazon DynamoDB is a key-value and document database that delivers single-digit millisecond performance at any scale. It's a fully managed, multi-region, multi-active, durable database with built-in security, backup and restore, and in-memory caching for internet-scale applications."
       Link: "https://aws.amazon.com/dynamodb/"
     References: [
-      { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "Capability", ID: "document-dbms", Relationship: "PROVIDES" },
-      { Class: "Capability", ID: "key-value-dbms", Relationship: "PROVIDES" },
-      { Class: "Tenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceCapability", ID: "document-dbms", Relationship: "PROVIDES" },
+      { Class: "ServiceCapability", ID: "key-value-dbms", Relationship: "PROVIDES" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]

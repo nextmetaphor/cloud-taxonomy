@@ -1,0 +1,7 @@
+Class: "ServiceCategory"
+References: [{ Class: "ServiceCategory", ID: "compute", Relationship: "TYPE_OF" }]
+Definitions:
+  shared-virtual-server:
+    Fields:
+      Name: "Shared Virtual Server"
+      Description: "Shared virtual server"

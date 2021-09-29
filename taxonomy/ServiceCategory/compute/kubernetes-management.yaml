@@ -1,0 +1,7 @@
+Class: "ServiceCategory"
+References: [ { Class: "ServiceCategory", ID: "compute", Relationship: "TYPE_OF" } ]
+Definitions:
+  kubernetes-management:
+    Fields:
+      Name: "Kubernetes Management"
+      Description: "Kubernetes Management"

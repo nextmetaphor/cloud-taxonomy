@@ -1,0 +1,6 @@
+Class: "ServiceCapability"
+Definitions:
+  migration:
+    Fields:
+      Name: "migration"
+      Description: "Migration"

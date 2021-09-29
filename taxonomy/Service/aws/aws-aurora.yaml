@@ -6,7 +6,7 @@ Definitions:
       Description: "Amazon Aurora is a MySQL and PostgreSQL-compatible relational database built for the cloud, that combines the performance and availability of traditional enterprise databases with the simplicity and cost-effectiveness of open source databases."
       Link: "https://aws.amazon.com/rds/aurora/"
     References: [
-      { Class: "Provider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "Capability", ID: "rdbms", Relationship: "PROVIDES" },
-      { Class: "Tenancy", ID: "managed", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceCapability", ID: "rdbms", Relationship: "PROVIDES" },
+      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
     ]

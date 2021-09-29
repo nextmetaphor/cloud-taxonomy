@@ -1,0 +1,7 @@
+Class: "ServiceCategory"
+References: [ { Class: "ServiceCategory", ID: "networking", Relationship: "TYPE_OF" } ]
+Definitions:
+  network-gateway:
+    Fields:
+      Name: "Network Gateway"
+      Description: "Network Gateway"
