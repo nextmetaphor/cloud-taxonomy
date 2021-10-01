@@ -1,0 +1,6 @@
+Class: "ServiceCategory"
+Definitions:
+  compute:
+    Fields:
+      Name: "compute"
+      Description: "Compute"

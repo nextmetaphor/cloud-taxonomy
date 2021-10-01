@@ -1,0 +1,6 @@
+Class: "ServiceCategory"
+Definitions:
+  networking:
+    Fields:
+      Name: "networking"
+      Description: "Networking"

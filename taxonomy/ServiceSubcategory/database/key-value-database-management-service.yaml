@@ -1,0 +1,7 @@
+Class: "ServiceSubcategory"
+References: [ { Class: "ServiceCategory", ID: "database", Relationship: "TYPE_OF" } ]
+Definitions:
+  key-value-dbms:
+    Fields:
+      Name: "Key/Value Database Management Service"
+      Description: "Key/Value Database Management Service"

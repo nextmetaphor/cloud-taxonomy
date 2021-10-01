@@ -1,11 +1,11 @@
 Class:
-  ServiceCapability:
+  ServiceCategory:
     MandatoryFields:
       Name:
       Description:
     OptionalFields:
 
-  ServiceCategory:
+  ServiceSubcategory:
     MandatoryFields:
       Name:
       Description:

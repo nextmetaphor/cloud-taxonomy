@@ -1,7 +1,0 @@
-Class: "ServiceCategory"
-References: [ { Class: "ServiceCapability", ID: "storage", Relationship: "TYPE_OF" } ]
-Definitions:
-  object-storage:
-    Fields:
-      Name: "Object Storage"
-      Description: "Object Storage"

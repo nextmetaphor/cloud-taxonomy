@@ -9,7 +9,7 @@ Definitions:
       Description: "Azure Application Gateway"
       Link: "https://azure.microsoft.com/en-gb/services/application-gateway/"
     References: [
-      { Class: "ServiceCategory", ID: "load-balancer", Relationship: "PROVIDES" },
+      { Class: "ServiceSubcategory", ID: "load-balancer", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
     ]
 
@@ -19,7 +19,7 @@ Definitions:
       Description: "Azure Content Delivery Network"
       Link: "https://azure.microsoft.com/en-gb/services/cdn/"
     References: [
-      { Class: "ServiceCategory", ID: "content-delivery-network", Relationship: "PROVIDES" },
+      { Class: "ServiceSubcategory", ID: "content-delivery-network", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]
 
@@ -29,7 +29,7 @@ Definitions:
       Description: "Azure Load Balancer"
       Link: "https://azure.microsoft.com/en-gb/services/load-balancer/"
     References: [
-      { Class: "ServiceCategory", ID: "load-balancer", Relationship: "PROVIDES" },
+      { Class: "ServiceSubcategory", ID: "load-balancer", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
     ]
 
@@ -39,7 +39,7 @@ Definitions:
       Description: "Virtual Network"
       Link: "https://azure.microsoft.com/en-gb/services/virtual-network/"
     References: [
-      { Class: "ServiceCategory", ID: "virtual-network", Relationship: "PROVIDES" },
+      { Class: "ServiceSubcategory", ID: "virtual-network", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
 
     ]
@@ -50,6 +50,6 @@ Definitions:
       Description: "Azure VPN Gateway"
       Link: "https://azure.microsoft.com/en-gb/services/vpn-gateway/"
     References: [
-      { Class: "ServiceCategory", ID: "network-gateway", Relationship: "PROVIDES" },
+      { Class: "ServiceSubcategory", ID: "network-gateway", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
     ]

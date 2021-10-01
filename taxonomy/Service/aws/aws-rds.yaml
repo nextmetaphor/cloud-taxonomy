@@ -8,6 +8,6 @@ Definitions:
       Link: "https://aws.amazon.com/rds/"
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceCategory", ID: "rdbms", Relationship: "PROVIDES" },
+      { Class: "ServiceSubcategory", ID: "rdbms", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
     ]

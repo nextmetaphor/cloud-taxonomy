@@ -1,6 +1,0 @@
-Class: "ServiceCapability"
-Definitions:
-  service-discovery:
-    Fields:
-      Name: "service discovery"
-      Description: "Service Discovery"

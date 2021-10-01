@@ -1,7 +1,0 @@
-Class: "ServiceCategory"
-References: [ { Class: "ServiceCapability", ID: "migration", Relationship: "TYPE_OF" } ]
-Definitions:
-  data-transfer:
-    Fields:
-      Name: "Data Transfer"
-      Description: "Data Transfer Service"

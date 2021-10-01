@@ -1,0 +1,7 @@
+Class: "ServiceSubcategory"
+References: [ { Class: "ServiceCategory", ID: "compute", Relationship: "TYPE_OF" } ]
+Definitions:
+  container-management:
+    Fields:
+      Name: "Container Management"
+      Description: "Container Management"

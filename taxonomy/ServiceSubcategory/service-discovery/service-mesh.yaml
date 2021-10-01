@@ -1,0 +1,7 @@
+Class: "ServiceSubcategory"
+References: [ { Class: "ServiceCategory", ID: "service-discovery", Relationship: "TYPE_OF" } ]
+Definitions:
+  service-mesh:
+    Fields:
+      Name: "Service Mesh"
+      Description: "Service Mesh"

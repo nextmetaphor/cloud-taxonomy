@@ -1,0 +1,7 @@
+Class: "ServiceSubcategory"
+References: [ { Class: "ServiceCategory", ID: "storage", Relationship: "TYPE_OF" } ]
+Definitions:
+  block-storage:
+    Fields:
+      Name: "Block Storage"
+      Description: "Block Storage"

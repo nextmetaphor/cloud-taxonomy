@@ -1,5 +1,5 @@
 SectionClass:
-  Class: ServiceCapability
+  Class: ServiceCategory
   Fields:
     - Name
     - Description
@@ -7,7 +7,7 @@ SectionClass:
     - Name
 CompositeSections:
   - SectionClass:
-      Class: ServiceCategory
+      Class: ServiceSubcategory
       Fields:
         - Name
         - Description

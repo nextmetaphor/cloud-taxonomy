@@ -1,7 +1,0 @@
-Class: "ServiceCategory"
-References: [ { Class: "ServiceCapability", ID: "compute", Relationship: "TYPE_OF" } ]
-Definitions:
-  shared-web-hosting:
-    Fields:
-      Name: "Shared Web Hosting"
-      Description: "Shared Web Hosting"

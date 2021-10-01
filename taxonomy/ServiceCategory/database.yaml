@@ -1,0 +1,6 @@
+Class: "ServiceCategory"
+Definitions:
+  database:
+    Fields:
+      Name: "database"
+      Description: "Database"

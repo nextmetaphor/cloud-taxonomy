@@ -1,6 +1,0 @@
-Class: "ServiceCapability"
-Definitions:
-  compute:
-    Fields:
-      Name: "compute"
-      Description: "Compute"

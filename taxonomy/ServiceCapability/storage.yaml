@@ -1,6 +1,0 @@
-Class: "ServiceCapability"
-Definitions:
-  storage:
-    Fields:
-      Name: "storage"
-      Description: "Storage"

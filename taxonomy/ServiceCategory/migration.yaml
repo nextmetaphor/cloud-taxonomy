@@ -1,0 +1,6 @@
+Class: "ServiceCategory"
+Definitions:
+  migration:
+    Fields:
+      Name: "migration"
+      Description: "Migration"

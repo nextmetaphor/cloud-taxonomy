@@ -166,8 +166,8 @@
     {{- $categoryClass := $category.Class -}}
     {{- $categoryID := $category.ID -}}
     {{- $categoryUID := (print $categoryClass "-" $categoryID)}}
-    {{- $categoryName := index $category.Fields "ServiceCapability.Name"}}
-    {{- $categoryDescription := index $category.Fields "ServiceCapability.Description"}}
+    {{- $categoryName := index $category.Fields "ServiceCategory.Name"}}
+    {{- $categoryDescription := index $category.Fields "ServiceCategory.Description"}}
 
     <input type="checkbox" id="{{$categoryUID}}"/>
     <label for="{{$categoryUID}}">{{$categoryName}}</label>
@@ -176,25 +176,25 @@
         <p>{{$categoryDescription}}</p>
         {{- range $key,$value := $category.CompositeSectionDefinitions -}}
             {{- if eq $key "TYPE_OF" -}}
-                {{- range $capability := $value -}}
-                    {{- $capabilityClass := $capability.Class -}}
-                    {{- $capabilityID := $capability.ID -}}
-                    {{- $capabilityUID := (printf "%s-%s" $capabilityClass $capabilityID)}}
-                    {{- $capabilityName := index $capability.Fields "ServiceCategory.Name" -}}
-                    {{- $capabilityDescription := index $capability.Fields "ServiceCategory.Description" -}}
-                    <input type="checkbox" id="{{$capabilityUID}}"/>
-                    <label for="{{$capabilityUID}}" class="level1">
+                {{- range $subcategory := $value -}}
+                    {{- $subcategoryClass := $subcategory.Class -}}
+                    {{- $subcategoryID := $subcategory.ID -}}
+                    {{- $subcategoryUID := (printf "%s-%s" $subcategoryClass $subcategoryID)}}
+                    {{- $subcategoryName := index $subcategory.Fields "ServiceSubcategory.Name" -}}
+                    {{- $subcategoryDescription := index $subcategory.Fields "ServiceSubcategory.Description" -}}
+                    <input type="checkbox" id="{{$subcategoryUID}}"/>
+                    <label for="{{$subcategoryUID}}" class="level1">
                         <div>
-                            <div class="definition">{{$capabilityClass}}</div>
-                            <span>{{$capabilityName}}</span>
+                            <div class="definition">{{$subcategoryClass}}</div>
+                            <span>{{$subcategoryName}}</span>
                         </div>
                     </label>
 
                     <div class="content">
-                        <p>{{$capabilityDescription}}</p>
+                        <p>{{$subcategoryDescription}}</p>
 
                         <div class="card-container">
-                            {{- range $key,$value := $capability.CompositeSectionDefinitions -}}
+                            {{- range $key,$value := $subcategory.CompositeSectionDefinitions -}}
                                 {{- if eq $key "PROVIDES" -}}
                                     {{- range $service := $value -}}
                                         {{- $serviceClass := $service.Class -}}

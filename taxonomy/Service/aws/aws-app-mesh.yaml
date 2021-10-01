@@ -7,6 +7,6 @@ Definitions:
       Link: "https://aws.amazon.com/app-mesh"
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceCategory", ID: "service-mesh", Relationship: "PROVIDES" },
+      { Class: "ServiceSubcategory", ID: "service-mesh", Relationship: "PROVIDES" },
       { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
     ]
