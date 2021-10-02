@@ -175,7 +175,7 @@
     <div class="content">
         <p>{{$categoryDescription}}</p>
         {{- range $key,$value := $category.CompositeSectionDefinitions -}}
-            {{- if eq $key "TYPE_OF" -}}
+            {{- if eq $key "GROUPED_BY" -}}
                 {{- range $subcategory := $value -}}
                     {{- $subcategoryClass := $subcategory.Class -}}
                     {{- $subcategoryID := $subcategory.ID -}}
@@ -195,7 +195,7 @@
 
                         <div class="card-container">
                             {{- range $key,$value := $subcategory.CompositeSectionDefinitions -}}
-                                {{- if eq $key "PROVIDES" -}}
+                                {{- if eq $key "BELONGS_TO" -}}
                                     {{- range $service := $value -}}
                                         {{- $serviceClass := $service.Class -}}
                                         {{- $serviceID := $service.ID -}}

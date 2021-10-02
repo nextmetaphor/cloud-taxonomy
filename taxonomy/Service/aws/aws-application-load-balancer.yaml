@@ -7,6 +7,6 @@ Definitions:
       Link: "https://aws.amazon.com/elasticloadbalancing/application-load-balancer/"
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceSubcategory", ID: "load-balancer", Relationship: "PROVIDES" },
-      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceSubcategory", ID: "load-balancer", Relationship: "BELONGS_TO" },
+      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
     ]

@@ -7,6 +7,6 @@ Definitions:
       Link: "https://aws.amazon.com/rds/aurora/"
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceSubcategory", ID: "rdbms", Relationship: "PROVIDES" },
-      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceSubcategory", ID: "rdbms", Relationship: "BELONGS_TO" },
+      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
     ]

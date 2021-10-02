@@ -9,8 +9,8 @@ Definitions:
       Description: "Azure Application Gateway"
       Link: "https://azure.microsoft.com/en-gb/services/application-gateway/"
     References: [
-      { Class: "ServiceSubcategory", ID: "load-balancer", Relationship: "PROVIDES" },
-      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceSubcategory", ID: "load-balancer", Relationship: "BELONGS_TO" },
+      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
     ]
 
   azure-content-delivery-network:
@@ -19,8 +19,8 @@ Definitions:
       Description: "Azure Content Delivery Network"
       Link: "https://azure.microsoft.com/en-gb/services/cdn/"
     References: [
-      { Class: "ServiceSubcategory", ID: "content-delivery-network", Relationship: "PROVIDES" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceSubcategory", ID: "content-delivery-network", Relationship: "BELONGS_TO" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]
 
   azure-load-balancer:
@@ -29,8 +29,8 @@ Definitions:
       Description: "Azure Load Balancer"
       Link: "https://azure.microsoft.com/en-gb/services/load-balancer/"
     References: [
-      { Class: "ServiceSubcategory", ID: "load-balancer", Relationship: "PROVIDES" },
-      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceSubcategory", ID: "load-balancer", Relationship: "BELONGS_TO" },
+      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
     ]
 
   azure-virtual-network:
@@ -39,8 +39,8 @@ Definitions:
       Description: "Virtual Network"
       Link: "https://azure.microsoft.com/en-gb/services/virtual-network/"
     References: [
-      { Class: "ServiceSubcategory", ID: "virtual-network", Relationship: "PROVIDES" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceSubcategory", ID: "virtual-network", Relationship: "BELONGS_TO" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
 
     ]
 
@@ -50,6 +50,6 @@ Definitions:
       Description: "Azure VPN Gateway"
       Link: "https://azure.microsoft.com/en-gb/services/vpn-gateway/"
     References: [
-      { Class: "ServiceSubcategory", ID: "network-gateway", Relationship: "PROVIDES" },
-      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceSubcategory", ID: "network-gateway", Relationship: "BELONGS_TO" },
+      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
     ]

@@ -1,5 +1,5 @@
 Class: "ServiceSubcategory"
-References: [ { Class: "ServiceCategory", ID: "database", Relationship: "TYPE_OF" } ]
+References: [ { Class: "ServiceCategory", ID: "database", Relationship: "GROUPED_BY" } ]
 Definitions:
   document-dbms:
     Fields:

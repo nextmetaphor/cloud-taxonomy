@@ -1,5 +1,5 @@
 Class: "ServiceSubcategory"
-References: [ { Class: "ServiceCategory", ID: "storage", Relationship: "TYPE_OF" } ]
+References: [ { Class: "ServiceCategory", ID: "storage", Relationship: "GROUPED_BY" } ]
 Definitions:
   file-storage:
     Fields:

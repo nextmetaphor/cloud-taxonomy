@@ -1,5 +1,5 @@
 Class: "ServiceSubcategory"
-References: [ { Class: "ServiceCategory", ID: "compute", Relationship: "TYPE_OF" } ]
+References: [ { Class: "ServiceCategory", ID: "compute", Relationship: "GROUPED_BY" } ]
 Definitions:
   auto-scaling:
     Fields:

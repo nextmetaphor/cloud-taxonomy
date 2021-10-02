@@ -9,6 +9,6 @@ Definitions:
       Description: "Azure Service Fabric"
       Link: "https://azure.microsoft.com/en-gb/services/service-fabric/"
     References: [
-      { Class: "ServiceSubcategory", ID: "service-mesh", Relationship: "PROVIDES" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceSubcategory", ID: "service-mesh", Relationship: "BELONGS_TO" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]

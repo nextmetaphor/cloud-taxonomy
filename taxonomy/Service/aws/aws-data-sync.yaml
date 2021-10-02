@@ -7,6 +7,6 @@ Definitions:
       Link: "https://aws.amazon.com/datasync"
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceSubcategory", ID: "data-transfer", Relationship: "PROVIDES" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceSubcategory", ID: "data-transfer", Relationship: "BELONGS_TO" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]

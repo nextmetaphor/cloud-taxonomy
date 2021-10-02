@@ -1,5 +1,5 @@
 Class: "ServiceSubcategory"
-References: [ { Class: "ServiceCategory", ID: "service-discovery", Relationship: "TYPE_OF" } ]
+References: [ { Class: "ServiceCategory", ID: "service-discovery", Relationship: "GROUPED_BY" } ]
 Definitions:
   service-mesh:
     Fields:

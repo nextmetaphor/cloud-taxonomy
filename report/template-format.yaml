@@ -11,7 +11,7 @@ CompositeSections:
       Fields:
         - Name
         - Description
-      Relationship: TYPE_OF
+      Relationship: GROUPED_BY
       OrderFields:
         - Name
     CompositeSections:
@@ -21,7 +21,7 @@ CompositeSections:
             - Name
             - Link
             - Description
-          Relationship: PROVIDES
+          Relationship: BELONGS_TO
           OrderFields:
             - Name
         AggregateClasses:
@@ -38,6 +38,6 @@ CompositeSections:
               - Description
               - BackgroundColour
               - FontColour
-            Relationship: HAS_TENANCY
+            Relationship: HAS_TENANCY_OF
             OrderFields:
               - Name

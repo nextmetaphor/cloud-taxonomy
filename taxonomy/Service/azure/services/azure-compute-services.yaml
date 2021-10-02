@@ -9,8 +9,8 @@ Definitions:
       Description: "A fully managed platform for building, deploying and scaling your web apps"
       Link: "https://azure.microsoft.com/en-gb/services/app-service/"
     References: [
-      { Class: "ServiceSubcategory", ID: "shared-web-hosting", Relationship: "PROVIDES" },
-      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceSubcategory", ID: "shared-web-hosting", Relationship: "BELONGS_TO" },
+      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
     ]
 
   azure-function:
@@ -19,8 +19,8 @@ Definitions:
       Description: "Azure Function"
       Link: "https://azure.microsoft.com/en-gb/services/functions/"
     References: [
-      { Class: "ServiceSubcategory", ID: "faas", Relationship: "PROVIDES" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceSubcategory", ID: "faas", Relationship: "BELONGS_TO" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]
 
   azure-kubernetes-service:
@@ -29,8 +29,8 @@ Definitions:
       Description: "Azure Kubernetes Service"
       Link: "https://azure.microsoft.com/en-gb/services/kubernetes-service/"
     References: [
-      { Class: "ServiceSubcategory", ID: "kubernetes-management", Relationship: "PROVIDES" },
-      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceSubcategory", ID: "kubernetes-management", Relationship: "BELONGS_TO" },
+      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
     ]
 
   azure-container-instance:
@@ -39,8 +39,8 @@ Definitions:
       Description: "Azure Container Instance"
       Link: "https://azure.microsoft.com/en-gb/services/container-instances/"
     References: [
-      { Class: "ServiceSubcategory", ID: "container-management", Relationship: "PROVIDES" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceSubcategory", ID: "container-management", Relationship: "BELONGS_TO" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]
 
   azure-virtual-machine:
@@ -53,8 +53,8 @@ Definitions:
       ImgSrc: {Path: "../icons/Azure_Public_Service_Icons/Icons/Compute/10021-icon-service-Virtual-Machine.svg", Prefix: "base64,"}
 
     References: [
-      { Class: "ServiceSubcategory", ID: "shared-virtual-server", Relationship: "PROVIDES" },
-      { Class: "ServiceTenancy", ID: "hosted", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceSubcategory", ID: "shared-virtual-server", Relationship: "BELONGS_TO" },
+      { Class: "ServiceTenancy", ID: "hosted", Relationship: "HAS_TENANCY_OF" }
     ]
 
   azure-virtual-machine-scale-set:
@@ -63,6 +63,6 @@ Definitions:
       Description: "Azure Virtual Machine Scale Set"
       Link: "https://azure.microsoft.com/en-gb/services/virtual-machine-scale-sets/"
     References: [
-      { Class: "ServiceSubcategory", ID: "auto-scaling", Relationship: "PROVIDES" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY" }
+      { Class: "ServiceSubcategory", ID: "auto-scaling", Relationship: "BELONGS_TO" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]
