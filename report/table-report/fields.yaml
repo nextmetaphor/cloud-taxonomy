@@ -24,6 +24,7 @@ CompositeSections:
             - Name
             - Link
             - Description
+            - ImgSrc
           Relationship: BELONGS_TO
           OrderFields:
             - Name

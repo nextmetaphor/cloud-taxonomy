@@ -18,6 +18,34 @@
 </head>
 
 <style>
+    body {
+        margin: auto;
+        width: 98%;
+        padding-top: 10px;
+        font-family: "RobotoDraft", "Roboto", "Helvetica", sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    table, th, td {
+        border: 1px solid white;
+        border-collapse: collapse;
+    }
+    th {
+        background-color: darkblue;
+        color: white;
+    }
+    td {
+        background-color: darkgray;
+    }
+
+    .subcategory {
+        text-align: right;
+        background-color: mediumblue;
+        color: ghostwhite;
+    }
+    .service {
+        text-align: center;
+    }
 </style>
 
 <body id="body">
@@ -67,6 +95,7 @@
                             {{- $serviceName := index $service.Fields "Service.Name" -}}
                             {{- $serviceDescription := index $service.Fields "Service.Description" -}}
                             {{- $serviceLink := index $service.Fields "Service.Link" -}}
+                            {{- $serviceImgSrc := index $service.Fields "Service.ImgSrc" -}}
                             {{- $providerID := index $service.Fields "ServiceProvider.ID" -}}
                             {{- $providerName := index $service.Fields "ServiceProvider.Name" -}}
                             {{- $tenancyID := index $service.Fields "ServiceTenancy.ID" -}}
@@ -79,7 +108,11 @@
                                     Name: {{$serviceName}},
                                     Description: {{$serviceDescription}},
                                     Link: {{$serviceLink}},
+                                    ImgSrc: {{$serviceImgSrc}},
                                 })
+
+                                console.log({{$serviceName}})
+                                console.log({{$serviceImgSrc}})
 
                                 serviceProviderMap.set({{$providerID}}, {
                                     Name: {{$providerName}},
@@ -144,11 +177,13 @@
                 currentRow = document.createElement('tr');
             }
             let subCategoryData = document.createElement('td');
-            subCategoryData.innerHTML = serviceSubcategory.Name
+            subCategoryData.innerHTML = serviceSubcategory.Name;
+            subCategoryData.className = "subcategory";
             currentRow.appendChild(subCategoryData)
 
             serviceProviderMap.forEach( function (serviceProvider, serviceProviderID) {
                 let serviceData = document.createElement('td');
+                serviceData.className = "service";
                 if (serviceSubcategory.ServiceByTenancyMap.get(serviceProviderID) !== undefined) {
                     let serviceID = serviceSubcategory.ServiceByTenancyMap.get(serviceProviderID).ServiceID
                     if (serviceID !== undefined) {
@@ -163,6 +198,14 @@
                                 serviceDescription = serviceObject.Description
                             }
                             serviceData.innerHTML = "<a title=\"" + serviceDescription + "\"target=\"_blank\" href=\"" + serviceLink + "\">" + serviceObject.Name + "</a>";
+
+                            if (serviceObject.ImgSrc !== undefined && serviceObject.ImgSrc !== null ) {
+                                let imageData = document.createElement('img');
+                                imageData.className = "serviceIcon"
+                                imageData.src = "data:image/" + serviceObject.ImgSrc;
+
+                                serviceData.prepend(imageData);
+                            }
                         }
                     }
                 }
