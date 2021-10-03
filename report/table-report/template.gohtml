@@ -1,0 +1,185 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Cloud Taxonomy</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script type="application/javascript">
+        let serviceCategoryMap = new Map()
+        let serviceSubcategoryMap = new Map()
+        let serviceProviderMap = new Map()
+        let serviceTenancyMap = new Map()
+        let serviceMap = new Map()
+    </script>
+</head>
+
+<style>
+</style>
+
+<body id="body">
+{{- range $category := . -}}
+    {{- $categoryClass := $category.Class -}}
+    {{- $categoryID := $category.ID -}}
+    {{- $categoryUID := (print $categoryClass "-" $categoryID)}}
+    {{- $categoryName := index $category.Fields "ServiceCategory.Name"}}
+    {{- $categoryDescription := index $category.Fields "ServiceCategory.Description"}}
+
+    <script>
+        serviceCategoryMap.set({{$categoryID}}, {
+            Name: {{$categoryName}},
+            Description: {{$categoryDescription}},
+            SubcategoryMap: new Map(),
+        })
+    </script>
+
+    {{- range $key,$value := $category.CompositeSectionDefinitions -}}
+        {{- if eq $key "GROUPED_BY" -}}
+            {{- range $subcategory := $value -}}
+                {{- $subcategoryClass := $subcategory.Class -}}
+                {{- $subcategoryID := $subcategory.ID -}}
+                {{- $subcategoryUID := (printf "%s-%s" $subcategoryClass $subcategoryID)}}
+                {{- $subcategoryName := index $subcategory.Fields "ServiceSubcategory.Name" -}}
+                {{- $subcategoryDescription := index $subcategory.Fields "ServiceSubcategory.Description" -}}
+
+                <script>
+                    serviceSubcategoryMap.set({{$subcategoryID}}, {
+                        Name: {{$subcategoryName}},
+                        Description: {{$subcategoryDescription}},
+                    })
+
+                    serviceCategoryMap.get({{$categoryID}}).SubcategoryMap.set({{$subcategoryID}}, {
+                        Name: {{$subcategoryName}},
+                        Description: {{$subcategoryDescription}},
+                        ServiceByTenancyMap: new Map()
+                    })
+                </script>
+
+                {{- range $key,$value := $subcategory.CompositeSectionDefinitions -}}
+                    {{- if eq $key "BELONGS_TO" -}}
+                        {{- range $service := $value -}}
+                            {{- $serviceClass := $service.Class -}}
+                            {{- $serviceID := $service.ID -}}
+                            {{- $serviceUID := (printf "%s-%s" $serviceClass $serviceID)}}
+                            {{- $serviceName := index $service.Fields "Service.Name" -}}
+                            {{- $serviceDescription := index $service.Fields "Service.Description" -}}
+                            {{- $serviceLink := index $service.Fields "Service.Link" -}}
+                            {{- $providerID := index $service.Fields "ServiceProvider.ID" -}}
+                            {{- $providerName := index $service.Fields "ServiceProvider.Name" -}}
+                            {{- $tenancyID := index $service.Fields "ServiceTenancy.ID" -}}
+                            {{- $tenancyName := index $service.Fields "ServiceTenancy.Name" -}}
+                            {{- $tenancyBackgroundColour := index $service.Fields "ServiceTenancy.BackgroundColour" -}}
+                            {{- $tenancyFontColour := index $service.Fields "ServiceTenancy.FontColour" -}}
+
+                            <script>
+                                serviceMap.set({{$serviceID}}, {
+                                    Name: {{$serviceName}},
+                                    Description: {{$serviceDescription}},
+                                    Link: {{$serviceLink}},
+                                })
+
+                                serviceProviderMap.set({{$providerID}}, {
+                                    Name: {{$providerName}},
+                                })
+
+                                serviceTenancyMap.set({{$tenancyID}}, {
+                                    Name: {{$tenancyName}},
+                                    BackgroundColour: {{$tenancyBackgroundColour}},
+                                    FontColour: {{$tenancyFontColour}},
+                                })
+
+                                // TODO this breaks if we have more than one service per subcategory
+                                serviceCategoryMap.get({{$categoryID}}).SubcategoryMap.get({{$subcategoryID}}).ServiceByTenancyMap.set({{$providerID}}, {
+                                    ServiceID: {{$serviceID}}
+                                });
+                            </script>
+
+                        {{end -}}
+                    {{- end -}}
+                {{- end -}}
+
+            {{end -}}
+        {{- end -}}
+    {{- end -}}
+{{end}}
+
+<script type="application/javascript">
+    let table = document.createElement('table');
+    let thead = document.createElement('thead');
+    let tbody = document.createElement('tbody');
+
+    table.appendChild(thead);
+    table.appendChild(tbody);
+
+    document.getElementById('body').appendChild(table);
+
+    // create header rows
+    let headerRow = document.createElement('tr');
+    headerRow.append(document.createElement('th')); // space for category
+    headerRow.append(document.createElement('th')); // space for subcategory
+    serviceProviderMap.forEach( function (serviceProvider, index) {
+        let heading = document.createElement('th');
+        heading.innerHTML = serviceProvider.Name;
+
+        headerRow.appendChild(heading)
+    });
+    thead.append(headerRow)
+
+    // create body rows for each category
+    serviceCategoryMap.forEach(function (serviceCategory, id) {
+        let categoryRow = document.createElement('tr');
+        let categoryData = document.createElement('th');
+        categoryData.rowSpan = serviceCategory.SubcategoryMap.size
+        categoryData.innerHTML = serviceCategory.Name
+        categoryRow.appendChild(categoryData)
+
+        // subdivide for each subcategory
+        let firstSubcategory = true
+        let currentRow = categoryRow
+        serviceCategory.SubcategoryMap.forEach(function (serviceSubcategory, index) {
+            if (firstSubcategory === false) {
+                currentRow = document.createElement('tr');
+            }
+            let subCategoryData = document.createElement('td');
+            subCategoryData.innerHTML = serviceSubcategory.Name
+            currentRow.appendChild(subCategoryData)
+
+            serviceProviderMap.forEach( function (serviceProvider, serviceProviderID) {
+                let serviceData = document.createElement('td');
+                if (serviceSubcategory.ServiceByTenancyMap.get(serviceProviderID) !== undefined) {
+                    let serviceID = serviceSubcategory.ServiceByTenancyMap.get(serviceProviderID).ServiceID
+                    if (serviceID !== undefined) {
+                        let serviceObject = serviceMap.get(serviceID);
+                        if (serviceObject !== undefined) {
+                            let serviceLink = ""
+                            if (serviceObject.Link !== undefined) {
+                                serviceLink = serviceObject.Link
+                            }
+                            let serviceDescription = ""
+                            if (serviceObject.Description !== undefined) {
+                                serviceDescription = serviceObject.Description
+                            }
+                            serviceData.innerHTML = "<a title=\"" + serviceDescription + "\"target=\"_blank\" href=\"" + serviceLink + "\">" + serviceObject.Name + "</a>";
+                        }
+                    }
+                }
+
+                currentRow.appendChild(serviceData)
+            });
+
+
+            tbody.appendChild(currentRow)
+            firstSubcategory = false
+        })
+        // tbody.appendChild(categoryRow)
+    })
+
+
+</script>
+
+</body>
+
+</html>
