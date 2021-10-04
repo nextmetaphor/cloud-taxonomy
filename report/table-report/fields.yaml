@@ -4,8 +4,9 @@ SectionClass:
     - ID
     - Name
     - Description
+    - Order
   OrderFields:
-    - Name
+    - Order
 CompositeSections:
   - SectionClass:
       Class: ServiceSubcategory

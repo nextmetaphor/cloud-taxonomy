@@ -1,7 +1,0 @@
-Class: "ServiceSubcategory"
-References: [ { Class: "ServiceCategory", ID: "networking", Relationship: "GROUPED_BY" } ]
-Definitions:
-  load-balancer:
-    Fields:
-      Name: "Load Balancer"
-      Description: "Load Balancer"

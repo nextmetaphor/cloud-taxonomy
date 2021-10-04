@@ -1,0 +1,16 @@
+Class: "ServiceCategory"
+Definitions:
+  service-discovery:
+    Fields:
+      Name: "service discovery"
+      Description: "Service Discovery"
+      Order: "06"
+
+    SubDefinitions:
+      GROUPED_BY:
+        Class: "ServiceSubcategory"
+        Definitions:
+          service-mesh:
+            Fields:
+              Name: "Service Mesh"
+              Description: "Service Mesh"

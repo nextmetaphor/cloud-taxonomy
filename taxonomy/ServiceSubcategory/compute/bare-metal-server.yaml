@@ -1,7 +1,0 @@
-Class: "ServiceSubcategory"
-References: [ { Class: "ServiceCategory", ID: "compute", Relationship: "GROUPED_BY" } ]
-Definitions:
-  bare-metal-server:
-    Fields:
-      Name: "Bare Metal Server"
-      Description: "Bare metal server"

@@ -1,7 +1,0 @@
-Class: "ServiceSubcategory"
-References: [ { Class: "ServiceCategory", ID: "networking", Relationship: "GROUPED_BY" } ]
-Definitions:
-  virtual-network:
-    Fields:
-      Name: "Virtual Network"
-      Description: "Virtual Network"

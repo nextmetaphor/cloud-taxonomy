@@ -1,0 +1,26 @@
+Class: "ServiceCategory"
+Definitions:
+  database:
+    Fields:
+      Name: "database"
+      Description: "Database"
+      Order: "03"
+
+    SubDefinitions:
+      GROUPED_BY:
+        Class: "ServiceSubcategory"
+        Definitions:
+          document-dbms:
+            Fields:
+              Name: "Document Database Management Service"
+              Description: "Document Database Management Service"
+
+          key-value-dbms:
+            Fields:
+              Name: "Key/Value Database Management Service"
+              Description: "Key/Value Database Management Service"
+
+          rdbms:
+            Fields:
+              Name: "Relational Database Management Service"
+              Description: "Relational Database Management Service"

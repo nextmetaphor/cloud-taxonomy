@@ -1,0 +1,51 @@
+Class: "ServiceCategory"
+Definitions:
+  compute:
+    Fields:
+      Name: "compute"
+      Description: "Compute"
+      Order: "01"
+
+    SubDefinitions:
+      GROUPED_BY:
+        Class: "ServiceSubcategory"
+        Definitions:
+          auto-scaling:
+            Fields:
+              Name: "Auto Scaling"
+              Description: "Auto Scaling"
+
+          bare-metal-server:
+            Fields:
+              Name: "Bare Metal Server"
+              Description: "Bare metal server"
+
+          container-management:
+            Fields:
+              Name: "Container Management"
+              Description: "Container Management"
+
+          dedicated-virtual-server:
+            Fields:
+              Name: "Dedicated Virtual Server"
+              Description: "Dedicated virtual server"
+
+          faas:
+            Fields:
+              Name: "Function-as-a-Service"
+              Description: "Function-as-a-Service"
+
+          kubernetes-management:
+            Fields:
+              Name: "Kubernetes Management"
+              Description: "Kubernetes Management"
+
+          shared-virtual-server:
+            Fields:
+              Name: "Shared Virtual Server"
+              Description: "Shared virtual server"
+
+          shared-web-hosting:
+            Fields:
+              Name: "Shared Web Hosting"
+              Description: "Shared Web Hosting"

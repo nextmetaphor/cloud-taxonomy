@@ -1,7 +1,0 @@
-Class: "ServiceSubcategory"
-References: [ { Class: "ServiceCategory", ID: "compute", Relationship: "GROUPED_BY" } ]
-Definitions:
-  container-management:
-    Fields:
-      Name: "Container Management"
-      Description: "Container Management"

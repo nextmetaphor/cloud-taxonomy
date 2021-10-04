@@ -1,7 +1,0 @@
-Class: "ServiceSubcategory"
-References: [ { Class: "ServiceCategory", ID: "compute", Relationship: "GROUPED_BY" } ]
-Definitions:
-  auto-scaling:
-    Fields:
-      Name: "Auto Scaling"
-      Description: "Auto Scaling"

@@ -1,7 +1,0 @@
-Class: "ServiceSubcategory"
-References: [ { Class: "ServiceCategory", ID: "database", Relationship: "GROUPED_BY" } ]
-Definitions:
-  document-dbms:
-    Fields:
-      Name: "Document Database Management Service"
-      Description: "Document Database Management Service"

@@ -1,7 +1,0 @@
-Class: "ServiceSubcategory"
-References: [ { Class: "ServiceCategory", ID: "compute", Relationship: "GROUPED_BY" } ]
-Definitions:
-  dedicated-virtual-server:
-    Fields:
-      Name: "Dedicated Virtual Server"
-      Description: "Dedicated virtual server"

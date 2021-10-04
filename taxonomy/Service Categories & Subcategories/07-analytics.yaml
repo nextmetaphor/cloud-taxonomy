@@ -1,0 +1,16 @@
+Class: "ServiceCategory"
+Definitions:
+  analytics:
+    Fields:
+      Name: "Analytics"
+      Description: "Analytics"
+      Order: "07"
+
+    SubDefinitions:
+      GROUPED_BY:
+        Class: "ServiceSubcategory"
+        Definitions:
+          big-data-query:
+            Fields:
+              Name: "Big Data Query"
+              Description: "Big Data Query"

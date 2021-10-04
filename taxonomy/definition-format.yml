@@ -3,6 +3,7 @@ Class:
     MandatoryFields:
       Name:
       Description:
+      Order:
     OptionalFields:
 
   ServiceSubcategory:

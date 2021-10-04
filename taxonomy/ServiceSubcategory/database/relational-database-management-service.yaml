@@ -1,7 +1,0 @@
-Class: "ServiceSubcategory"
-References: [ { Class: "ServiceCategory", ID: "database", Relationship: "GROUPED_BY" } ]
-Definitions:
-  rdbms:
-    Fields:
-      Name: "Relational Database Management Service"
-      Description: "Relational Database Management Service"

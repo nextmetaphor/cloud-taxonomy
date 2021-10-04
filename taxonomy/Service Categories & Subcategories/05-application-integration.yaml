@@ -1,0 +1,46 @@
+Class: "ServiceCategory"
+Definitions:
+  application-integration:
+    Fields:
+      Name: "Application Integration"
+      Description: "Application Integration"
+      Order: "05"
+
+    SubDefinitions:
+      GROUPED_BY:
+        Class: "ServiceSubcategory"
+        Definitions:
+          api-management:
+            Fields:
+              Name: "API Management"
+              Description: "API Management"
+
+          media-transcoding:
+            Fields:
+              Name: "Media Transcoding"
+              Description: "Media Transcoding"
+
+          queue:
+            Fields:
+              Name: "Queue"
+              Description: "Queue"
+
+          notification:
+            Fields:
+              Name: "Notification"
+              Description: "Notification"
+
+          email:
+            Fields:
+              Name: "Email"
+              Description: "Email"
+
+          blockchain:
+            Fields:
+              Name: "Blockchain"
+              Description: "Blockchain"
+
+          chatbot:
+            Fields:
+              Name: "Chatbot"
+              Description: "Chatbot"

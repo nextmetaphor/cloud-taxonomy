@@ -1,7 +1,0 @@
-Class: "ServiceSubcategory"
-References: [ { Class: "ServiceCategory", ID: "migration", Relationship: "GROUPED_BY" } ]
-Definitions:
-  data-transfer:
-    Fields:
-      Name: "Data Transfer"
-      Description: "Data Transfer Service"

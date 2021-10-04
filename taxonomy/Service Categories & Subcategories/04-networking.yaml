@@ -1,0 +1,31 @@
+Class: "ServiceCategory"
+Definitions:
+  networking:
+    Fields:
+      Name: "networking"
+      Description: "Networking"
+      Order: "04"
+
+    SubDefinitions:
+      GROUPED_BY:
+        Class: "ServiceSubcategory"
+        Definitions:
+          content-delivery-network:
+            Fields:
+              Name: "Content Delivery Network"
+              Description: "Content Delivery Network"
+
+          load-balancer:
+            Fields:
+              Name: "Load Balancer"
+              Description: "Load Balancer"
+
+          network-gateway:
+            Fields:
+              Name: "Network Gateway"
+              Description: "Network Gateway"
+
+          virtual-network:
+            Fields:
+              Name: "Virtual Network"
+              Description: "Virtual Network"

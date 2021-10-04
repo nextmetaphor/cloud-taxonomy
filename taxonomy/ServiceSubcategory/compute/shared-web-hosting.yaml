@@ -1,7 +1,0 @@
-Class: "ServiceSubcategory"
-References: [ { Class: "ServiceCategory", ID: "compute", Relationship: "GROUPED_BY" } ]
-Definitions:
-  shared-web-hosting:
-    Fields:
-      Name: "Shared Web Hosting"
-      Description: "Shared Web Hosting"
