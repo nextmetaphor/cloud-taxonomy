@@ -5,6 +5,8 @@ Definitions:
       Name: "Application Load Balancer"
       Description: "AWS Application Load Balancer"
       Link: "https://aws.amazon.com/elasticloadbalancing/application-load-balancer/"
+    FileFields:
+      ImgSrc: {Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Elastic-Load-Balancing_Application-Load-Balancer_48_Dark.svg", Prefix: "svg+xml;base64,"}
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
       { Class: "ServiceSubcategory", ID: "load-balancer", Relationship: "BELONGS_TO" },

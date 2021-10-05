@@ -5,6 +5,9 @@ Definitions:
       Name: "AWS S3"
       Description: "Object storage built to store and retrieve any amount of data from anywhere"
       Link: "https://aws.amazon.com/s3/"
+    FileFields:
+      ImgSrc: {Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Storage/Res_48_Dark/Res_Amazon-Simple-Storage-Service_S3-Standard_48_Dark.svg", Prefix: "svg+xml;base64,"}
+
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
       { Class: "ServiceSubcategory", ID: "object-storage", Relationship: "BELONGS_TO" },

@@ -7,6 +7,10 @@ Definitions:
           designed for use with Amazon Elastic Compute Cloud (EC2) for both throughput and transaction intensive
           workloads at any scale."
       Link: "https://aws.amazon.com/ebs"
+    FileFields:
+      ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Storage/16/Arch_Amazon-Elastic-Block-Store_16.svg", Prefix: "svg+xml;base64,"}
+
+
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
       { Class: "ServiceSubcategory", ID: "block-storage", Relationship: "BELONGS_TO" },

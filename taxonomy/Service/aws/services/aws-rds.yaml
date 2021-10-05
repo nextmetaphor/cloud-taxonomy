@@ -6,6 +6,9 @@ Definitions:
       Description: "Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a
         relational database in the cloud."
       Link: "https://aws.amazon.com/rds/"
+    FileFields:
+      ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Database/16/Arch_Amazon-RDS_16.svg", Prefix: "svg+xml;base64,"}
+
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
       { Class: "ServiceSubcategory", ID: "rdbms", Relationship: "BELONGS_TO" },
