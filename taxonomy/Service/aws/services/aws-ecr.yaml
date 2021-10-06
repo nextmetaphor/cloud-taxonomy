@@ -1,0 +1,15 @@
+Class: "Service"
+Definitions:
+  aws-ecr:
+    Fields:
+      Name: "AWS Elastic Container Registry (ECR)"
+      Description: "AWS Elastic Container Registry"
+      Link: "https://aws.amazon.com/ecr"
+    FileFields:
+      ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Containers/16/Arch_Amazon-Elastic-Container-Registry_16.svg", Prefix: "svg+xml;base64,"}
+
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceSubcategory", ID: "container-registry", Relationship: "BELONGS_TO" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+    ]

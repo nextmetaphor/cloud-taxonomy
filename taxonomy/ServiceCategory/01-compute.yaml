@@ -14,38 +14,58 @@ Definitions:
             Fields:
               Name: "Auto Scaling"
               Description: "Auto Scaling"
+              Order: "01"
 
           bare-metal-server:
             Fields:
               Name: "Bare Metal Server"
               Description: "Bare metal server"
+              Order: "02"
 
           container-management:
             Fields:
               Name: "Container Management"
               Description: "Container Management"
+              Order: "03"
+
+          container-runtime:
+            Fields:
+              Name: "Container Runtime"
+              Description: "Container Runtime"
+              Order: "04"
+
+          container-registry:
+            Fields:
+              Name: "Container Registry"
+              Description: "Container Registry"
+              Order: "05"
 
           dedicated-virtual-server:
             Fields:
               Name: "Dedicated Virtual Server"
               Description: "Dedicated virtual server"
+              Order: "06"
 
           faas:
             Fields:
               Name: "Function-as-a-Service"
               Description: "Function-as-a-Service"
+              Order: "07"
 
           kubernetes-management:
             Fields:
               Name: "Kubernetes Management"
               Description: "Kubernetes Management"
+              Order: "08"
 
           shared-virtual-server:
             Fields:
               Name: "Shared Virtual Server"
               Description: "Shared virtual server"
+              Order: "09"
 
           shared-web-hosting:
             Fields:
               Name: "Shared Web Hosting"
               Description: "Shared Web Hosting"
+              Order: "10"

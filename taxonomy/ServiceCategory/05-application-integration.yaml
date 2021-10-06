@@ -14,33 +14,40 @@ Definitions:
             Fields:
               Name: "API Management"
               Description: "API Management"
+              Order: "01"
 
           media-transcoding:
             Fields:
               Name: "Media Transcoding"
               Description: "Media Transcoding"
+              Order: "02"
 
           queue:
             Fields:
               Name: "Queue"
               Description: "Queue"
+              Order: "03"
 
           notification:
             Fields:
               Name: "Notification"
               Description: "Notification"
+              Order: "04"
 
           email:
             Fields:
               Name: "Email"
               Description: "Email"
+              Order: "05"
 
           blockchain:
             Fields:
               Name: "Blockchain"
               Description: "Blockchain"
+              Order: "06"
 
           chatbot:
             Fields:
               Name: "Chatbot"
               Description: "Chatbot"
+              Order: "07"

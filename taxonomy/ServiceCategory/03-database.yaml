@@ -14,13 +14,16 @@ Definitions:
             Fields:
               Name: "Document Database Management Service"
               Description: "Document Database Management Service"
+              Order: "01"
 
           key-value-dbms:
             Fields:
               Name: "Key/Value Database Management Service"
               Description: "Key/Value Database Management Service"
+              Order: "02"
 
           rdbms:
             Fields:
               Name: "Relational Database Management Service"
               Description: "Relational Database Management Service"
+              Order: "03"

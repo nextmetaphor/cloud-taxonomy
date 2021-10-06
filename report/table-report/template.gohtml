@@ -38,6 +38,13 @@
         background-color: darkgray;
     }
 
+    .service-icon {
+        max-height: 16px;
+        max-width: 16px;
+    }
+
+    }
+
     .subcategory {
         text-align: right;
         background-color: mediumblue;
@@ -110,9 +117,6 @@
                                     Link: {{$serviceLink}},
                                     ImgSrc: {{$serviceImgSrc}},
                                 })
-
-                                console.log({{$serviceName}})
-                                console.log({{$serviceImgSrc}})
 
                                 serviceProviderMap.set({{$providerID}}, {
                                     Name: {{$providerName}},
@@ -201,7 +205,7 @@
 
                             if (serviceObject.ImgSrc !== undefined && serviceObject.ImgSrc !== null ) {
                                 let imageData = document.createElement('img');
-                                imageData.className = "serviceIcon"
+                                imageData.className = "service-icon"
                                 imageData.src = "data:image/" + serviceObject.ImgSrc;
 
                                 serviceData.prepend(imageData);

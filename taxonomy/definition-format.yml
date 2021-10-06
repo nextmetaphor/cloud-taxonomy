@@ -10,6 +10,7 @@ Class:
     MandatoryFields:
       Name:
       Description:
+      Order:
     OptionalFields:
 
   ServiceProvider:

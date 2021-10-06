@@ -2,7 +2,7 @@ Class: "Service"
 Definitions:
   aws-efs:
     Fields:
-      Name: "AWS Elastie File System (EFS)"
+      Name: "AWS Elastic File System (EFS)"
       Description: "Amazon Elastic File System (Amazon EFS) provides a simple, serverless, set-and-forget, elastic file
         system that lets you share file data without provisioning or managing storage."
       Link: "https://aws.amazon.com/efs/"

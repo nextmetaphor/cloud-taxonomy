@@ -4,7 +4,7 @@ Definitions:
     Fields:
       Name: "AWS App Mesh"
       Description: "AWS App Mesh"
-      Link: "https://aws.amazon.com/app-mesh"
+      Link: "https://aws.amazon.com/https://aws.amazon.com/app-mesh"
     FileFields:
       ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Networking-Content-Delivery/16/Arch_AWS-App-Mesh_16.svg", Prefix: "svg+xml;base64,"}
 

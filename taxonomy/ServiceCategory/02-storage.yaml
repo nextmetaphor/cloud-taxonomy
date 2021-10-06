@@ -14,18 +14,22 @@ Definitions:
             Fields:
               Name: "Block Storage"
               Description: "Block Storage"
+              Order: "01"
 
           file-storage:
             Fields:
               Name: "File Storage"
               Description: "File Storage"
+              Order: "02"
 
           long-term-cold-storage:
             Fields:
               Name: "Long Term Cold Storage"
               Description: "Long Term Cold Storage"
+              Order: "03"
 
           object-storage:
             Fields:
               Name: "Object Storage"
               Description: "Object Storage"
+              Order: "04"

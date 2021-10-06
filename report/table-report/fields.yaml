@@ -14,9 +14,10 @@ CompositeSections:
         - ID
         - Name
         - Description
+        - Order
       Relationship: GROUPED_BY
       OrderFields:
-        - Name
+        - Order
     CompositeSections:
       - SectionClass:
           Class: Service

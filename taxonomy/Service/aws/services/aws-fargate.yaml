@@ -1,0 +1,15 @@
+Class: "Service"
+Definitions:
+  aws-fargate:
+    Fields:
+      Name: "AWS Fargate"
+      Description: "AWS Fargate"
+      Link: "https://aws.amazon.com/fargate"
+    FileFields:
+      ImgSrc: {Path: "../icons//Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Compute/16/Arch_AWS-Fargate_16.svg", Prefix: "svg+xml;base64,"}
+
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceSubcategory", ID: "container-runtime", Relationship: "BELONGS_TO" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+    ]
