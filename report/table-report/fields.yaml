@@ -20,7 +20,7 @@ CompositeSections:
         - Order
     CompositeSections:
       - SectionClass:
-          Class: Service
+          Class: ServiceConfiguration
           Fields:
             - ID
             - Name
@@ -30,22 +30,34 @@ CompositeSections:
           Relationship: BELONGS_TO
           OrderFields:
             - Name
-        AggregateClasses:
-          - Class: ServiceProvider
-            Fields:
-              - ID
-              - Name
-              - Description
-            Relationship: PROVIDED_BY
-            OrderFields:
-              - Name
-          - Class: ServiceTenancy
-            Fields:
-              - ID
-              - Name
-              - Description
-              - BackgroundColour
-              - FontColour
-            Relationship: HAS_TENANCY_OF
-            OrderFields:
-              - Name
+        CompositeSections:
+          - SectionClass:
+              Class: Service
+              Fields:
+                - ID
+                - Name
+                - Link
+                - Description
+                - ImgSrc
+              Relationship: CONFIGURED_IN
+              OrderFields:
+                - Name
+            AggregateClasses:
+              - Class: ServiceProvider
+                Fields:
+                  - ID
+                  - Name
+                  - Description
+                Relationship: PROVIDED_BY
+                OrderFields:
+                  - Name
+              - Class: ServiceTenancy
+                Fields:
+                  - ID
+                  - Name
+                  - Description
+                  - BackgroundColour
+                  - FontColour
+                Relationship: HAS_TENANCY_OF
+                OrderFields:
+                  - Name

@@ -10,6 +10,14 @@ Definitions:
 
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceSubcategory", ID: "big-data-query", Relationship: "BELONGS_TO" },
       { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-athena-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "big-data-query", Relationship: "BELONGS_TO" },
+            ]

@@ -11,6 +11,14 @@ Definitions:
 
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceSubcategory", ID: "file-storage", Relationship: "BELONGS_TO" },
       { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
     ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-efs-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "file-storage", Relationship: "BELONGS_TO" },
+            ]

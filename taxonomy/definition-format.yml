@@ -27,6 +27,14 @@ Class:
     OptionalFields:
       ImgSrc:
 
+  ServiceConfiguration:
+    MandatoryFields:
+    OptionalFields:
+      Name:
+      Description:
+      Link:
+      ImgSrc:
+
   ServiceTenancy:
     MandatoryFields:
       Name:

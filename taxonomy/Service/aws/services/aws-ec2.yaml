@@ -5,14 +5,46 @@ Definitions:
       Name: "Amazon EC2"
       Description: "Amazon EC2"
       Link: "https://aws.amazon.com/ec2"
-    FileFields:
-      ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Compute/16/Arch_Amazon-EC2_16.svg", Prefix: "svg+xml;base64,"}
-
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceSubcategory", ID: "shared-virtual-server", Relationship: "BELONGS_TO" },
-      { Class: "ServiceSubcategory", ID: "dedicated-virtual-server", Relationship: "BELONGS_TO" },
-      { Class: "ServiceSubcategory", ID: "dedicated-virtual-server", Relationship: "BELONGS_TO" },
-      { Class: "ServiceSubcategory", ID: "bare-metal-server", Relationship: "BELONGS_TO" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-ec2-shared-virtual-server:
+            Fields:
+              Name: "Amazon EC2"
+              Description: "Amazon EC2"
+              Link: "https://aws.amazon.com/ec2"
+            FileFields:
+              ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Compute/16/Arch_Amazon-EC2_16.svg", Prefix: "svg+xml;base64,"}
+            References: [
+              { Class: "ServiceSubcategory", ID: "shared-virtual-server", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]
+
+          aws-ec2-dedicated-virtual-server:
+            Fields:
+              Name: "Amazon EC2"
+              Description: "Amazon EC2"
+              Link: "https://aws.amazon.com/ec2"
+            FileFields:
+              ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Compute/16/Arch_Amazon-EC2_16.svg", Prefix: "svg+xml;base64,"}
+            References: [
+              { Class: "ServiceSubcategory", ID: "dedicated-virtual-server", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]
+
+          aws-ec2-bare-metal-server:
+            Fields:
+              Name: "Amazon EC2"
+              Description: "Amazon EC2"
+              Link: "https://aws.amazon.com/ec2"
+            FileFields:
+              ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Compute/16/Arch_Amazon-EC2_16.svg", Prefix: "svg+xml;base64,"}
+            References: [
+              { Class: "ServiceSubcategory", ID: "bare-metal-server", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

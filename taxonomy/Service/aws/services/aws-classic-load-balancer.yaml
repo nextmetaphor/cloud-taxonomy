@@ -10,6 +10,23 @@ Definitions:
 
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceSubcategory", ID: "load-balancer", Relationship: "BELONGS_TO" },
       { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
     ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-classic-load-balancer-default:
+            Fields:
+              Name: "Classic Load Balancer"
+              Description: "AWS Classic Load Balancer"
+              Link: "https://aws.amazon.com/elasticloadbalancing/classic-load-balancer/"
+            FileFields:
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Elastic-Load-Balancing_Classic-Load-Balancer_48_Dark.svg", Prefix: "svg+xml;base64," }
+
+            References: [
+              { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+              { Class: "ServiceSubcategory", ID: "load-balancer", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
+            ]
