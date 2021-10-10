@@ -1,0 +1,20 @@
+Class: "Service"
+Definitions:
+  azure-container-instance:
+    Fields:
+      Name: "Container Instance"
+      Description: "Azure Container Instance"
+      Link: "https://azure.microsoft.com/en-gb/services/container-instances/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Azure_Public_Service_Icons/Icons/Compute/10104-icon-service-Container-Instances.svg", Prefix: "svg+xml;base64," }
+    References: [
+      { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          azure-container-instance-default:
+            References: [ { Class: "ServiceSubcategory", ID: "container-management", Relationship: "BELONGS_TO" } ]

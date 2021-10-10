@@ -1,0 +1,18 @@
+Class: "Service"
+Definitions:
+  azure-file-storage:
+    Fields:
+      Name: "File Storage"
+      Description: "Azure File Storage"
+      Link: "https://azure.microsoft.com/en-gb/services/storage/files/"
+    References: [
+      { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          azure-file-storage-default:
+            References: [ { Class: "ServiceSubcategory", ID: "file-storage", Relationship: "BELONGS_TO" } ]

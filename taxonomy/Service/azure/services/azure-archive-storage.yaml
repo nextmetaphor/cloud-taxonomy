@@ -1,0 +1,18 @@
+Class: "Service"
+Definitions:
+  azure-archive-storage:
+    Fields:
+      Name: "Archive Storage"
+      Description: "Azure Archive Storage"
+      Link: "https://azure.microsoft.com/en-gb/services/storage/archive/"
+    References: [
+      { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          azure-archive-storage-default:
+            References: [ { Class: "ServiceSubcategory", ID: "container-management", Relationship: "BELONGS_TO" } ]

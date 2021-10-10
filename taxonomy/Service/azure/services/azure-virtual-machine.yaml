@@ -1,0 +1,20 @@
+Class: "Service"
+Definitions:
+  azure-virtual-machine:
+    Fields:
+      Name: "Virtual Machine"
+      Description: "Azure Virtual Machine"
+      Link: "https://azure.microsoft.com/en-gb/services/virtual-machines/"
+    FileFields:
+      ImgSrc: {Path: "../icons/Azure_Public_Service_Icons/Icons/Compute/10021-icon-service-Virtual-Machine.svg", Prefix: "svg+xml;base64,"}
+    References: [
+      { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceTenancy", ID: "hosted", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          azure-virtual-machine-default:
+            References: [ { Class: "ServiceSubcategory", ID: "shared-virtual-server", Relationship: "BELONGS_TO" } ]

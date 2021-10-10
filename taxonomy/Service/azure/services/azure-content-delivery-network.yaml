@@ -1,0 +1,18 @@
+Class: "Service"
+Definitions:
+  azure-load-balancer:
+    Fields:
+      Name: "Load Balancer"
+      Description: "Azure Load Balancer"
+      Link: "https://azure.microsoft.com/en-gb/services/load-balancer/"
+    References: [
+      { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          azure-load-balancer-default:
+            References: [ { Class: "ServiceSubcategory", ID: "load-balancer", Relationship: "BELONGS_TO" } ]

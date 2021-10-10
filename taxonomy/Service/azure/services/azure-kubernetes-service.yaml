@@ -1,0 +1,21 @@
+Class: "Service"
+Definitions:
+  azure-kubernetes-service:
+    Fields:
+      Name: "Azure Kubernetes Service (AKS)"
+      Description: "Azure Kubernetes Service"
+      Link: "https://azure.microsoft.com/en-gb/services/kubernetes-service/"
+    FileFields:
+      ImgSrc: {Path: "../icons/Azure_Public_Service_Icons/Icons/Compute/10023-icon-service-Kubernetes-Services.svg", Prefix: "svg+xml;base64,"}
+    References: [
+      { Class: "ServiceSubcategory", ID: "kubernetes-management", Relationship: "BELONGS_TO" },
+      { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          azure-kubernetes-service-default:
+            References: [ { Class: "ServiceSubcategory", ID: "kubernetes-management", Relationship: "BELONGS_TO" } ]

@@ -1,0 +1,18 @@
+Class: "Service"
+Definitions:
+  azure-blob-storage:
+    Fields:
+      Name: "Blob Storage"
+      Description: "Azure Blob Storage"
+      Link: "https://azure.microsoft.com/en-gb/services/storage/blobs/"
+    References: [
+      { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          azure-blob-storage-default:
+            References: [ { Class: "ServiceSubcategory", ID: "object-storage", Relationship: "BELONGS_TO" } ]

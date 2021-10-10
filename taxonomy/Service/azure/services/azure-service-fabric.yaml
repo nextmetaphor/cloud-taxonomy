@@ -1,0 +1,18 @@
+Class: "Service"
+Definitions:
+  azure-service-fabric:
+    Fields:
+      Name: "Azure Service Fabric"
+      Description: "Azure Service Fabric"
+      Link: "https://azure.microsoft.com/en-gb/services/service-fabric/"
+    References: [
+      { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          azure-service-fabric-default:
+            References: [ { Class: "ServiceSubcategory", ID: "service-mesh", Relationship: "BELONGS_TO" } ]

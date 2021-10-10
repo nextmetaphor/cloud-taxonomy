@@ -1,0 +1,21 @@
+Class: "Service"
+Definitions:
+  azure-function:
+    Fields:
+      Name: "Azure Function"
+      Description: "Azure Function"
+      Link: "https://azure.microsoft.com/en-gb/services/functions/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Azure_Public_Service_Icons/Icons/Compute/10029-icon-service-Function-Apps.svg", Prefix: "svg+xml;base64," }
+    References: [
+      { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
+
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          azure-function-default:
+            References: [ { Class: "ServiceSubcategory", ID: "faas", Relationship: "BELONGS_TO" } ]

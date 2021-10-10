@@ -32,6 +32,11 @@ match (n) return n
 yaml-graph report -f report/template-format.yaml -t report/output-template.gohtml > report/cloud-taxonomy.html
 ```
 
+### Building a Table
+```bash
+ yaml-graph report -f report/table-report/fields.yaml -t report/table-report/template.gohtml > report/table-report/table-report.html
+ ```
+
 ## Licence
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 

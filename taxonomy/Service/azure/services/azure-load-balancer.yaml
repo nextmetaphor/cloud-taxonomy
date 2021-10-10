@@ -1,0 +1,18 @@
+Class: "Service"
+Definitions:
+  azure-content-delivery-network:
+    Fields:
+      Name: "Content Delivery Network"
+      Description: "Azure Content Delivery Network"
+      Link: "https://azure.microsoft.com/en-gb/services/cdn/"
+    References: [
+      { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          azure-content-delivery-network-default:
+            References: [ { Class: "ServiceSubcategory", ID: "content-delivery-network", Relationship: "BELONGS_TO" } ]
