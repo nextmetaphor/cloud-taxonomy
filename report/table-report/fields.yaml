@@ -48,9 +48,10 @@ CompositeSections:
                   - ID
                   - Name
                   - Description
+                  - Order
                 Relationship: PROVIDED_BY
                 OrderFields:
-                  - Name
+                  - Order
               - Class: ServiceTenancy
                 Fields:
                   - ID

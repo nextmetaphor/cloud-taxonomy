@@ -1,26 +1,26 @@
 Class: "ServiceProvider"
 Definitions:
-  alibaba: {
-    Fields:
-      { Name: "Alibaba", Description: "Alibaba Cloud" }
-  }
   aws: {
     Fields:
-      { Name: "AWS", Description: "Amazon Web Services" }
+      { Name: "AWS", Description: "Amazon Web Services", Order: "01" }
   }
   azure: {
     Fields:
-      { Name: "Azure", Description: "Microsoft Azure" }
+      { Name: "Azure", Description: "Microsoft Azure", Order: "02" }
   }
   gcp: {
     Fields:
-      { Name: "GCP", Description: "Google Cloud Platform" }
-  }
-  ibm: {
-    Fields:
-      { Name: "IBM", Description: "IBM" }
+      { Name: "GCP", Description: "Google Cloud Platform", Order: "03" }
   }
   oracle: {
     Fields:
-      { Name: "Oracle Cloud", Description: "Oracle Cloud" }
+      { Name: "Oracle Cloud", Description: "Oracle Cloud", Order: "04" }
+  }
+  ibm: {
+    Fields:
+      { Name: "IBM", Description: "IBM", Order: "05" }
+  }
+  alibaba: {
+    Fields:
+      { Name: "Alibaba", Description: "Alibaba Cloud", Order: "06" }
   }

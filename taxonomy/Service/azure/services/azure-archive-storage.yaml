@@ -15,4 +15,4 @@ Definitions:
         Class: "ServiceConfiguration"
         Definitions:
           azure-archive-storage-default:
-            References: [ { Class: "ServiceSubcategory", ID: "container-management", Relationship: "BELONGS_TO" } ]
+            References: [ { Class: "ServiceSubcategory", ID: "long-term-cold-storage", Relationship: "BELONGS_TO" } ]
