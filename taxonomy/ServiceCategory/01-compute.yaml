@@ -10,28 +10,28 @@ Definitions:
       GROUPED_BY:
         Class: "ServiceSubcategory"
         Definitions:
-          auto-scaling:
+          shared-virtual-server:
             Fields:
-              Name: "Auto Scaling"
-              Description: "Auto Scaling"
+              Name: "Shared Virtual Server"
+              Description: "Shared virtual server"
               Order: "01"
+
+          dedicated-virtual-server:
+            Fields:
+              Name: "Dedicated Virtual Server"
+              Description: "Dedicated virtual server"
+              Order: "02"
 
           bare-metal-server:
             Fields:
               Name: "Bare Metal Server"
               Description: "Bare metal server"
-              Order: "02"
+              Order: "03"
 
           container-management:
             Fields:
               Name: "Container Management"
               Description: "Container Management"
-              Order: "03"
-
-          container-runtime:
-            Fields:
-              Name: "Container Runtime"
-              Description: "Container Runtime"
               Order: "04"
 
           container-registry:
@@ -40,28 +40,28 @@ Definitions:
               Description: "Container Registry"
               Order: "05"
 
-          dedicated-virtual-server:
+          container-runtime:
             Fields:
-              Name: "Dedicated Virtual Server"
-              Description: "Dedicated virtual server"
+              Name: "Container Runtime"
+              Description: "Container Runtime"
               Order: "06"
-
-          faas:
-            Fields:
-              Name: "Function-as-a-Service"
-              Description: "Function-as-a-Service"
-              Order: "07"
 
           kubernetes-management:
             Fields:
               Name: "Kubernetes Management"
               Description: "Kubernetes Management"
+              Order: "07"
+
+          faas:
+            Fields:
+              Name: "Function-as-a-Service"
+              Description: "Function-as-a-Service"
               Order: "08"
 
-          shared-virtual-server:
+          auto-scaling:
             Fields:
-              Name: "Shared Virtual Server"
-              Description: "Shared virtual server"
+              Name: "Auto Scaling"
+              Description: "Auto Scaling"
               Order: "09"
 
           shared-web-hosting:

@@ -1,0 +1,18 @@
+Class: "Service"
+Definitions:
+  azure-container-registry:
+    Fields:
+      Name: "Container Registry"
+      Description: "Azure Container Registry"
+      Link: "https://azure.microsoft.com/en-us/services/container-registry/"
+    References: [
+      { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          azure-container-registry-default:
+            References: [ { Class: "ServiceSubcategory", ID: "container-registry", Relationship: "BELONGS_TO" } ]

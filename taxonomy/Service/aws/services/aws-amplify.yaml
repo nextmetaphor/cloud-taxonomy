@@ -1,0 +1,21 @@
+Class: "Service"
+Definitions:
+  aws-amplify:
+    Fields:
+      Name: "AWS Amplify"
+      Description: "AWS Amplify"
+      Link: "https://aws.amazon.com/amplify/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Front-End-Web-Mobile/16/Arch_AWS-Amplify_16.svg", Prefix: "svg+xml;base64," }
+
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-amplify-default:
+            References: [ { Class: "ServiceSubcategory", ID: "shared-web-hosting", Relationship: "BELONGS_TO" } ]

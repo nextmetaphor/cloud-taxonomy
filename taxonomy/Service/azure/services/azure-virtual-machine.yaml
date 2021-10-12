@@ -16,5 +16,16 @@ Definitions:
       CONFIGURED_IN:
         Class: "ServiceConfiguration"
         Definitions:
-          azure-virtual-machine-default:
+          azure-virtual-machine-shared-host:
+            Fields:
+              Name: "Virtual Machine [Shared Host]"
+              Description: "Azure Virtual Machine"
+              Link: "https://azure.microsoft.com/en-gb/services/virtual-machines/"
             References: [ { Class: "ServiceSubcategory", ID: "shared-virtual-server", Relationship: "BELONGS_TO" } ]
+
+          azure-virtual-machine-dedicated-host:
+            Fields:
+              Name: "Virtual Machine [Dedicated Host]"
+              Description: "Azure Virtual Machine"
+              Link: "https://azure.microsoft.com/en-gb/services/virtual-machines/dedicated-host"
+            References: [ { Class: "ServiceSubcategory", ID: "dedicated-virtual-server", Relationship: "BELONGS_TO" } ]
