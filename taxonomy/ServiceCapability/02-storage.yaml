@@ -1,0 +1,71 @@
+Class: "ServiceCapability"
+Definitions:
+  storage:
+    Fields:
+      Name: "storage"
+      Description: "Storage"
+      Order: "02"
+
+    SubDefinitions:
+      PROVIDED_BY:
+        Class: "ServiceCategory"
+        Definitions:
+          block-storage:
+            Fields:
+              Name: "Block Storage"
+              Description: "Block Storage"
+              Order: "01"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  block-storage:
+                    Fields:
+                      Name: "Block Storage"
+                      Description: "Block Storage"
+                      Order: "01"
+
+          file-storage:
+            Fields:
+              Name: "File Storage"
+              Description: "File Storage"
+              Order: "02"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  file-storage:
+                    Fields:
+                      Name: "File Storage"
+                      Description: "File Storage"
+                      Order: "01"
+
+          long-term-cold-storage:
+            Fields:
+              Name: "Long Term Cold Storage"
+              Description: "Long Term Cold Storage"
+              Order: "03"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  long-term-cold-storage:
+                    Fields:
+                      Name: "Long Term Cold Storage"
+                      Description: "Long Term Cold Storage"
+                      Order: "01"
+
+          object-storage:
+            Fields:
+              Name: "Object Storage"
+              Description: "Object Storage"
+              Order: "04"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  object-storage:
+                    Fields:
+                      Name: "Object Storage"
+                      Description: "Object Storage"
+                      Order: "01"

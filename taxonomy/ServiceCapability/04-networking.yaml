@@ -1,0 +1,71 @@
+Class: "ServiceCapability"
+Definitions:
+  networking:
+    Fields:
+      Name: "networking"
+      Description: "Networking"
+      Order: "04"
+
+    SubDefinitions:
+      PROVIDED_BY:
+        Class: "ServiceCategory"
+        Definitions:
+          content-delivery-network:
+            Fields:
+              Name: "Content Delivery Network"
+              Description: "Content Delivery Network"
+              Order: "01"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  content-delivery-network:
+                    Fields:
+                      Name: "Content Delivery Network"
+                      Description: "Content Delivery Network"
+                      Order: "01"
+
+          load-balancer:
+            Fields:
+              Name: "Load Balancer"
+              Description: "Load Balancer"
+              Order: "02"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  load-balancer:
+                    Fields:
+                      Name: "Load Balancer"
+                      Description: "Load Balancer"
+                      Order: "01"
+
+          network-gateway:
+            Fields:
+              Name: "Network Gateway"
+              Description: "Network Gateway"
+              Order: "03"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  network-gateway:
+                    Fields:
+                      Name: "Network Gateway"
+                      Description: "Network Gateway"
+                      Order: "01"
+
+          virtual-network:
+            Fields:
+              Name: "Virtual Network"
+              Description: "Virtual Network"
+              Order: "04"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  virtual-network:
+                    Fields:
+                      Name: "Virtual Network"
+                      Description: "Virtual Network"
+                      Order: "01"

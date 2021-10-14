@@ -9,8 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script type="application/javascript">
-        let serviceCategoryMap = new Map()
-        let serviceSubcategoryMap = new Map()
+        let serviceCapabilityMap = new Map()
         let serviceProviderMap = new Map()
         let serviceTenancyMap = new Map()
         let serviceMap = new Map()
@@ -39,13 +38,19 @@
         background-color: darkgray;
     }
 
+    .right-align {
+        text-align: right;
+    }
     .service-icon {
         max-height: 16px;
         max-width: 16px;
     }
 
+    .category {
+        text-align: right;
+        background-color: darkblue;
+        color: white;
     }
-
     .subcategory {
         text-align: right;
         background-color: mediumblue;
@@ -54,124 +59,146 @@
     .service {
         text-align: center;
     }
+
+
+    .rTable { display: table; } .rTableRow { display: table-row; } .rTableHeading { display: table-header-group; } .rTableBody { display: table-row-group; } .rTableFoot { display: table-footer-group; } .rTableCell, .rTableHead { display: table-cell; }
 </style>
 
 <body id="body">
-{{- range $category := . -}}
-    {{- $categoryClass := $category.Class -}}
-    {{- $categoryID := $category.ID -}}
-    {{- $categoryUID := (print $categoryClass "-" $categoryID)}}
-    {{- $categoryName := index $category.Fields "ServiceCategory.Name"}}
-    {{- $categoryDescription := index $category.Fields "ServiceCategory.Description"}}
+{{- range $capability := . -}}
+    {{- $capabilityClass := $capability.Class -}}
+    {{- $capabilityID := $capability.ID -}}
+    {{- $capabilityUID := (print $capabilityClass "-" $capabilityID)}}
+    {{- $capabilityName := index $capability.Fields "ServiceCapability.Name"}}
+    {{- $capabilityDescription := index $capability.Fields "ServiceCapability.Description"}}
 
     <script>
-        serviceCategoryMap.set({{$categoryID}}, {
-            Name: {{$categoryName}},
-            Description: {{$categoryDescription}},
-            SubcategoryMap: new Map(),
+        serviceCapabilityMap.set({{$capabilityID}}, {
+            Name: {{$capabilityName}},
+            Description: {{$capabilityDescription}},
+            CategoryMap: new Map(),
         })
     </script>
 
-    {{- range $key,$value := $category.CompositeSectionDefinitions -}}
-        {{- if eq $key "GROUPED_BY" -}}
-            {{- range $subcategory := $value -}}
-                {{- $subcategoryClass := $subcategory.Class -}}
-                {{- $subcategoryID := $subcategory.ID -}}
-                {{- $subcategoryUID := (printf "%s-%s" $subcategoryClass $subcategoryID)}}
-                {{- $subcategoryName := index $subcategory.Fields "ServiceSubcategory.Name" -}}
-                {{- $subcategoryDescription := index $subcategory.Fields "ServiceSubcategory.Description" -}}
+    {{- range $key,$value := $capability.CompositeSectionDefinitions -}}
+        {{- if eq $key "PROVIDED_BY" -}}
+            {{- range $category := $value -}}
+                {{- $categoryClass := $category.Class -}}
+                {{- $categoryID := $category.ID -}}
+                {{- $categoryUID := (print $categoryClass "-" $categoryID)}}
+                {{- $categoryName := index $category.Fields "ServiceCategory.Name"}}
+                {{- $categoryDescription := index $category.Fields "ServiceCategory.Description"}}
 
                 <script>
-                    serviceSubcategoryMap.set({{$subcategoryID}}, {
-                        Name: {{$subcategoryName}},
-                        Description: {{$subcategoryDescription}},
-                    })
-
-                    serviceCategoryMap.get({{$categoryID}}).SubcategoryMap.set({{$subcategoryID}}, {
-                        Name: {{$subcategoryName}},
-                        Description: {{$subcategoryDescription}},
-                        ServiceByTenancyMap: new Map()
+                    serviceCapabilityMap.get({{$capabilityID}}).CategoryMap.set({{$categoryID}}, {
+                        Name: {{$categoryName}},
+                        Description: {{$categoryDescription}},
+                        SubcategoryMap: new Map(),
                     })
                 </script>
 
-                {{- range $key,$value := $subcategory.CompositeSectionDefinitions -}}
-                    {{- if eq $key "BELONGS_TO" -}}
-                        {{- range $serviceConfiguration := $value -}}
-                            {{- $serviceConfigurationClass := $serviceConfiguration.Class -}}
-                            {{- $serviceConfigurationID := $serviceConfiguration.ID -}}
-                            {{- $serviceConfigurationUID := (printf "%s-%s" $serviceConfigurationClass $serviceConfigurationID)}}
-                            {{- $serviceConfigurationName := index $serviceConfiguration.Fields "ServiceConfiguration.Name" -}}
-                            {{- $serviceConfigurationDescription := index $serviceConfiguration.Fields "ServiceConfiguration.Description" -}}
-                            {{- $serviceConfigurationLink := index $serviceConfiguration.Fields "ServiceConfiguration.Link" -}}
-                            {{- $serviceConfigurationImgSrc := index $serviceConfiguration.Fields "ServiceConfiguration.ImgSrc" -}}
+                {{- range $key,$value := $category.CompositeSectionDefinitions -}}
+                    {{- if eq $key "GROUPED_BY" -}}
+                        {{- range $subcategory := $value -}}
+                            {{- $subcategoryClass := $subcategory.Class -}}
+                            {{- $subcategoryID := $subcategory.ID -}}
+                            {{- $subcategoryUID := (printf "%s-%s" $subcategoryClass $subcategoryID)}}
+                            {{- $subcategoryName := index $subcategory.Fields "ServiceSubcategory.Name" -}}
+                            {{- $subcategoryDescription := index $subcategory.Fields "ServiceSubcategory.Description" -}}
 
-                            {{- range $key,$value := $serviceConfiguration.CompositeSectionDefinitions -}}
-                                {{- if eq $key "CONFIGURED_IN" -}}
-                                    {{- range $service := $value -}}
-                                        {{- $serviceClass := $service.Class -}}
-                                        {{- $serviceID := $service.ID -}}
-                                        {{- $serviceUID := (printf "%s-%s" $serviceClass $serviceID)}}
-                                        {{- $serviceName := index $service.Fields "Service.Name" -}}
-                                        {{- $serviceDescription := index $service.Fields "Service.Description" -}}
-                                        {{- $serviceLink := index $service.Fields "Service.Link" -}}
-                                        {{- $serviceImgSrc := index $service.Fields "Service.ImgSrc" -}}
-        
-                                        {{- $providerID := index $service.Fields "ServiceProvider.ID" -}}
-                                        {{- $providerName := index $service.Fields "ServiceProvider.Name" -}}
-                                        {{- $tenancyID := index $service.Fields "ServiceTenancy.ID" -}}
-                                        {{- $tenancyName := index $service.Fields "ServiceTenancy.Name" -}}
-                                        {{- $tenancyBackgroundColour := index $service.Fields "ServiceTenancy.BackgroundColour" -}}
-                                        {{- $tenancyFontColour := index $service.Fields "ServiceTenancy.FontColour" -}}
+                            <script>
+                                serviceCapabilityMap.get({{$capabilityID}}).CategoryMap.get({{$categoryID}}).SubcategoryMap.set({{$subcategoryID}}, {
+                                    Name: {{$subcategoryName}},
+                                    Description: {{$subcategoryDescription}},
+                                    ServiceByTenancyMap: new Map()
+                                })
+                            </script>
 
-                                        <script>
-                                            serviceConfigurationMap.set({{$serviceConfigurationID}}, {
-                                                Name: {{$serviceConfigurationName}},
-                                                Description: {{$serviceConfigurationDescription}},
-                                                Link: {{$serviceConfigurationLink}},
-                                                ImgSrc: {{$serviceConfigurationImgSrc}},
-                                                ServiceID: {{$serviceID}},
-                                            })
+                            {{- range $key,$value := $subcategory.CompositeSectionDefinitions -}}
+                                {{- if eq $key "BELONGS_TO" -}}
+                                    {{- range $serviceConfiguration := $value -}}
+                                        {{- $serviceConfigurationClass := $serviceConfiguration.Class -}}
+                                        {{- $serviceConfigurationID := $serviceConfiguration.ID -}}
+                                        {{- $serviceConfigurationUID := (printf "%s-%s" $serviceConfigurationClass $serviceConfigurationID)}}
+                                        {{- $serviceConfigurationName := index $serviceConfiguration.Fields "ServiceConfiguration.Name" -}}
+                                        {{- $serviceConfigurationDescription := index $serviceConfiguration.Fields "ServiceConfiguration.Description" -}}
+                                        {{- $serviceConfigurationLink := index $serviceConfiguration.Fields "ServiceConfiguration.Link" -}}
+                                        {{- $serviceConfigurationImgSrc := index $serviceConfiguration.Fields "ServiceConfiguration.ImgSrc" -}}
 
-                                            serviceMap.set({{$serviceID}}, {
-                                                Name: {{$serviceName}},
-                                                Description: {{$serviceDescription}},
-                                                Link: {{$serviceLink}},
-                                                ImgSrc: {{$serviceImgSrc}},
-                                                ProviderID: {{$providerID}},
-                                                TenancyID: {{$tenancyID}},
-                                            })
+                                        {{- range $key,$value := $serviceConfiguration.CompositeSectionDefinitions -}}
+                                            {{- if eq $key "CONFIGURED_IN" -}}
+                                                {{- range $service := $value -}}
+                                                    {{- $serviceClass := $service.Class -}}
+                                                    {{- $serviceID := $service.ID -}}
+                                                    {{- $serviceUID := (printf "%s-%s" $serviceClass $serviceID)}}
+                                                    {{- $serviceName := index $service.Fields "Service.Name" -}}
+                                                    {{- $serviceDescription := index $service.Fields "Service.Description" -}}
+                                                    {{- $serviceLink := index $service.Fields "Service.Link" -}}
+                                                    {{- $serviceImgSrc := index $service.Fields "Service.ImgSrc" -}}
 
-                                            serviceProviderMap.set({{$providerID}}, {
-                                                Name: {{$providerName}},
-                                            })
-                                    
-                                            serviceTenancyMap.set({{$tenancyID}}, {
-                                                Name: {{$tenancyName}},
-                                                BackgroundColour: {{$tenancyBackgroundColour}},
-                                                FontColour: {{$tenancyFontColour}},
-                                            })
-                                    
-                                            // TODO this breaks if we have more than one service per subcategory
-                                            serviceCategoryMap.get({{$categoryID}}).SubcategoryMap.get({{$subcategoryID}}).ServiceByTenancyMap.set({{$providerID}}, {
-                                                ServiceConfigurationID: {{$serviceConfigurationID}}
-                                            });
-                                        </script>
+                                                    {{- $providerID := index $service.Fields "ServiceProvider.ID" -}}
+                                                    {{- $providerName := index $service.Fields "ServiceProvider.Name" -}}
+                                                    {{- $tenancyID := index $service.Fields "ServiceTenancy.ID" -}}
+                                                    {{- $tenancyName := index $service.Fields "ServiceTenancy.Name" -}}
+                                                    {{- $tenancyBackgroundColour := index $service.Fields "ServiceTenancy.BackgroundColour" -}}
+                                                    {{- $tenancyFontColour := index $service.Fields "ServiceTenancy.FontColour" -}}
 
+                                                    <script>
+                                                        serviceConfigurationMap.set({{$serviceConfigurationID}}, {
+                                                            Name: {{$serviceConfigurationName}},
+                                                            Description: {{$serviceConfigurationDescription}},
+                                                            Link: {{$serviceConfigurationLink}},
+                                                            ImgSrc: {{$serviceConfigurationImgSrc}},
+                                                            ServiceID: {{$serviceID}},
+                                                        })
 
-    {{/* end of ServiceConfiguration loop */}}
+                                                        serviceMap.set({{$serviceID}}, {
+                                                            Name: {{$serviceName}},
+                                                            Description: {{$serviceDescription}},
+                                                            Link: {{$serviceLink}},
+                                                            ImgSrc: {{$serviceImgSrc}},
+                                                            ProviderID: {{$providerID}},
+                                                            TenancyID: {{$tenancyID}},
+                                                        })
+
+                                                        serviceProviderMap.set({{$providerID}}, {
+                                                            Name: {{$providerName}},
+                                                        })
+
+                                                        serviceTenancyMap.set({{$tenancyID}}, {
+                                                            Name: {{$tenancyName}},
+                                                            BackgroundColour: {{$tenancyBackgroundColour}},
+                                                            FontColour: {{$tenancyFontColour}},
+                                                        })
+
+                                                        // TODO this breaks if we have more than one service per subcategory
+                                                        serviceCapabilityMap.get({{$capabilityID}}).CategoryMap.get({{$categoryID}}).SubcategoryMap.get({{$subcategoryID}}).ServiceByTenancyMap.set({{$providerID}}, {
+                                                            ServiceConfigurationID: {{$serviceConfigurationID}}
+                                                        });
+                                                    </script>
+
+                                                {{end -}}
+                                            {{- end -}}
+                                        {{- end -}}
+                                        {{/* end of ServiceConfiguration loop */}}
+
                                     {{end -}}
                                 {{- end -}}
-                            {{- end -}}        
-        
-                        {{/* end of Service loop */}}
+                            {{- end -}}
+                            {{/* end of Service loop */}}
+
                         {{end -}}
                     {{- end -}}
                 {{- end -}}
+                {{/* end of SubCategory loop*/}}
 
             {{end -}}
         {{- end -}}
-    {{- end -}}
+        {{/* end of Category loop*/}}
+    {{end}}
+
 {{end}}
+
 
 <script type="application/javascript">
     let table = document.createElement('table');
@@ -185,8 +212,22 @@
 
     // create header rows
     let headerRow = document.createElement('tr');
-    headerRow.append(document.createElement('th')); // space for category
-    headerRow.append(document.createElement('th')); // space for subcategory
+
+    let element = document.createElement('th')
+    element.innerHTML = 'Capability'
+    element.className = 'right-align'
+    headerRow.append(element);
+
+    element = document.createElement('th')
+    element.innerHTML = 'Category'
+    element.className = 'right-align'
+    headerRow.append(element);
+
+    element = document.createElement('th')
+    element.innerHTML = 'Subcategory'
+    element.className = 'right-align'
+    headerRow.append(element);
+
     serviceProviderMap.forEach( function (serviceProvider, index) {
         let heading = document.createElement('th');
         heading.innerHTML = serviceProvider.Name;
@@ -195,95 +236,114 @@
     });
     thead.append(headerRow)
 
-    // create body rows for each category
-    serviceCategoryMap.forEach(function (serviceCategory, id) {
-        let categoryRow = document.createElement('tr');
-        let categoryData = document.createElement('th');
-        categoryData.rowSpan = serviceCategory.SubcategoryMap.size
-        categoryData.innerHTML = serviceCategory.Name
-        categoryRow.appendChild(categoryData)
+    // create body rows for each capability
+    serviceCapabilityMap.forEach(function (serviceCapability, id) {
+        let currentRow = document.createElement('tr');
+        let capabilityData = document.createElement('th');
 
-        // subdivide for each subcategory
-        let firstSubcategory = true
-        let currentRow = categoryRow
-        serviceCategory.SubcategoryMap.forEach(function (serviceSubcategory, index) {
-            if (firstSubcategory === false) {
+        // calculate row span for capability row
+        let rowSpan = 0
+        serviceCapability.CategoryMap.forEach(function (serviceCategory, id) {
+            serviceCategory.SubcategoryMap.forEach(function (serviceSubcategory, id) {
+                rowSpan++;
+            });
+        });
+
+        capabilityData.rowSpan = rowSpan;
+        capabilityData.innerHTML = serviceCapability.Name
+        capabilityData.className = 'right-align'
+        currentRow.append(capabilityData)
+
+        let serviceCategoryMap = serviceCapability.CategoryMap
+        serviceCategoryMap.forEach(function (serviceCategory, id) {
+            if (currentRow === null) {
                 currentRow = document.createElement('tr');
             }
-            let subCategoryData = document.createElement('td');
-            subCategoryData.innerHTML = serviceSubcategory.Name;
-            subCategoryData.className = "subcategory";
-            currentRow.appendChild(subCategoryData)
 
-            serviceProviderMap.forEach( function (serviceProvider, serviceProviderID) {
-                let serviceData = document.createElement('td');
-                serviceData.className = "service";
-                if (serviceSubcategory.ServiceByTenancyMap.get(serviceProviderID) !== undefined) {
-                    let serviceConfigurationID = serviceSubcategory.ServiceByTenancyMap.get(serviceProviderID).ServiceConfigurationID
-                    if (serviceConfigurationID !== undefined) {
-                        let serviceConfigurationObject = serviceConfigurationMap.get(serviceConfigurationID);
-                        if (serviceConfigurationObject !== undefined) {
+            let categoryData = document.createElement('td');
+            categoryData.rowSpan = serviceCategory.SubcategoryMap.size
+            categoryData.innerHTML = serviceCategory.Name
+            categoryData.className = 'category'
+            currentRow.appendChild(categoryData)
 
-                            let serviceLink = ""
-                            if (serviceConfigurationObject.Link !== undefined) {
-                                if (serviceConfigurationObject.Description === null) {
-                                    serviceLink = serviceMap.get(serviceConfigurationObject.ServiceID).Link;
-                                } else {
-                                    serviceLink = serviceConfigurationObject.Link;
-                                }
-                            }
+            // subdivide for each subcategory
+            serviceCategory.SubcategoryMap.forEach(function (serviceSubcategory, index) {
+                if (currentRow === null) {
+                    currentRow = document.createElement('tr');
+                }
+                let subCategoryData = document.createElement('td');
+                subCategoryData.innerHTML = serviceSubcategory.Name;
+                subCategoryData.className = "subcategory";
+                currentRow.appendChild(subCategoryData)
 
-                            let serviceName = ""
-                            if (serviceConfigurationObject.Name !== undefined) {
-                                if (serviceConfigurationObject.Name === null) {
-                                    serviceName = serviceMap.get(serviceConfigurationObject.ServiceID).Name;
-                                } else {
-                                    serviceName = serviceConfigurationObject.Name;
-                                }
-                            }
+                serviceProviderMap.forEach( function (serviceProvider, serviceProviderID) {
+                    let serviceData = document.createElement('td');
+                    serviceData.className = "service";
+                    if (serviceSubcategory.ServiceByTenancyMap.get(serviceProviderID) !== undefined) {
+                        let serviceConfigurationID = serviceSubcategory.ServiceByTenancyMap.get(serviceProviderID).ServiceConfigurationID
+                        if (serviceConfigurationID !== undefined) {
+                            let serviceConfigurationObject = serviceConfigurationMap.get(serviceConfigurationID);
+                            if (serviceConfigurationObject !== undefined) {
 
-                            let serviceDescription = ""
-                            if (serviceConfigurationObject.Description !== undefined) {
-                                if (serviceConfigurationObject.Description === null) {
-                                    serviceDescription = serviceMap.get(serviceConfigurationObject.ServiceID).Description;
-                                } else {
-                                    serviceDescription = serviceConfigurationObject.Description;
-                                }
-                            }
-
-                            serviceData.innerHTML = "<a title=\"" + serviceDescription + "\"target=\"_blank\" href=\"" + serviceLink + "\">" + serviceName + "</a>";
-
-                            if ((serviceConfigurationObject.ImgSrc !== undefined && serviceConfigurationObject.ImgSrc !== null) || serviceMap.get(serviceConfigurationObject.ServiceID).ImgSrc !== null) {
-                                let imageData = document.createElement('img');
-                                imageData.className = "service-icon"
-
-                                let imgSrc = ""
-                                if (serviceConfigurationObject.ImgSrc !== undefined) {
-                                    if (serviceConfigurationObject.ImgSrc === null) {
-                                        imgSrc = serviceMap.get(serviceConfigurationObject.ServiceID).ImgSrc;
+                                let serviceLink = ""
+                                if (serviceConfigurationObject.Link !== undefined) {
+                                    if (serviceConfigurationObject.Description === null) {
+                                        serviceLink = serviceMap.get(serviceConfigurationObject.ServiceID).Link;
                                     } else {
-                                        imgSrc = serviceConfigurationObject.ImgSrc;
+                                        serviceLink = serviceConfigurationObject.Link;
                                     }
                                 }
 
+                                let serviceName = ""
+                                if (serviceConfigurationObject.Name !== undefined) {
+                                    if (serviceConfigurationObject.Name === null) {
+                                        serviceName = serviceMap.get(serviceConfigurationObject.ServiceID).Name;
+                                    } else {
+                                        serviceName = serviceConfigurationObject.Name;
+                                    }
+                                }
 
-                                imageData.src = "data:image/" + imgSrc;
+                                let serviceDescription = ""
+                                if (serviceConfigurationObject.Description !== undefined) {
+                                    if (serviceConfigurationObject.Description === null) {
+                                        serviceDescription = serviceMap.get(serviceConfigurationObject.ServiceID).Description;
+                                    } else {
+                                        serviceDescription = serviceConfigurationObject.Description;
+                                    }
+                                }
 
-                                serviceData.prepend(imageData);
+                                serviceData.innerHTML = "<a title=\"" + serviceDescription + "\"target=\"_blank\" href=\"" + serviceLink + "\">" + serviceName + "</a>";
+
+                                if ((serviceConfigurationObject.ImgSrc !== undefined && serviceConfigurationObject.ImgSrc !== null) || serviceMap.get(serviceConfigurationObject.ServiceID).ImgSrc !== null) {
+                                    let imageData = document.createElement('img');
+                                    imageData.className = "service-icon"
+
+                                    let imgSrc = ""
+                                    if (serviceConfigurationObject.ImgSrc !== undefined) {
+                                        if (serviceConfigurationObject.ImgSrc === null) {
+                                            imgSrc = serviceMap.get(serviceConfigurationObject.ServiceID).ImgSrc;
+                                        } else {
+                                            imgSrc = serviceConfigurationObject.ImgSrc;
+                                        }
+                                    }
+
+                                    imageData.src = "data:image/" + imgSrc;
+
+                                    serviceData.prepend(imageData);
+                                }
                             }
                         }
                     }
-                }
 
-                currentRow.appendChild(serviceData)
-            });
+                    currentRow.appendChild(serviceData)
+                });
 
-            tbody.appendChild(currentRow)
-            firstSubcategory = false
+                tbody.appendChild(currentRow)
+                currentRow = null
+            })
+            currentRow = null
         })
-        // tbody.appendChild(categoryRow)
-    })
-
+    });
 
 </script>
 

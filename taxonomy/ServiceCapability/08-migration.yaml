@@ -1,0 +1,26 @@
+Class: "ServiceCapability"
+Definitions:
+  migration:
+    Fields:
+      Name: "migration"
+      Description: "Migration"
+      Order: "08"
+
+    SubDefinitions:
+      PROVIDED_BY:
+        Class: "ServiceCategory"
+        Definitions:
+          data-transfer:
+            Fields:
+              Name: "Data Transfer"
+              Description: "Data Transfer Service"
+              Order: "01"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  data-transfer:
+                    Fields:
+                      Name: "Data Transfer"
+                      Description: "Data Transfer"
+                      Order: "01"

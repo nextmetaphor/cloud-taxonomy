@@ -1,0 +1,121 @@
+Class: "ServiceCapability"
+Definitions:
+  compute:
+    Fields:
+      Name: "compute"
+      Description: "Compute"
+      Order: "01"
+
+    SubDefinitions:
+      PROVIDED_BY:
+        Class: "ServiceCategory"
+        Definitions:
+          virtual-server:
+            Fields:
+              Name: "Virtual Server"
+              Description: "Virtual server"
+              Order: "01"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  shared-virtual-server:
+                    Fields:
+                      Name: "Shared Host"
+                      Description: "Shared virtual server host"
+                      Order: "01"
+                  dedicated-virtual-server:
+                    Fields:
+                      Name: "Dedicated Host"
+                      Description: "Dedicated virtual server host"
+                      Order: "02"
+                  bare-metal-server:
+                    Fields:
+                      Name: "Bare Metal Host"
+                      Description: "Bare metal server host"
+                      Order: "03"
+
+          container:
+            Fields:
+              Name: "Container"
+              Description: "Container"
+              Order: "02"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  container-management:
+                    Fields:
+                      Name: "Container Management"
+                      Description: "Container Management"
+                      Order: "01"
+                  container-registry:
+                    Fields:
+                      Name: "Container Registry"
+                      Description: "Container Registry"
+                      Order: "02"
+                  container-runtime:
+                    Fields:
+                      Name: "Container Runtime"
+                      Description: "Container Runtime"
+                      Order: "03"
+
+          kubernetes:
+            Fields:
+              Name: "Kubernetes"
+              Description: "Kubernetes"
+              Order: "03"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  kubernetes-management:
+                    Fields:
+                      Name: "Kubernetes Management"
+                      Description: "Kubernetes Management"
+                      Order: "01"
+
+          faas:
+            Fields:
+              Name: "faas"
+              Description: "faas"
+              Order: "04"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  faas:
+                    Fields:
+                      Name: "Function-as-a-Service"
+                      Description: "Function-as-a-Service"
+                      Order: "01"
+
+          auto-scaling:
+            Fields:
+              Name: "Auto Scaling"
+              Description: "Auto Scaling"
+              Order: "05"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  auto-scaling:
+                    Fields:
+                      Name: "Auto Scaling"
+                      Description: "Auto Scaling"
+                      Order: "09"
+
+          shared-web-hosting:
+            Fields:
+              Name: "Shared Web Hosting"
+              Description: "Shared Web Hosting"
+              Order: "06"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  shared-web-hosting:
+                    Fields:
+                      Name: "Shared Web Hosting"
+                      Description: "Shared Web Hosting"
+                      Order: 01"

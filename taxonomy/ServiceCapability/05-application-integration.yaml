@@ -1,0 +1,116 @@
+Class: "ServiceCapability"
+Definitions:
+  application-integration:
+    Fields:
+      Name: "application integration"
+      Description: "Application Integration"
+      Order: "05"
+
+    SubDefinitions:
+      PROVIDED_BY:
+        Class: "ServiceCategory"
+        Definitions:
+          api-management:
+            Fields:
+              Name: "API Management"
+              Description: "API Management"
+              Order: "01"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  api-management:
+                    Fields:
+                      Name: "API Management"
+                      Description: "API Management"
+                      Order: "01"
+
+          media-transcoding:
+            Fields:
+              Name: "Media Transcoding"
+              Description: "Media Transcoding"
+              Order: "02"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  media-transcoding:
+                    Fields:
+                      Name: "Media Transcoding"
+                      Description: "Media Transcoding"
+                      Order: "01"
+
+          queue:
+            Fields:
+              Name: "Queue"
+              Description: "Queue"
+              Order: "03"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  queue:
+                    Fields:
+                      Name: "Queue"
+                      Description: "Queue"
+                      Order: "01"
+
+          notification:
+            Fields:
+              Name: "Notification"
+              Description: "Notification"
+              Order: "04"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  notification:
+                    Fields:
+                      Name: "Notification"
+                      Description: "Notification"
+                      Order: "01"
+
+          email:
+            Fields:
+              Name: "Email"
+              Description: "Email"
+              Order: "05"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  email:
+                    Fields:
+                      Name: "Email"
+                      Description: "Email"
+                      Order: "01"
+
+          blockchain:
+            Fields:
+              Name: "Blockchain"
+              Description: "Blockchain"
+              Order: "06"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  blockchain:
+                    Fields:
+                      Name: "Blockchain"
+                      Description: "Blockchain"
+                      Order: "01"
+
+          chatbot:
+            Fields:
+              Name: "Chatbot"
+              Description: "Chatbot"
+              Order: "07"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  chatbot:
+                    Fields:
+                      Name: "Chatbot"
+                      Description: "Chatbot"
+                      Order: "01"

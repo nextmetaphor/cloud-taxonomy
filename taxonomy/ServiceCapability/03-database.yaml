@@ -1,0 +1,56 @@
+Class: "ServiceCapability"
+Definitions:
+  database:
+    Fields:
+      Name: "database"
+      Description: "Database"
+      Order: "03"
+
+    SubDefinitions:
+      PROVIDED_BY:
+        Class: "ServiceCategory"
+        Definitions:
+          document-dbms:
+            Fields:
+              Name: "Document DBMS"
+              Description: "Document Database Management Service"
+              Order: "01"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  document-dbms:
+                    Fields:
+                      Name: "Document DBMS"
+                      Description: "Document Database Management Service"
+                      Order: "01"
+
+          key-value-dbms:
+            Fields:
+              Name: "Key/Value DBMS"
+              Description: "Key/Value Database Management Service"
+              Order: "02"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  key-value-dbms:
+                    Fields:
+                      Name: "Key/Value DBMS"
+                      Description: "Key/Value Database Management Service"
+                      Order: "01"
+
+          rdbms:
+            Fields:
+              Name: "Relational DBMS"
+              Description: "Relational Database Management Service"
+              Order: "03"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  rdbms:
+                    Fields:
+                      Name: "Relational DBMS"
+                      Description: "Relational Database Management Service"
+                      Order: "01"

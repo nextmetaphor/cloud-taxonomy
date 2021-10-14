@@ -1,5 +1,5 @@
 SectionClass:
-  Class: ServiceCategory
+  Class: ServiceCapability
   Fields:
     - ID
     - Name
@@ -9,56 +9,67 @@ SectionClass:
     - Order
 CompositeSections:
   - SectionClass:
-      Class: ServiceSubcategory
+      Class: ServiceCategory
       Fields:
         - ID
         - Name
         - Description
         - Order
-      Relationship: GROUPED_BY
+      Relationship: PROVIDED_BY
       OrderFields:
         - Order
     CompositeSections:
       - SectionClass:
-          Class: ServiceConfiguration
+          Class: ServiceSubcategory
           Fields:
             - ID
             - Name
-            - Link
             - Description
-            - ImgSrc
-          Relationship: BELONGS_TO
+            - Order
+          Relationship: GROUPED_BY
           OrderFields:
-            - Name
+            - Order
         CompositeSections:
           - SectionClass:
-              Class: Service
+              Class: ServiceConfiguration
               Fields:
                 - ID
                 - Name
                 - Link
                 - Description
                 - ImgSrc
-              Relationship: CONFIGURED_IN
+              Relationship: BELONGS_TO
               OrderFields:
                 - Name
-            AggregateClasses:
-              - Class: ServiceProvider
-                Fields:
-                  - ID
-                  - Name
-                  - Description
-                  - Order
-                Relationship: PROVIDED_BY
-                OrderFields:
-                  - Order
-              - Class: ServiceTenancy
-                Fields:
-                  - ID
-                  - Name
-                  - Description
-                  - BackgroundColour
-                  - FontColour
-                Relationship: HAS_TENANCY_OF
-                OrderFields:
-                  - Name
+            CompositeSections:
+              - SectionClass:
+                  Class: Service
+                  Fields:
+                    - ID
+                    - Name
+                    - Link
+                    - Description
+                    - ImgSrc
+                  Relationship: CONFIGURED_IN
+                  OrderFields:
+                    - Name
+                AggregateClasses:
+                  - Class: ServiceProvider
+                    Fields:
+                      - ID
+                      - Name
+                      - Description
+                      - Order
+                    Relationship: PROVIDED_BY
+                    OrderFields:
+                      - Order
+                  - Class: ServiceTenancy
+                    Fields:
+                      - ID
+                      - Name
+                      - Description
+                      - BackgroundColour
+                      - FontColour
+                    Relationship: HAS_TENANCY_OF
+                    OrderFields:
+                      - Name

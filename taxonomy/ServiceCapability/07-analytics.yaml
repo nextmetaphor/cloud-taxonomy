@@ -1,0 +1,26 @@
+Class: "ServiceCapability"
+Definitions:
+  analytics:
+    Fields:
+      Name: "analytics"
+      Description: "Analytics"
+      Order: "07"
+
+    SubDefinitions:
+      PROVIDED_BY:
+        Class: "ServiceCategory"
+        Definitions:
+          big-data-query:
+            Fields:
+              Name: "Big Data Query"
+              Description: "Big Data Query"
+              Order: "01"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  big-data-query:
+                    Fields:
+                      Name: "Big Data Query"
+                      Description: "Big Data Query"
+                      Order: "01"
