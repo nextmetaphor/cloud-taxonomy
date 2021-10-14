@@ -12,7 +12,7 @@ Definitions:
         Definitions:
           virtual-server:
             Fields:
-              Name: "Virtual Server"
+              Name: "virtual server"
               Description: "Virtual server"
               Order: "01"
             SubDefinitions:
@@ -21,23 +21,23 @@ Definitions:
                 Definitions:
                   shared-virtual-server:
                     Fields:
-                      Name: "Shared Host"
+                      Name: "shared host"
                       Description: "Shared virtual server host"
                       Order: "01"
                   dedicated-virtual-server:
                     Fields:
-                      Name: "Dedicated Host"
+                      Name: "dedicated host"
                       Description: "Dedicated virtual server host"
                       Order: "02"
                   bare-metal-server:
                     Fields:
-                      Name: "Bare Metal Host"
+                      Name: "bare metal host"
                       Description: "Bare metal server host"
                       Order: "03"
 
           container:
             Fields:
-              Name: "Container"
+              Name: "container"
               Description: "Container"
               Order: "02"
             SubDefinitions:
@@ -46,23 +46,23 @@ Definitions:
                 Definitions:
                   container-management:
                     Fields:
-                      Name: "Container Management"
+                      Name: "container management"
                       Description: "Container Management"
                       Order: "01"
                   container-registry:
                     Fields:
-                      Name: "Container Registry"
+                      Name: "container registry"
                       Description: "Container Registry"
                       Order: "02"
                   container-runtime:
                     Fields:
-                      Name: "Container Runtime"
+                      Name: "container runtime"
                       Description: "Container Runtime"
                       Order: "03"
 
           kubernetes:
             Fields:
-              Name: "Kubernetes"
+              Name: "kubernetes"
               Description: "Kubernetes"
               Order: "03"
             SubDefinitions:
@@ -71,7 +71,7 @@ Definitions:
                 Definitions:
                   kubernetes-management:
                     Fields:
-                      Name: "Kubernetes Management"
+                      Name: "kubernetes management"
                       Description: "Kubernetes Management"
                       Order: "01"
 
@@ -86,13 +86,13 @@ Definitions:
                 Definitions:
                   faas:
                     Fields:
-                      Name: "Function-as-a-Service"
+                      Name: "function-as-a-service"
                       Description: "Function-as-a-Service"
                       Order: "01"
 
           auto-scaling:
             Fields:
-              Name: "Auto Scaling"
+              Name: "auto scaling"
               Description: "Auto Scaling"
               Order: "05"
             SubDefinitions:
@@ -101,13 +101,13 @@ Definitions:
                 Definitions:
                   auto-scaling:
                     Fields:
-                      Name: "Auto Scaling"
+                      Name: "auto scaling"
                       Description: "Auto Scaling"
                       Order: "09"
 
           shared-web-hosting:
             Fields:
-              Name: "Shared Web Hosting"
+              Name: "shared web hosting"
               Description: "Shared Web Hosting"
               Order: "06"
             SubDefinitions:

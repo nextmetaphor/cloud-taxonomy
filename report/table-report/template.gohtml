@@ -26,15 +26,22 @@
         -webkit-font-smoothing: antialiased;
     }
 
-    table, th, td {
-        border: 1px solid white;
+    table {
+        border: 2px solid darkslategrey;
         border-collapse: collapse;
     }
+
+    .capability-row {
+        border-top: 1px solid darkslategrey;
+    }
+
     th {
+        border-right: 1px solid ghostwhite;
         background-color: darkblue;
         color: white;
     }
     td {
+        /*border: 1px solid white;*/
         background-color: darkgray;
     }
 
@@ -47,13 +54,19 @@
     }
 
     .category {
+        border-right: 1px solid antiquewhite;
+        /*border-bottom: 1px solid ghostwhite;*/
         text-align: right;
+        font-size: small;
         background-color: darkblue;
         color: white;
     }
     .subcategory {
+        border-right: 1px solid navajowhite;
+
         text-align: right;
-        background-color: mediumblue;
+        font-size: smaller;
+        background-color: midnightblue;
         color: ghostwhite;
     }
     .service {
@@ -214,17 +227,17 @@
     let headerRow = document.createElement('tr');
 
     let element = document.createElement('th')
-    element.innerHTML = 'Capability'
+    element.innerHTML = 'capability'
     element.className = 'right-align'
     headerRow.append(element);
 
     element = document.createElement('th')
-    element.innerHTML = 'Category'
+    element.innerHTML = 'category'
     element.className = 'right-align'
     headerRow.append(element);
 
     element = document.createElement('th')
-    element.innerHTML = 'Subcategory'
+    element.innerHTML = 'subcategory'
     element.className = 'right-align'
     headerRow.append(element);
 
@@ -239,6 +252,7 @@
     // create body rows for each capability
     serviceCapabilityMap.forEach(function (serviceCapability, id) {
         let currentRow = document.createElement('tr');
+        currentRow.className = 'capability-row'
         let capabilityData = document.createElement('th');
 
         // calculate row span for capability row
