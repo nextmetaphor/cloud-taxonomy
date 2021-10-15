@@ -12,7 +12,7 @@ Definitions:
         Definitions:
           block-storage:
             Fields:
-              Name: "Block Storage"
+              Name: "block storage"
               Description: "Block Storage"
               Order: "01"
             SubDefinitions:
@@ -21,13 +21,13 @@ Definitions:
                 Definitions:
                   block-storage:
                     Fields:
-                      Name: "Block Storage"
+                      Name: "block storage"
                       Description: "Block Storage"
                       Order: "01"
 
           file-storage:
             Fields:
-              Name: "File Storage"
+              Name: "file storage"
               Description: "File Storage"
               Order: "02"
             SubDefinitions:
@@ -36,13 +36,13 @@ Definitions:
                 Definitions:
                   file-storage:
                     Fields:
-                      Name: "File Storage"
+                      Name: "file storage"
                       Description: "File Storage"
                       Order: "01"
 
           long-term-cold-storage:
             Fields:
-              Name: "Long Term Cold Storage"
+              Name: "long term cold storage"
               Description: "Long Term Cold Storage"
               Order: "03"
             SubDefinitions:
@@ -51,13 +51,13 @@ Definitions:
                 Definitions:
                   long-term-cold-storage:
                     Fields:
-                      Name: "Long Term Cold Storage"
+                      Name: "long term cold storage"
                       Description: "Long Term Cold Storage"
                       Order: "01"
 
           object-storage:
             Fields:
-              Name: "Object Storage"
+              Name: "object storage"
               Description: "Object Storage"
               Order: "04"
             SubDefinitions:
@@ -66,6 +66,6 @@ Definitions:
                 Definitions:
                   object-storage:
                     Fields:
-                      Name: "Object Storage"
+                      Name: "object storage"
                       Description: "Object Storage"
                       Order: "01"

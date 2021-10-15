@@ -12,7 +12,7 @@ Definitions:
         Definitions:
           big-data-query:
             Fields:
-              Name: "Big Data Query"
+              Name: "big data query"
               Description: "Big Data Query"
               Order: "01"
             SubDefinitions:
@@ -21,6 +21,6 @@ Definitions:
                 Definitions:
                   big-data-query:
                     Fields:
-                      Name: "Big Data Query"
+                      Name: "big data query"
                       Description: "Big Data Query"
                       Order: "01"

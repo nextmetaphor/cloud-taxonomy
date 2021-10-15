@@ -12,7 +12,7 @@ Definitions:
         Definitions:
           data-transfer:
             Fields:
-              Name: "Data Transfer"
+              Name: "data transfer"
               Description: "Data Transfer Service"
               Order: "01"
             SubDefinitions:
@@ -21,6 +21,6 @@ Definitions:
                 Definitions:
                   data-transfer:
                     Fields:
-                      Name: "Data Transfer"
+                      Name: "data transfer"
                       Description: "Data Transfer"
                       Order: "01"

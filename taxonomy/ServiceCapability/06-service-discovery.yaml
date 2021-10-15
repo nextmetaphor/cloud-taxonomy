@@ -12,7 +12,7 @@ Definitions:
         Definitions:
           service-mesh:
             Fields:
-              Name: "Service Mesh"
+              Name: "service mesh"
               Description: "Service Mesh"
               Order: "01"
             SubDefinitions:
@@ -21,6 +21,6 @@ Definitions:
                 Definitions:
                   service-mesh:
                     Fields:
-                      Name: "Service Mesh"
+                      Name: "service mesh"
                       Description: "Service Mesh"
                       Order: "01"

@@ -116,6 +116,6 @@ Definitions:
                 Definitions:
                   shared-web-hosting:
                     Fields:
-                      Name: "Shared Web Hosting"
+                      Name: "shared web hosting"
                       Description: "Shared Web Hosting"
                       Order: 01"

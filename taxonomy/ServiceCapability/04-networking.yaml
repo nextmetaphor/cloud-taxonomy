@@ -12,7 +12,7 @@ Definitions:
         Definitions:
           content-delivery-network:
             Fields:
-              Name: "Content Delivery Network"
+              Name: "content delivery network"
               Description: "Content Delivery Network"
               Order: "01"
             SubDefinitions:
@@ -21,13 +21,13 @@ Definitions:
                 Definitions:
                   content-delivery-network:
                     Fields:
-                      Name: "Content Delivery Network"
+                      Name: "content delivery network"
                       Description: "Content Delivery Network"
                       Order: "01"
 
           load-balancer:
             Fields:
-              Name: "Load Balancer"
+              Name: "load balancer"
               Description: "Load Balancer"
               Order: "02"
             SubDefinitions:
@@ -36,13 +36,13 @@ Definitions:
                 Definitions:
                   load-balancer:
                     Fields:
-                      Name: "Load Balancer"
+                      Name: "load balancer"
                       Description: "Load Balancer"
                       Order: "01"
 
           network-gateway:
             Fields:
-              Name: "Network Gateway"
+              Name: "network gateway"
               Description: "Network Gateway"
               Order: "03"
             SubDefinitions:
@@ -51,13 +51,13 @@ Definitions:
                 Definitions:
                   network-gateway:
                     Fields:
-                      Name: "Network Gateway"
+                      Name: "network gateway"
                       Description: "Network Gateway"
                       Order: "01"
 
           virtual-network:
             Fields:
-              Name: "Virtual Network"
+              Name: "virtual network"
               Description: "Virtual Network"
               Order: "04"
             SubDefinitions:
@@ -66,6 +66,6 @@ Definitions:
                 Definitions:
                   virtual-network:
                     Fields:
-                      Name: "Virtual Network"
+                      Name: "virtual network"
                       Description: "Virtual Network"
                       Order: "01"

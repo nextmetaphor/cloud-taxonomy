@@ -12,7 +12,7 @@ Definitions:
         Definitions:
           document-dbms:
             Fields:
-              Name: "Document DBMS"
+              Name: "document dbms"
               Description: "Document Database Management Service"
               Order: "01"
             SubDefinitions:
@@ -21,13 +21,13 @@ Definitions:
                 Definitions:
                   document-dbms:
                     Fields:
-                      Name: "Document DBMS"
+                      Name: "document dbms"
                       Description: "Document Database Management Service"
                       Order: "01"
 
           key-value-dbms:
             Fields:
-              Name: "Key/Value DBMS"
+              Name: "key/value dbms"
               Description: "Key/Value Database Management Service"
               Order: "02"
             SubDefinitions:
@@ -36,13 +36,13 @@ Definitions:
                 Definitions:
                   key-value-dbms:
                     Fields:
-                      Name: "Key/Value DBMS"
+                      Name: "key/value dbms"
                       Description: "Key/Value Database Management Service"
                       Order: "01"
 
           rdbms:
             Fields:
-              Name: "Relational DBMS"
+              Name: "relational dbms"
               Description: "Relational Database Management Service"
               Order: "03"
             SubDefinitions:
@@ -51,6 +51,6 @@ Definitions:
                 Definitions:
                   rdbms:
                     Fields:
-                      Name: "Relational DBMS"
+                      Name: "relational dbms"
                       Description: "Relational Database Management Service"
                       Order: "01"

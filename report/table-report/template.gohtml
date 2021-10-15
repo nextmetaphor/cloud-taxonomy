@@ -31,50 +31,61 @@
         border-collapse: collapse;
     }
 
-    .capability-row {
-        border-top: 1px solid darkslategrey;
-    }
 
     th {
-        border-right: 1px solid ghostwhite;
+        font-size: smaller;
         background-color: darkblue;
         color: white;
     }
     td {
-        /*border: 1px solid white;*/
-        background-color: darkgray;
+        border-right: 1px solid darkslategrey;
+        background-color: #99FFFF;
+        font-size: smaller;
     }
 
     .right-align {
         text-align: right;
     }
+
+    .capability {
+        font-size: smaller;
+        border-right: 1px solid darkslategrey;
+        background-color: #000099;
+    }
+    .capability-row {
+        border-top: 2px solid darkslategrey;
+    }
+
+    .category {
+        border-right: 1px solid darkslategrey;
+        text-align: right;
+        font-size: small;
+        background-color: #003399;
+        color: white;
+    }
+    .category-top-row {
+        border-top: 1px solid darkslategrey;
+    }
+
+    .subcategory {
+        border-right: 2px solid darkslategrey;
+
+        text-align: right;
+        font-size: small;
+        background-color: #006699;
+        color: ghostwhite;
+    }
+    .subcategory-top-row {
+        border-top: 1px dotted darkgrey;
+    }
+
+    .service {
+        text-align: center;
+    }
     .service-icon {
         max-height: 16px;
         max-width: 16px;
     }
-
-    .category {
-        border-right: 1px solid antiquewhite;
-        /*border-bottom: 1px solid ghostwhite;*/
-        text-align: right;
-        font-size: small;
-        background-color: darkblue;
-        color: white;
-    }
-    .subcategory {
-        border-right: 1px solid navajowhite;
-
-        text-align: right;
-        font-size: smaller;
-        background-color: midnightblue;
-        color: ghostwhite;
-    }
-    .service {
-        text-align: center;
-    }
-
-
-    .rTable { display: table; } .rTableRow { display: table-row; } .rTableHeading { display: table-header-group; } .rTableBody { display: table-row-group; } .rTableFoot { display: table-footer-group; } .rTableCell, .rTableHead { display: table-cell; }
 </style>
 
 <body id="body">
@@ -228,17 +239,17 @@
 
     let element = document.createElement('th')
     element.innerHTML = 'capability'
-    element.className = 'right-align'
+    element.className = 'right-align capability'
     headerRow.append(element);
 
     element = document.createElement('th')
     element.innerHTML = 'category'
-    element.className = 'right-align'
+    element.className = 'right-align category'
     headerRow.append(element);
 
     element = document.createElement('th')
     element.innerHTML = 'subcategory'
-    element.className = 'right-align'
+    element.className = 'right-align subcategory'
     headerRow.append(element);
 
     serviceProviderMap.forEach( function (serviceProvider, index) {
@@ -265,13 +276,14 @@
 
         capabilityData.rowSpan = rowSpan;
         capabilityData.innerHTML = serviceCapability.Name
-        capabilityData.className = 'right-align'
+        capabilityData.className = 'right-align capability'
         currentRow.append(capabilityData)
 
         let serviceCategoryMap = serviceCapability.CategoryMap
         serviceCategoryMap.forEach(function (serviceCategory, id) {
             if (currentRow === null) {
                 currentRow = document.createElement('tr');
+                currentRow.className = 'category-top-row'
             }
 
             let categoryData = document.createElement('td');
@@ -284,6 +296,10 @@
             serviceCategory.SubcategoryMap.forEach(function (serviceSubcategory, index) {
                 if (currentRow === null) {
                     currentRow = document.createElement('tr');
+                    currentRow.className = 'subcategory-top-row'
+                } else {
+                    console.log('here')
+
                 }
                 let subCategoryData = document.createElement('td');
                 subCategoryData.innerHTML = serviceSubcategory.Name;
