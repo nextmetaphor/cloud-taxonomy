@@ -34,11 +34,26 @@ Definitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
                 Definitions:
-                  file-storage:
+                  nfs-file-storage:
                     Fields:
-                      Name: "file storage"
-                      Description: "File Storage"
+                      Name: "nfs file storage"
+                      Description: "NFS File Storage"
                       Order: "01"
+                  smb-file-storage:
+                    Fields:
+                      Name: "smb file storage"
+                      Description: "SMB File Storage"
+                      Order: "02"
+                  lustre-file-storage:
+                    Fields:
+                      Name: "lustre file storage"
+                      Description: "Lustre File Storage"
+                      Order: "03"
+                  ontap-file-storage:
+                    Fields:
+                      Name: "ontap file storage"
+                      Description: "NetApp ONTAP File Storage"
+                      Order: "04"
 
           long-term-cold-storage:
             Fields:

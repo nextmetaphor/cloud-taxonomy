@@ -14,5 +14,7 @@ Definitions:
       CONFIGURED_IN:
         Class: "ServiceConfiguration"
         Definitions:
-          azure-file-storage-default:
-            References: [ { Class: "ServiceSubcategory", ID: "file-storage", Relationship: "BELONGS_TO" } ]
+          azure-file-storage-nfs:
+            References: [ { Class: "ServiceSubcategory", ID: "nfs-file-storage", Relationship: "BELONGS_TO" } ]
+          azure-file-storage-smb:
+            References: [ { Class: "ServiceSubcategory", ID: "smb-file-storage", Relationship: "BELONGS_TO" } ]

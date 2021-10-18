@@ -20,5 +20,5 @@ Definitions:
         Definitions:
           aws-efs-default:
             References: [
-              { Class: "ServiceSubcategory", ID: "file-storage", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "nfs-file-storage", Relationship: "BELONGS_TO" },
             ]
