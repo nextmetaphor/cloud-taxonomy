@@ -17,7 +17,18 @@ Definitions:
       CONFIGURED_IN:
         Class: "ServiceConfiguration"
         Definitions:
-          aws-s3-default:
+          aws-s3-hot:
             References: [
-              { Class: "ServiceSubcategory", ID: "object-storage", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "hot-object-storage", Relationship: "BELONGS_TO" },
+            ]
+          aws-s3-archive:
+            Fields:
+              Name: "Amazon S3 Glacier"
+              Description: "Amazon S3 Glacier and S3 Glacier Deep Archive are secure, durable, and extremely low-cost Amazon S3 cloud storage classes for data archiving and long-term backup."
+              Link: "https://aws.amazon.com/s3/glacier/"
+            FileFields:
+              ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Storage/16/Arch_Amazon-Simple-Storage-Service-Glacier_16.svg", Prefix: "svg+xml;base64,"}
+
+            References: [
+              { Class: "ServiceSubcategory", ID: "archive-object-storage", Relationship: "BELONGS_TO" },
             ]

@@ -55,21 +55,6 @@ Definitions:
                       Description: "NetApp ONTAP File Storage"
                       Order: "04"
 
-          long-term-cold-storage:
-            Fields:
-              Name: "long term cold storage"
-              Description: "Long Term Cold Storage"
-              Order: "03"
-            SubDefinitions:
-              GROUPED_BY:
-                Class: "ServiceSubcategory"
-                Definitions:
-                  long-term-cold-storage:
-                    Fields:
-                      Name: "long term cold storage"
-                      Description: "Long Term Cold Storage"
-                      Order: "01"
-
           object-storage:
             Fields:
               Name: "object storage"
@@ -79,8 +64,18 @@ Definitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
                 Definitions:
-                  object-storage:
+                  hot-object-storage:
                     Fields:
-                      Name: "object storage"
-                      Description: "Object Storage"
+                      Name: "hot object storage"
+                      Description: "Storage for objects accessed and/or modified frequently."
                       Order: "01"
+                  cool-object-storage:
+                    Fields:
+                      Name: "cold object storage"
+                      Description: "Storage for objects accessed and/or modified infrequently."
+                      Order: "02"
+                  archive-object-storage:
+                    Fields:
+                      Name: "archive object storage"
+                      Description: "Storage for objects accessed infrequently."
+                      Order: "03"
