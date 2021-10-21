@@ -1,0 +1,37 @@
+Class: "Service"
+Definitions:
+  aws-directory-service:
+    Fields:
+      Name: "AWS Directory Service"
+      Description: "AWS Directory Service"
+      Link: "https://aws.amazon.com/directoryservice/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Security-Identity-Compliance/16/Arch_AWS-Directory-Service_16.svg", Prefix: "svg+xml;base64," }
+
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-directory-service-managed-ad:
+            Fields:
+              Name: "AWS Directory Service [Managed AD]"
+              Description: "AWS Directory Service [Managed AD]"
+              Link: "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html"
+            FileFields:
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Directory-Service_AWS-Managed-Microsoft-AD_48_Dark.svg", Prefix: "svg+xml;base64," }
+            References: [ { Class: "ServiceSubcategory", ID: "managed-active-directory", Relationship: "BELONGS_TO" } ]
+
+          aws-directory-service-ad-connector:
+            Fields:
+              Name: "AWS Directory Service [AD Connector]"
+              Description: "AWS Directory Service [AD Connector]"
+              Link: "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_ad_connector.html"
+            FileFields:
+              ImgSrc: { Path: "icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Directory-Service_AD-Connector_48_Dark.svg", Prefix: "svg+xml;base64," }
+            References: [ { Class: "ServiceSubcategory", ID: "active-directory-proxy", Relationship: "BELONGS_TO" } ]
+

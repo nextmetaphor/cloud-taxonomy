@@ -1,0 +1,31 @@
+Class: "ServiceCapability"
+Definitions:
+  identity:
+    Fields:
+      Name: "identity"
+      Description: "Identity Management"
+      Order: "09"
+
+    SubDefinitions:
+      PROVIDED_BY:
+        Class: "ServiceCategory"
+        Definitions:
+          active-directory:
+            Fields:
+              Name: "active directory"
+              Description: "Active Directory"
+              Order: "02"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  managed-active-directory:
+                    Fields:
+                      Name: "managed active directory"
+                      Description: "Managed Active Directory"
+                      Order: "01"
+                  active-directory-proxy:
+                    Fields:
+                      Name: "active directory proxy"
+                      Description: "Active Directory Proxy"
+                      Order: "02"
