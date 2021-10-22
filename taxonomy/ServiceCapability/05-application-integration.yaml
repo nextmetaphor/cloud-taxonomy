@@ -10,11 +10,45 @@ Definitions:
       PROVIDED_BY:
         Class: "ServiceCategory"
         Definitions:
+          queue:
+            Fields:
+              Name: "queue"
+              Description: "Queue"
+              Order: "01"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  unordered-queue:
+                    Fields:
+                      Name: "unordered-queue"
+                      Description: "Queue where the order is not guaranteed"
+                      Order: "01"
+                  fifo-queue:
+                    Fields:
+                      Name: "fifo queue"
+                      Description: "Queue where the order is guaranteed to be FIFO"
+                      Order: "02"
+
+          notification:
+            Fields:
+              Name: "notification"
+              Description: "Notification"
+              Order: "02"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  notification:
+                    Fields:
+                      Name: "notification"
+                      Description: "Notification"
+                      Order: "01"
           api-management:
             Fields:
               Name: "api management"
               Description: "API Management"
-              Order: "01"
+              Order: "03"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
@@ -29,7 +63,7 @@ Definitions:
             Fields:
               Name: "media transcoding"
               Description: "Media Transcoding"
-              Order: "02"
+              Order: "04"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
@@ -40,35 +74,7 @@ Definitions:
                       Description: "Media Transcoding"
                       Order: "01"
 
-          queue:
-            Fields:
-              Name: "queue"
-              Description: "Queue"
-              Order: "03"
-            SubDefinitions:
-              GROUPED_BY:
-                Class: "ServiceSubcategory"
-                Definitions:
-                  queue:
-                    Fields:
-                      Name: "queue"
-                      Description: "Queue"
-                      Order: "01"
 
-          notification:
-            Fields:
-              Name: "notification"
-              Description: "Notification"
-              Order: "04"
-            SubDefinitions:
-              GROUPED_BY:
-                Class: "ServiceSubcategory"
-                Definitions:
-                  notification:
-                    Fields:
-                      Name: "notification"
-                      Description: "Notification"
-                      Order: "01"
 
           email:
             Fields:

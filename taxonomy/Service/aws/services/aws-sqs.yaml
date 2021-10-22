@@ -1,0 +1,31 @@
+Class: "Service"
+Definitions:
+  aws-sqs:
+    Fields:
+      Name: "Amazon SQS"
+      Description: "Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications. SQS eliminates the complexity and overhead associated with managing and operating message-oriented middleware, and empowers developers to focus on differentiating work."
+      Link: "https://aws.amazon.com/sqs/"
+    FileFields:
+      ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_App-Integration/Arch_16/Arch_Amazon-Simple-Queue-Service_16.svg", Prefix: "svg+xml;base64,"}
+
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-sqs-standard:
+            Fields:
+              Name: "Amazon SQS [Standard]"
+            References: [
+              { Class: "ServiceSubcategory", ID: "unordered-queue", Relationship: "BELONGS_TO" },
+            ]
+          aws-sqs-fifo:
+            Fields:
+              Name: "Amazon SQS [FIFO]"
+            References: [
+              { Class: "ServiceSubcategory", ID: "fifo-queue", Relationship: "BELONGS_TO" },
+            ]
