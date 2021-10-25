@@ -10,19 +10,19 @@ Definitions:
       PROVIDED_BY:
         Class: "ServiceCategory"
         Definitions:
-          content-delivery-network:
+          virtual-network:
             Fields:
-              Name: "content delivery network"
-              Description: "Content Delivery Network"
+              Name: "virtual network"
+              Description: "Virtual Network"
               Order: "01"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
                 Definitions:
-                  content-delivery-network:
+                  virtual-network:
                     Fields:
-                      Name: "content delivery network"
-                      Description: "Content Delivery Network"
+                      Name: "virtual network"
+                      Description: "Virtual Network"
                       Order: "01"
 
           load-balancer:
@@ -34,38 +34,44 @@ Definitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
                 Definitions:
-                  load-balancer:
+                  layer-7-load-balancer:
                     Fields:
-                      Name: "load balancer"
-                      Description: "Load Balancer"
+                      Name: "layer 7 load balancer"
+                      Description: "Layer 7 Load Balancer"
                       Order: "01"
+                  layer-4-load-balancer:
+                    Fields:
+                      Name: "layer 4 load balancer"
+                      Description: "Layer 4 Load Balancer"
+                      Order: "02"
 
-          network-gateway:
+          content-delivery-network:
             Fields:
-              Name: "network gateway"
-              Description: "Network Gateway"
+              Name: "content delivery network"
+              Description: "Content Delivery Network"
               Order: "03"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
                 Definitions:
-                  network-gateway:
+                  content-delivery-network:
                     Fields:
-                      Name: "network gateway"
-                      Description: "Network Gateway"
+                      Name: "content delivery network"
+                      Description: "Content Delivery Network"
                       Order: "01"
 
-          virtual-network:
+
+          vpn:
             Fields:
-              Name: "virtual network"
-              Description: "Virtual Network"
+              Name: "vpn"
+              Description: "VPN"
               Order: "04"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
                 Definitions:
-                  virtual-network:
+                  vpn-gateway:
                     Fields:
-                      Name: "virtual network"
-                      Description: "Virtual Network"
+                      Name: "vpn gateway"
+                      Description: "VPN Gateway"
                       Order: "01"

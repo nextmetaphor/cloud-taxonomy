@@ -4,7 +4,7 @@ Definitions:
     Fields:
       Name: "application integration"
       Description: "Application Integration"
-      Order: "05"
+      Order: "06"
 
     SubDefinitions:
       PROVIDED_BY:
@@ -24,10 +24,10 @@ Definitions:
                       Name: "unordered-queue"
                       Description: "Queue where the order is not guaranteed"
                       Order: "01"
-                  fifo-queue:
+                  ordered-queue:
                     Fields:
-                      Name: "fifo queue"
-                      Description: "Queue where the order is guaranteed to be FIFO"
+                      Name: "ordered queue"
+                      Description: "Queue where the order is guaranteed"
                       Order: "02"
 
           notification:
@@ -44,6 +44,7 @@ Definitions:
                       Name: "notification"
                       Description: "Notification"
                       Order: "01"
+
           api-management:
             Fields:
               Name: "api management"

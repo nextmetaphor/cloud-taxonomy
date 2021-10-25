@@ -17,4 +17,4 @@ Definitions:
         Class: "ServiceConfiguration"
         Definitions:
           azure-app-service-default:
-            References: [ { Class: "ServiceSubcategory", ID: "shared-web-hosting", Relationship: "BELONGS_TO" } ]
+            References: [ { Class: "ServiceSubcategory", ID: "web-app-hosting", Relationship: "BELONGS_TO" } ]

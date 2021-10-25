@@ -15,4 +15,4 @@ Definitions:
         Class: "ServiceConfiguration"
         Definitions:
           azure-load-balancer-default:
-            References: [ { Class: "ServiceSubcategory", ID: "load-balancer", Relationship: "BELONGS_TO" } ]
+            References: [ { Class: "ServiceSubcategory", ID: "layer-4-load-balancer", Relationship: "BELONGS_TO" } ]

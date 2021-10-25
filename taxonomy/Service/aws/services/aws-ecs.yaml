@@ -19,5 +19,5 @@ Definitions:
         Definitions:
           aws-ecs-default:
             References: [
-              { Class: "ServiceSubcategory", ID: "container-management", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "container-orchestration", Relationship: "BELONGS_TO" },
             ]

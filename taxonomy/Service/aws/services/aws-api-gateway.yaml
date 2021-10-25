@@ -1,0 +1,21 @@
+Class: "Service"
+Definitions:
+  aws-api-gateway:
+    Fields:
+      Name: "Amazon API Gateway"
+      Description: "Amazon API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale."
+      Link: "https://aws.amazon.com/apigateway/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_App-Integration/Arch_16/Arch_ Amazon-API-Gateway_16.svg", Prefix: "svg+xml;base64," }
+
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-api-gateway-default:
+            References: [ { Class: "ServiceSubcategory", ID: "api-management", Relationship: "BELONGS_TO" } ]

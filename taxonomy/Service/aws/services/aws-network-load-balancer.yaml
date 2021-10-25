@@ -19,5 +19,5 @@ Definitions:
         Definitions:
           aws-network-load-balancer-default:
             References: [
-              { Class: "ServiceSubcategory", ID: "load-balancer", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "layer-4-load-balancer", Relationship: "BELONGS_TO" },
             ]

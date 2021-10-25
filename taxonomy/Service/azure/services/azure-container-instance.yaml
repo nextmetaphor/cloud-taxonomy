@@ -17,4 +17,4 @@ Definitions:
         Class: "ServiceConfiguration"
         Definitions:
           azure-container-instance-default:
-            References: [ { Class: "ServiceSubcategory", ID: "container-management", Relationship: "BELONGS_TO" } ]
+            References: [ { Class: "ServiceSubcategory", ID: "container-orchestration", Relationship: "BELONGS_TO" } ]

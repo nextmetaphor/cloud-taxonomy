@@ -18,8 +18,20 @@ Definitions:
         Class: "ServiceConfiguration"
         Definitions:
           aws-s3-hot:
+            Fields:
+              Name: "AWS S3 [Standard]"
+              Description: "S3 Standard offers high durability, availability, and performance object storage for frequently accessed data."
+              Link: "https://aws.amazon.com/s3/storage-classes#General_purpose"
             References: [
               { Class: "ServiceSubcategory", ID: "hot-object-storage", Relationship: "BELONGS_TO" },
+            ]
+          aws-s3-cool:
+            Fields:
+              Name: "AWS S3 [Infrequent Accessed]"
+              Description: "S3 Standard-IA is for data that is accessed less frequently, but requires rapid access when needed."
+              Link: "https://aws.amazon.com/s3/storage-classes#Infrequent_access"
+            References: [
+              { Class: "ServiceSubcategory", ID: "cool-object-storage", Relationship: "BELONGS_TO" },
             ]
           aws-s3-archive:
             Fields:

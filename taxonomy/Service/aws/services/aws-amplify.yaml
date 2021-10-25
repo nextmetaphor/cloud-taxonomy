@@ -18,4 +18,4 @@ Definitions:
         Class: "ServiceConfiguration"
         Definitions:
           aws-amplify-default:
-            References: [ { Class: "ServiceSubcategory", ID: "shared-web-hosting", Relationship: "BELONGS_TO" } ]
+            References: [ { Class: "ServiceSubcategory", ID: "static-web-app-hosting", Relationship: "BELONGS_TO" } ]

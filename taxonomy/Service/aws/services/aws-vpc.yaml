@@ -1,0 +1,21 @@
+Class: "Service"
+Definitions:
+  aws-vpc:
+    Fields:
+      Name: "Amazon Virtual Private Cloud (VPC)"
+      Description: "Define and launch AWS resources in a logically isolated virtual network"
+      Link: "https://aws.amazon.com/vpc/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Networking-Content-Delivery/16/Arch_Amazon-Virtual-Private-Cloud_16.svg", Prefix: "svg+xml;base64," }
+
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-vpc-default:
+            References: [ { Class: "ServiceSubcategory", ID: "virtual-network", Relationship: "BELONGS_TO" } ]

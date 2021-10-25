@@ -1,0 +1,23 @@
+Class: "Service"
+Definitions:
+  aws-sns:
+    Fields:
+      Name: "Amazon SNS"
+      Description: "Amazon Simple Notification Service (Amazon SNS) is a fully managed messaging service for both application-to-application (A2A) and application-to-person (A2P) communication."
+      Link: "https://aws.amazon.com/sns/"
+    FileFields:
+      ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_App-Integration/Arch_16/Arch_Amazon-Simple-Notification-Service_16.svg", Prefix: "svg+xml;base64,"}
+
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-sqs-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "notification", Relationship: "BELONGS_TO" },
+            ]

@@ -71,7 +71,7 @@ Definitions:
                       Order: "01"
                   cool-object-storage:
                     Fields:
-                      Name: "cold object storage"
+                      Name: "cool object storage"
                       Description: "Storage for objects accessed and/or modified infrequently."
                       Order: "02"
                   archive-object-storage:

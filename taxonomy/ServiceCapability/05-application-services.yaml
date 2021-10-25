@@ -1,0 +1,31 @@
+Class: "ServiceCapability"
+Definitions:
+  application-services:
+    Fields:
+      Name: "application services"
+      Description: "Application Services"
+      Order: "05"
+
+    SubDefinitions:
+      PROVIDED_BY:
+        Class: "ServiceCategory"
+        Definitions:
+          app-hosting:
+            Fields:
+              Name: "app hosting"
+              Description: "app hosting"
+              Order: "01"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  static-web-app-hosting:
+                    Fields:
+                      Name: "static web app hosting"
+                      Description: "Static Web App Hosting"
+                      Order: "01"
+                  web-app-hosting:
+                    Fields:
+                      Name: "web app hosting"
+                      Description: "Web App Hosting"
+                      Order: "02"

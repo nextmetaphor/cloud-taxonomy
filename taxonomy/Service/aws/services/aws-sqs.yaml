@@ -27,5 +27,5 @@ Definitions:
             Fields:
               Name: "Amazon SQS [FIFO]"
             References: [
-              { Class: "ServiceSubcategory", ID: "fifo-queue", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "ordered-queue", Relationship: "BELONGS_TO" },
             ]
