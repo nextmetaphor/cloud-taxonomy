@@ -15,4 +15,4 @@ Definitions:
         Class: "ServiceConfiguration"
         Definitions:
           azure-vpn-gateway-default:
-            References: [ { Class: "ServiceSubcategory", ID: "vpn-gateway", Relationship: "BELONGS_TO" } ]
+            References: [ { Class: "ServiceSubcategory", ID: "vpn-network-connectivity", Relationship: "BELONGS_TO" } ]

@@ -1,0 +1,21 @@
+Class: "Service"
+Definitions:
+  aws-direct-connect:
+    Fields:
+      Name: "AWS Direct Connect"
+      Description: "AWS Direct Connect is a cloud service that links your network directly to AWS, bypassing the internet to deliver more consistent, lower-latency performance."
+      Link: "https://aws.amazon.com/directconnect/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Networking-Content-Delivery/16/Arch_AWS-Direct-Connect_16.svg", Prefix: "svg+xml;base64," }
+
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-direct-connect-default:
+            References: [ { Class: "ServiceSubcategory", ID: "dedicated-network-connectivity", Relationship: "BELONGS_TO" } ]

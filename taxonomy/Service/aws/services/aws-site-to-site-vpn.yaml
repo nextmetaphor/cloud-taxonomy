@@ -18,4 +18,4 @@ Definitions:
         Class: "ServiceConfiguration"
         Definitions:
           aws-site-to-site-vpn-default:
-            References: [ { Class: "ServiceSubcategory", ID: "vpn-gateway", Relationship: "BELONGS_TO" } ]
+            References: [ { Class: "ServiceSubcategory", ID: "vpn-network-connectivity", Relationship: "BELONGS_TO" } ]

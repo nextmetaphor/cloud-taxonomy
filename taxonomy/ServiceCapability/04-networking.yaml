@@ -10,10 +10,10 @@ Definitions:
       PROVIDED_BY:
         Class: "ServiceCategory"
         Definitions:
-          virtual-network:
+          private-network:
             Fields:
-              Name: "virtual network"
-              Description: "Virtual Network"
+              Name: "private network"
+              Description: "Private Network"
               Order: "01"
             SubDefinitions:
               GROUPED_BY:
@@ -24,12 +24,47 @@ Definitions:
                       Name: "virtual network"
                       Description: "Virtual Network"
                       Order: "01"
+                  dedicated-network-connectivity:
+                    Fields:
+                      Name: "dedicated network connectivity"
+                      Description: "Dedicated Network Connectivity"
+                      Order: "02"
+                  vpn-network-connectivity:
+                    Fields:
+                      Name: "vpn network connectivity"
+                      Description: "VPN Network Connectivity"
+                      Order: "03"
+                  intra-csp-connectivity:
+                    Fields:
+                      Name: "intra-csp connectivity"
+                      Description: "Intra-CSP Connectivity"
+                      Order: "04"
+                  edge-optimised-connectivity:
+                    Fields:
+                      Name: "edge-optimised connectivity"
+                      Description: "Edge-Optimised Connectivity"
+                      Order: "05"
+
+          dns:
+            Fields:
+              Name: "dns"
+              Description: "DNS"
+              Order: "02"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  dns:
+                    Fields:
+                      Name: "dns"
+                      Description: "DNS"
+                      Order: "01"
 
           load-balancer:
             Fields:
               Name: "load balancer"
               Description: "Load Balancer"
-              Order: "02"
+              Order: "03"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
@@ -49,7 +84,7 @@ Definitions:
             Fields:
               Name: "content delivery network"
               Description: "Content Delivery Network"
-              Order: "03"
+              Order: "04"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
@@ -58,20 +93,4 @@ Definitions:
                     Fields:
                       Name: "content delivery network"
                       Description: "Content Delivery Network"
-                      Order: "01"
-
-
-          vpn:
-            Fields:
-              Name: "vpn"
-              Description: "VPN"
-              Order: "04"
-            SubDefinitions:
-              GROUPED_BY:
-                Class: "ServiceSubcategory"
-                Definitions:
-                  vpn-gateway:
-                    Fields:
-                      Name: "vpn gateway"
-                      Description: "VPN Gateway"
                       Order: "01"
