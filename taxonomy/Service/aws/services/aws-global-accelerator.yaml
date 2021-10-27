@@ -18,4 +18,4 @@ Definitions:
         Class: "ServiceConfiguration"
         Definitions:
           aws-global-accelerator-default:
-            References: [ { Class: "ServiceSubcategory", ID: "edge-optimised-connectivity", Relationship: "BELONGS_TO" } ]
+            References: [ { Class: "ServiceSubcategory", ID: "edge-optimised-endpoint", Relationship: "BELONGS_TO" } ]

@@ -34,36 +34,21 @@ Definitions:
                       Name: "vpn network connectivity"
                       Description: "VPN Network Connectivity"
                       Order: "03"
-                  intra-csp-connectivity:
+                  point-to-point-network-peering:
                     Fields:
-                      Name: "intra-csp connectivity"
-                      Description: "Intra-CSP Connectivity"
+                      Name: "point-to-point network peering"
+                      Description: "Point-to-Point Network Peering"
                       Order: "04"
-                  edge-optimised-connectivity:
+                  hub-and-spoke-network-peering:
                     Fields:
-                      Name: "edge-optimised connectivity"
-                      Description: "Edge-Optimised Connectivity"
+                      Name: "hub-and-spoke network peering"
+                      Description: "Hub and Spoke Network Peering"
                       Order: "05"
 
-          dns:
+          application-connectivity:
             Fields:
-              Name: "dns"
-              Description: "DNS"
-              Order: "02"
-            SubDefinitions:
-              GROUPED_BY:
-                Class: "ServiceSubcategory"
-                Definitions:
-                  dns:
-                    Fields:
-                      Name: "dns"
-                      Description: "DNS"
-                      Order: "01"
-
-          load-balancer:
-            Fields:
-              Name: "load balancer"
-              Description: "Load Balancer"
+              Name: "application connectivity"
+              Description: "Application Connectivity"
               Order: "03"
             SubDefinitions:
               GROUPED_BY:
@@ -79,12 +64,37 @@ Definitions:
                       Name: "layer 4 load balancer"
                       Description: "Layer 4 Load Balancer"
                       Order: "02"
+                  intra-csp-endpoint:
+                    Fields:
+                      Name: "intra-csp endpoint"
+                      Description: "Intra-CSP Endpoint"
+                      Order: "03"
+                  edge-optimised-endpoint:
+                    Fields:
+                      Name: "edge-optimised endpoint"
+                      Description: "Edge-Optimised Endpoint"
+                      Order: "04"
+
+          dns:
+            Fields:
+              Name: "dns"
+              Description: "DNS"
+              Order: "04"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  dns:
+                    Fields:
+                      Name: "dns"
+                      Description: "DNS"
+                      Order: "01"
 
           content-delivery-network:
             Fields:
               Name: "content delivery network"
               Description: "Content Delivery Network"
-              Order: "04"
+              Order: "05"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"

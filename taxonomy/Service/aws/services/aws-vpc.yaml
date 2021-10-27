@@ -2,7 +2,7 @@ Class: "Service"
 Definitions:
   aws-vpc:
     Fields:
-      Name: "Amazon Virtual Private Cloud (VPC)"
+      Name: "Amazon VPC"
       Description: "Define and launch AWS resources in a logically isolated virtual network"
       Link: "https://aws.amazon.com/vpc/"
     FileFields:
@@ -19,3 +19,13 @@ Definitions:
         Definitions:
           aws-vpc-default:
             References: [ { Class: "ServiceSubcategory", ID: "virtual-network", Relationship: "BELONGS_TO" } ]
+
+          aws-vpc-peering:
+            Fields:
+              Name: "Amazon VPC [Peering]"
+              Description: "A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them using private IPv4 addresses or IPv6 addresses."
+              Link: "https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html"
+            FileFields:
+              ImgSrc: { Path: "icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-VPC_Peering-Connection_48_Dark.svg", Prefix: "svg+xml;base64," }
+
+            References: [ { Class: "ServiceSubcategory", ID: "point-to-point-network-peering", Relationship: "BELONGS_TO" } ]
