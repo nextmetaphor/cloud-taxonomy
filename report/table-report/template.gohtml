@@ -196,9 +196,16 @@
                                                         })
 
                                                         // TODO this breaks if we have more than one service per subcategory
-                                                        serviceCapabilityMap.get({{$capabilityID}}).CategoryMap.get({{$categoryID}}).SubcategoryMap.get({{$subcategoryID}}).ServiceByTenancyMap.set({{$providerID}}, {
-                                                            ServiceConfigurationID: {{$serviceConfigurationID}}
-                                                        });
+                                                        tm = serviceCapabilityMap.get({{$capabilityID}}).CategoryMap.get({{$categoryID}}).SubcategoryMap.get({{$subcategoryID}}).ServiceByTenancyMap
+                                                        if (tm.get({{$providerID}}) === undefined ) {
+                                                            tm.set({{$providerID}}, new Map())
+                                                        }
+                                                        tm.get({{$providerID}}).set({{$serviceConfigurationID}}, {
+                                                                ServiceConfigurationID: {{$serviceConfigurationID}}}
+                                                        )
+                                                        {{/*serviceCapabilityMap.get({{$capabilityID}}).CategoryMap.get({{$categoryID}}).SubcategoryMap.get({{$subcategoryID}}).ServiceByTenancyMap.set({{$providerID}}, {*/}}
+                                                        {{/*    ServiceConfigurationID: {{$serviceConfigurationID}}*/}}
+                                                        {{/*});*/}}
                                                     </script>
 
                                                 {{end -}}
@@ -297,10 +304,8 @@
                 if (currentRow === null) {
                     currentRow = document.createElement('tr');
                     currentRow.className = 'subcategory-top-row'
-                } else {
-                    console.log('here')
-
                 }
+
                 let subCategoryData = document.createElement('td');
                 subCategoryData.innerHTML = serviceSubcategory.Name;
                 subCategoryData.className = "subcategory";
@@ -310,59 +315,63 @@
                     let serviceData = document.createElement('td');
                     serviceData.className = "service";
                     if (serviceSubcategory.ServiceByTenancyMap.get(serviceProviderID) !== undefined) {
-                        let serviceConfigurationID = serviceSubcategory.ServiceByTenancyMap.get(serviceProviderID).ServiceConfigurationID
-                        if (serviceConfigurationID !== undefined) {
-                            let serviceConfigurationObject = serviceConfigurationMap.get(serviceConfigurationID);
-                            if (serviceConfigurationObject !== undefined) {
 
-                                let serviceLink = ""
-                                if (serviceConfigurationObject.Link !== undefined) {
-                                    if (serviceConfigurationObject.Description === null) {
-                                        serviceLink = serviceMap.get(serviceConfigurationObject.ServiceID).Link;
-                                    } else {
-                                        serviceLink = serviceConfigurationObject.Link;
-                                    }
-                                }
+                        let serviceConfigMap = serviceSubcategory.ServiceByTenancyMap.get(serviceProviderID)
 
-                                let serviceName = ""
-                                if (serviceConfigurationObject.Name !== undefined) {
-                                    if (serviceConfigurationObject.Name === null) {
-                                        serviceName = serviceMap.get(serviceConfigurationObject.ServiceID).Name;
-                                    } else {
-                                        serviceName = serviceConfigurationObject.Name;
-                                    }
-                                }
+                        serviceConfigMap.forEach(function (serviceConfiguration, serviceConfigurationID) {
+                            if (serviceConfigurationID !== undefined) {
+                                let serviceConfigurationObject = serviceConfigurationMap.get(serviceConfigurationID);
+                                if (serviceConfigurationObject !== undefined) {
 
-                                let serviceDescription = ""
-                                if (serviceConfigurationObject.Description !== undefined) {
-                                    if (serviceConfigurationObject.Description === null) {
-                                        serviceDescription = serviceMap.get(serviceConfigurationObject.ServiceID).Description;
-                                    } else {
-                                        serviceDescription = serviceConfigurationObject.Description;
-                                    }
-                                }
-
-                                serviceData.innerHTML = "<a title=\"" + serviceDescription + "\"target=\"_blank\" href=\"" + serviceLink + "\">" + serviceName + "</a>";
-
-                                if ((serviceConfigurationObject.ImgSrc !== undefined && serviceConfigurationObject.ImgSrc !== null) || serviceMap.get(serviceConfigurationObject.ServiceID).ImgSrc !== null) {
-                                    let imageData = document.createElement('img');
-                                    imageData.className = "service-icon"
-
-                                    let imgSrc = ""
-                                    if (serviceConfigurationObject.ImgSrc !== undefined) {
-                                        if (serviceConfigurationObject.ImgSrc === null) {
-                                            imgSrc = serviceMap.get(serviceConfigurationObject.ServiceID).ImgSrc;
+                                    let serviceLink = ""
+                                    if (serviceConfigurationObject.Link !== undefined) {
+                                        if (serviceConfigurationObject.Description === null) {
+                                            serviceLink = serviceMap.get(serviceConfigurationObject.ServiceID).Link;
                                         } else {
-                                            imgSrc = serviceConfigurationObject.ImgSrc;
+                                            serviceLink = serviceConfigurationObject.Link;
                                         }
                                     }
 
-                                    imageData.src = "data:image/" + imgSrc;
+                                    let serviceName = ""
+                                    if (serviceConfigurationObject.Name !== undefined) {
+                                        if (serviceConfigurationObject.Name === null) {
+                                            serviceName = serviceMap.get(serviceConfigurationObject.ServiceID).Name;
+                                        } else {
+                                            serviceName = serviceConfigurationObject.Name;
+                                        }
+                                    }
 
-                                    serviceData.prepend(imageData);
+                                    let serviceDescription = ""
+                                    if (serviceConfigurationObject.Description !== undefined) {
+                                        if (serviceConfigurationObject.Description === null) {
+                                            serviceDescription = serviceMap.get(serviceConfigurationObject.ServiceID).Description;
+                                        } else {
+                                            serviceDescription = serviceConfigurationObject.Description;
+                                        }
+                                    }
+
+                                    serviceData.innerHTML = "<a title=\"" + serviceDescription + "\"target=\"_blank\" href=\"" + serviceLink + "\">" + serviceName + "</a>";
+
+                                    if ((serviceConfigurationObject.ImgSrc !== undefined && serviceConfigurationObject.ImgSrc !== null) || serviceMap.get(serviceConfigurationObject.ServiceID).ImgSrc !== null) {
+                                        let imageData = document.createElement('img');
+                                        imageData.className = "service-icon"
+
+                                        let imgSrc = ""
+                                        if (serviceConfigurationObject.ImgSrc !== undefined) {
+                                            if (serviceConfigurationObject.ImgSrc === null) {
+                                                imgSrc = serviceMap.get(serviceConfigurationObject.ServiceID).ImgSrc;
+                                            } else {
+                                                imgSrc = serviceConfigurationObject.ImgSrc;
+                                            }
+                                        }
+
+                                        imageData.src = "data:image/" + imgSrc;
+
+                                        serviceData.prepend(imageData);
+                                    }
                                 }
                             }
-                        }
+                        });
                     }
 
                     currentRow.appendChild(serviceData)
