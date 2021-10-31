@@ -86,6 +86,8 @@
         max-height: 16px;
         max-width: 16px;
     }
+    .service-config {
+    }
 </style>
 
 <body id="body">
@@ -314,11 +316,13 @@
                 serviceProviderMap.forEach( function (serviceProvider, serviceProviderID) {
                     let serviceData = document.createElement('td');
                     serviceData.className = "service";
+
                     if (serviceSubcategory.ServiceByTenancyMap.get(serviceProviderID) !== undefined) {
+                        // for this specific service provider, iterate through all service configurations
+                        serviceSubcategory.ServiceByTenancyMap.get(serviceProviderID).forEach(function (serviceConfiguration, serviceConfigurationID) {
+                            let serviceConfigData = document.createElement('div');
+                            serviceConfigData.className = "service-config"
 
-                        let serviceConfigMap = serviceSubcategory.ServiceByTenancyMap.get(serviceProviderID)
-
-                        serviceConfigMap.forEach(function (serviceConfiguration, serviceConfigurationID) {
                             if (serviceConfigurationID !== undefined) {
                                 let serviceConfigurationObject = serviceConfigurationMap.get(serviceConfigurationID);
                                 if (serviceConfigurationObject !== undefined) {
@@ -350,7 +354,7 @@
                                         }
                                     }
 
-                                    serviceData.innerHTML = "<a title=\"" + serviceDescription + "\"target=\"_blank\" href=\"" + serviceLink + "\">" + serviceName + "</a>";
+                                    serviceConfigData.innerHTML =  "<a title=\"" + serviceDescription + "\"target=\"_blank\" href=\"" + serviceLink + "\">" + serviceName + "</a>"
 
                                     if ((serviceConfigurationObject.ImgSrc !== undefined && serviceConfigurationObject.ImgSrc !== null) || serviceMap.get(serviceConfigurationObject.ServiceID).ImgSrc !== null) {
                                         let imageData = document.createElement('img');
@@ -367,10 +371,11 @@
 
                                         imageData.src = "data:image/" + imgSrc;
 
-                                        serviceData.prepend(imageData);
+                                        serviceConfigData.prepend(imageData);
                                     }
                                 }
                             }
+                            serviceData.appendChild(serviceConfigData);
                         });
                     }
 
