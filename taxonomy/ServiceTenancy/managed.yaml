@@ -1,8 +1,0 @@
-Class: "ServiceTenancy"
-Definitions:
-  managed:
-    Fields:
-      Name: "Managed"
-      Description: "Service hosted on and Managed by the CSP; operational support is provided by the CSP but is charged for on an ongoing basis"
-      BackgroundColour: "SlateBlue"
-      FontColour: "White"

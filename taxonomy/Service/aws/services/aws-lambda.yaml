@@ -5,17 +5,19 @@ Definitions:
       Name: "AWS Lambda"
       Description: "AWS Lambda"
       Link: "https://aws.amazon.com/lambda"
-    References: [
-      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
-    ]
     FileFields:
       ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Compute/16/Arch_AWS-Lambda_16.svg", Prefix: "svg+xml;base64,"}
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
 
     SubDefinitions:
       CONFIGURED_IN:
         Class: "ServiceConfiguration"
         Definitions:
           aws-lambda-default:
-            References: [ { Class: "ServiceSubcategory", ID: "faas", Relationship: "BELONGS_TO" } ]
+            References: [
+              { Class: "ServiceSubcategory", ID: "faas", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]
 

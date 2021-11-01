@@ -6,10 +6,9 @@ Definitions:
       Description: "Azure Virtual Machine"
       Link: "https://azure.microsoft.com/en-gb/services/virtual-machines/"
     FileFields:
-      ImgSrc: {Path: "../icons/Azure_Public_Service_Icons/Icons/Compute/10021-icon-service-Virtual-Machine.svg", Prefix: "svg+xml;base64,"}
+      ImgSrc: { Path: "../icons/Azure_Public_Service_Icons/Icons/Compute/10021-icon-service-Virtual-Machine.svg", Prefix: "svg+xml;base64," }
     References: [
       { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "hosted", Relationship: "HAS_TENANCY_OF" }
     ]
 
     SubDefinitions:
@@ -21,11 +20,17 @@ Definitions:
               Name: "Virtual Machine [Shared Host]"
               Description: "Azure Virtual Machine"
               Link: "https://azure.microsoft.com/en-gb/services/virtual-machines/"
-            References: [ { Class: "ServiceSubcategory", ID: "shared-virtual-server", Relationship: "BELONGS_TO" } ]
+            References: [
+              { Class: "ServiceSubcategory", ID: "shared-virtual-server", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "hosted", Relationship: "HAS_TENANCY_OF" },
+            ]
 
           azure-virtual-machine-dedicated-host:
             Fields:
               Name: "Virtual Machine [Dedicated Host]"
               Description: "Azure Virtual Machine"
               Link: "https://azure.microsoft.com/en-gb/services/virtual-machines/dedicated-host"
-            References: [ { Class: "ServiceSubcategory", ID: "dedicated-virtual-server", Relationship: "BELONGS_TO" } ]
+            References: [
+              { Class: "ServiceSubcategory", ID: "dedicated-virtual-server", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "hosted", Relationship: "HAS_TENANCY_OF" },
+            ]

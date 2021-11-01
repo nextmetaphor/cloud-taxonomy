@@ -7,7 +7,6 @@ Definitions:
       Link: "https://azure.microsoft.com/en-gb/services/storage/blobs/"
     References: [
       { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]
 
     SubDefinitions:
@@ -15,11 +14,17 @@ Definitions:
         Class: "ServiceConfiguration"
         Definitions:
           azure-blob-storage-hot:
-            References: [ { Class: "ServiceSubcategory", ID: "hot-object-storage", Relationship: "BELONGS_TO" } ]
+            References: [
+              { Class: "ServiceSubcategory", ID: "hot-object-storage", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]
 
           azure-blob-storage-cold:
             Fields:
               Name: "Archive Storage"
               Description: "Azure Archive Storage"
               Link: "https://azure.microsoft.com/en-gb/services/storage/archive/"
-            References: [ { Class: "ServiceSubcategory", ID: "archive-object-storage", Relationship: "BELONGS_TO" } ]
+            References: [
+              { Class: "ServiceSubcategory", ID: "archive-object-storage", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

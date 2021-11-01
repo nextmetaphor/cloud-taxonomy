@@ -6,11 +6,9 @@ Definitions:
       Description: "AWS App Mesh"
       Link: "https://aws.amazon.com/https://aws.amazon.com/app-mesh"
     FileFields:
-      ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Networking-Content-Delivery/16/Arch_AWS-App-Mesh_16.svg", Prefix: "svg+xml;base64,"}
-
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Networking-Content-Delivery/16/Arch_AWS-App-Mesh_16.svg", Prefix: "svg+xml;base64," }
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]
 
     SubDefinitions:
@@ -20,4 +18,5 @@ Definitions:
           aws-app-mesh-default:
             References: [
               { Class: "ServiceSubcategory", ID: "service-mesh", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]

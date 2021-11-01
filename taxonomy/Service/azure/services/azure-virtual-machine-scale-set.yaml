@@ -9,7 +9,6 @@ Definitions:
       ImgSrc: { Path: "../icons/Azure_Public_Service_Icons/Icons/Compute/10034-icon-service-VM-Scale-Sets.svg", Prefix: "svg+xml;base64," }
     References: [
       { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]
 
     SubDefinitions:
@@ -17,4 +16,7 @@ Definitions:
         Class: "ServiceConfiguration"
         Definitions:
           azure-virtual-machine-scale-set-default:
-            References: [ { Class: "ServiceSubcategory", ID: "auto-scaling", Relationship: "BELONGS_TO" } ]
+            References: [
+              { Class: "ServiceSubcategory", ID: "auto-scaling", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

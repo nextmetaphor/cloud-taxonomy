@@ -7,7 +7,6 @@ Definitions:
       Link: "https://aws.amazon.com/eks/"
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
     ]
 
     SubDefinitions:
@@ -23,4 +22,5 @@ Definitions:
               ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Containers/16/Arch_Amazon-EKS-Cloud_16.svg", Prefix: "svg+xml;base64," }
             References: [
               { Class: "ServiceSubcategory", ID: "kubernetes-management", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]

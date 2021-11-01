@@ -7,10 +7,8 @@ Definitions:
       Link: "https://aws.amazon.com/elasticbeanstalk/"
     FileFields:
       ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Compute/16/Arch_AWS-Elastic-Beanstalk_16.svg", Prefix: "svg+xml;base64," }
-
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]
 
     SubDefinitions:
@@ -18,4 +16,7 @@ Definitions:
         Class: "ServiceConfiguration"
         Definitions:
           aws-elasticbeanstalk-default:
-            References: [ { Class: "ServiceSubcategory", ID: "web-app-hosting", Relationship: "BELONGS_TO" } ]
+            References: [
+              { Class: "ServiceSubcategory", ID: "web-app-hosting", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

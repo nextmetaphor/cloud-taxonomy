@@ -6,11 +6,9 @@ Definitions:
       Description: "Amazon Aurora is a MySQL and PostgreSQL-compatible relational database built for the cloud, that combines the performance and availability of traditional enterprise databases with the simplicity and cost-effectiveness of open source databases."
       Link: "https://aws.amazon.com/rds/aurora/"
     FileFields:
-      ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Database/16/Arch_Amazon-Aurora_16.svg", Prefix: "svg+xml;base64,"}
-
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Database/16/Arch_Amazon-Aurora_16.svg", Prefix: "svg+xml;base64," }
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
     ]
 
     SubDefinitions:
@@ -20,4 +18,5 @@ Definitions:
           aws-aurora-default:
             References: [
               { Class: "ServiceSubcategory", ID: "rdbms", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
             ]

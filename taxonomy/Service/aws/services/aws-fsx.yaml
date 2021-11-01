@@ -7,10 +7,8 @@ Definitions:
       Link: "https://aws.amazon.com/fsx/"
     FileFields:
       ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Storage/16/Arch_Amazon-FSx_16.svg", Prefix: "svg+xml;base64,"}
-
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
     ]
 
     SubDefinitions:
@@ -26,6 +24,7 @@ Definitions:
               ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Storage/16/Arch_Amazon-FSx-for-Windows-File-Server_16.svg", Prefix: "svg+xml;base64,"}
             References: [
               { Class: "ServiceSubcategory", ID: "smb-file-storage", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
             ]
           aws-fsx-lustre:
             Fields:
@@ -36,6 +35,7 @@ Definitions:
               ImgSrc: {Path: "..//icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Storage/16/Arch_Amazon-FSx-for-Lustre_16.svg", Prefix: "svg+xml;base64,"}
             References: [
               { Class: "ServiceSubcategory", ID: "lustre-file-storage", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
             ]
           aws-fsx-ontap:
             Fields:
@@ -44,4 +44,5 @@ Definitions:
               Link: "https://aws.amazon.com/fsx/netapp-ontap/"
             References: [
               { Class: "ServiceSubcategory", ID: "ontap-file-storage", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
             ]

@@ -9,8 +9,6 @@ Definitions:
       ImgSrc: { Path: "../icons/Azure_Public_Service_Icons/Icons/Compute/10029-icon-service-Function-Apps.svg", Prefix: "svg+xml;base64," }
     References: [
       { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
-
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]
 
     SubDefinitions:
@@ -18,4 +16,7 @@ Definitions:
         Class: "ServiceConfiguration"
         Definitions:
           azure-function-default:
-            References: [ { Class: "ServiceSubcategory", ID: "faas", Relationship: "BELONGS_TO" } ]
+            References: [
+              { Class: "ServiceSubcategory", ID: "faas", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

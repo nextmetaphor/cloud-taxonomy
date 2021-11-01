@@ -6,11 +6,9 @@ Definitions:
       Description: "Amazon Athena"
       Link: "https://aws.amazon.com/athena"
     FileFields:
-      ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Analytics/Arch_48/Arch_Amazon-Athena_48.svg", Prefix: "svg+xml;base64,"}
-
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Analytics/Arch_48/Arch_Amazon-Athena_48.svg", Prefix: "svg+xml;base64," }
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]
 
     SubDefinitions:
@@ -20,4 +18,5 @@ Definitions:
           aws-athena-default:
             References: [
               { Class: "ServiceSubcategory", ID: "big-data-query", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]

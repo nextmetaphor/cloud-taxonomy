@@ -7,10 +7,8 @@ Definitions:
       Link: "https://aws.amazon.com/sqs/"
     FileFields:
       ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_App-Integration/Arch_16/Arch_Amazon-Simple-Queue-Service_16.svg", Prefix: "svg+xml;base64,"}
-
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]
 
     SubDefinitions:
@@ -22,10 +20,12 @@ Definitions:
               Name: "Amazon SQS [Standard]"
             References: [
               { Class: "ServiceSubcategory", ID: "unordered-queue", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]
           aws-sqs-fifo:
             Fields:
               Name: "Amazon SQS [FIFO]"
             References: [
               { Class: "ServiceSubcategory", ID: "ordered-queue", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]

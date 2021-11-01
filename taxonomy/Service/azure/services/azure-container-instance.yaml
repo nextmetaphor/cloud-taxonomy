@@ -9,7 +9,6 @@ Definitions:
       ImgSrc: { Path: "../icons/Azure_Public_Service_Icons/Icons/Compute/10104-icon-service-Container-Instances.svg", Prefix: "svg+xml;base64," }
     References: [
       { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]
 
     SubDefinitions:
@@ -17,4 +16,7 @@ Definitions:
         Class: "ServiceConfiguration"
         Definitions:
           azure-container-instance-default:
-            References: [ { Class: "ServiceSubcategory", ID: "container-orchestration", Relationship: "BELONGS_TO" } ]
+            References: [
+              { Class: "ServiceSubcategory", ID: "container-orchestration", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

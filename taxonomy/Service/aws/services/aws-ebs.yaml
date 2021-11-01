@@ -9,10 +9,8 @@ Definitions:
       Link: "https://aws.amazon.com/ebs"
     FileFields:
       ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Storage/16/Arch_Amazon-Elastic-Block-Store_16.svg", Prefix: "svg+xml;base64,"}
-
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
     ]
 
     SubDefinitions:
@@ -22,4 +20,5 @@ Definitions:
           aws-ebs-default:
             References: [
               { Class: "ServiceSubcategory", ID: "block-storage", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
             ]

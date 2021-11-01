@@ -6,11 +6,9 @@ Definitions:
       Description: "Simplify, automate, and accelerate moving data to and from AWS Storage, as well as between AWS Storage services."
       Link: "https://aws.amazon.com/datasync"
     FileFields:
-      ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_App-Integration/Arch_16/Arch_AWS-AppSync_16.svg", Prefix: "svg+xml;base64,"}
-
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_App-Integration/Arch_16/Arch_AWS-AppSync_16.svg", Prefix: "svg+xml;base64," }
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]
 
     SubDefinitions:
@@ -20,4 +18,5 @@ Definitions:
           aws-data-sync-default:
             References: [
               { Class: "ServiceSubcategory", ID: "data-transfer", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]

@@ -7,10 +7,8 @@ Definitions:
       Link: "https://aws.amazon.com/elasticloadbalancing/network-load-balancer/"
     FileFields:
       ImgSrc: {Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Elastic-Load-Balancing_Network-Load-Balancer_48_Dark.svg", Prefix: "svg+xml;base64,"}
-
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
     ]
 
     SubDefinitions:
@@ -20,4 +18,5 @@ Definitions:
           aws-network-load-balancer-default:
             References: [
               { Class: "ServiceSubcategory", ID: "layer-4-load-balancer", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
             ]

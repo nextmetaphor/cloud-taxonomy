@@ -7,7 +7,6 @@ Definitions:
       Link: "https://azure.microsoft.com/en-gb/services/storage/disks/"
     References: [
       { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" }
     ]
 
     SubDefinitions:
@@ -15,4 +14,7 @@ Definitions:
         Class: "ServiceConfiguration"
         Definitions:
           azure-disk-storage-default:
-            References: [ { Class: "ServiceSubcategory", ID: "block-storage", Relationship: "BELONGS_TO" } ]
+            References: [
+              { Class: "ServiceSubcategory", ID: "block-storage", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
+            ]

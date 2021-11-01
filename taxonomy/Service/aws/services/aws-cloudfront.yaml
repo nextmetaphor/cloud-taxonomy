@@ -7,10 +7,8 @@ Definitions:
       Link: "https://aws.amazon.com/cloudfront/"
     FileFields:
       ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Networking-Content-Delivery/16/Arch_Amazon-CloudFront_16.svg", Prefix: "svg+xml;base64," }
-
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]
 
     SubDefinitions:
@@ -18,4 +16,7 @@ Definitions:
         Class: "ServiceConfiguration"
         Definitions:
           aws-cloudfront-default:
-            References: [ { Class: "ServiceSubcategory", ID: "content-delivery-network", Relationship: "BELONGS_TO" } ]
+            References: [
+              { Class: "ServiceSubcategory", ID: "content-delivery-network", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

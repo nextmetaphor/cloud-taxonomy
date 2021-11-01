@@ -7,7 +7,6 @@ Definitions:
       Link: "https://azure.microsoft.com/en-gb/services/storage/files/"
     References: [
       { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
-      { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
     ]
 
     SubDefinitions:
@@ -15,6 +14,12 @@ Definitions:
         Class: "ServiceConfiguration"
         Definitions:
           azure-file-storage-nfs:
-            References: [ { Class: "ServiceSubcategory", ID: "nfs-file-storage", Relationship: "BELONGS_TO" } ]
+            References: [
+              { Class: "ServiceSubcategory", ID: "nfs-file-storage", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]
           azure-file-storage-smb:
-            References: [ { Class: "ServiceSubcategory", ID: "smb-file-storage", Relationship: "BELONGS_TO" } ]
+            References: [
+              { Class: "ServiceSubcategory", ID: "smb-file-storage", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]
