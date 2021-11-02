@@ -48,3 +48,39 @@ Definitions:
               { Class: "ServiceSubcategory", ID: "bare-metal-server", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]
+
+          aws-ec2-nitro-enclaves:
+            Fields:
+              Name: "Amazon EC2 [Nitro Enclaves]"
+              Description: "Amazon EC2 Nitro Enclaves"
+              Link: "https://aws.amazon.com/ec2/nitro/nitro-enclaves/"
+            FileFields:
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Compute/16/Arch_AWS-Nitro-Enclaves_16.svg", Prefix: "svg+xml;base64," }
+            References: [
+              { Class: "ServiceSubcategory", ID: "confidential-server", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "hosted", Relationship: "HAS_TENANCY_OF" },
+            ]
+
+          aws-ec2-ecs-agent-ami:
+            Fields:
+              Name: "Amazon EC2 [ECS Agent AMI]"
+              Description: "Amazon EC2 ECS Agent AMI"
+              Link: "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/getting-started-ecs-ec2.html"
+            FileFields:
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Compute/16/Arch_Amazon-Elastic-Container-Service_16.svg", Prefix: "svg+xml;base64," }
+            References: [
+              { Class: "ServiceSubcategory", ID: "container-runtime", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "hosted", Relationship: "HAS_TENANCY_OF" },
+            ]
+
+          aws-ec2-bottlerocket-ami:
+            Fields:
+              Name: "Amazon EC2 [Bottlerocket AMI]"
+              Description: "Amazon EC2 Bottlerocket AMI"
+              Link: "https://aws.amazon.com/bottlerocket/"
+            FileFields:
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Compute/16/Arch_Bottlerocket_16.svg", Prefix: "svg+xml;base64," }
+            References: [
+              { Class: "ServiceSubcategory", ID: "container-runtime", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "hosted", Relationship: "HAS_TENANCY_OF" },
+            ]

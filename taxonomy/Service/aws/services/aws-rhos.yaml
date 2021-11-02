@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-rhos:
+    Fields:
+      Name: "Red Hat OpenShift Service"
+      Description: "Red Hat OpenShift Service on AWS (ROSA) provides an integrated experience to use OpenShift."
+      Link: "https://aws.amazon.com/rosa/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Containers/16/Arch_Red-Hat-OpenShift_16.svg", Prefix: "svg+xml;base64," }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-rhos-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "openshift-management", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
+            ]

@@ -34,6 +34,11 @@ Definitions:
                       Name: "bare metal host"
                       Description: "Bare metal server host"
                       Order: "03"
+                  confidential-server:
+                    Fields:
+                      Name: "confidential server"
+                      Description: "confidential server host"
+                      Order: "04"
 
           container:
             Fields:
@@ -74,6 +79,11 @@ Definitions:
                       Name: "kubernetes management"
                       Description: "Kubernetes Management"
                       Order: "01"
+                  openshift-management:
+                    Fields:
+                      Name: "openshift management"
+                      Description: "OpenShift Management"
+                      Order: "02"
 
           faas:
             Fields:
