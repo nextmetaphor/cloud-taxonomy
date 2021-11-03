@@ -2,7 +2,7 @@ Class: "Service"
 Definitions:
   aws-ecs:
     Fields:
-      Name: "AWS Elastic Container Service (ECS)"
+      Name: "AWS ECS"
       Description: "AWS Elastic Container Service"
       Link: "https://aws.amazon.com/ecs"
     FileFields:

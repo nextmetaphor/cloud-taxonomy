@@ -2,7 +2,7 @@ Class: "Service"
 Definitions:
   aws-rds:
     Fields:
-      Name: "Amazon Relational Database Service (RDS)"
+      Name: "Amazon RDS"
       Description: "Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a
         relational database in the cloud."
       Link: "https://aws.amazon.com/rds/"

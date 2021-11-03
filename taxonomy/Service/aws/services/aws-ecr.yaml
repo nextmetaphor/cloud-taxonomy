@@ -2,7 +2,7 @@ Class: "Service"
 Definitions:
   aws-ecr:
     Fields:
-      Name: "AWS Elastic Container Registry (ECR)"
+      Name: "AWS ECR"
       Description: "AWS Elastic Container Registry"
       Link: "https://aws.amazon.com/ecr"
     FileFields:
