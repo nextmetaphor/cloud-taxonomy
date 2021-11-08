@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-event-bridge:
+    Fields:
+      Name: "Amazon EventBridge"
+      Description: "Amazon EventBridge"
+      Link: "https://aws.amazon.com/eventbridge/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_App-Integration/Arch_16/Arch_Amazon-EventBridge_16.svg", Prefix: "svg+xml;base64," }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-event-bridge:
+            References: [
+              { Class: "ServiceSubcategory", ID: "event-bus", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

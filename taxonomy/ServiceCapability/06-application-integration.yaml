@@ -45,11 +45,26 @@ Definitions:
                       Description: "Notification"
                       Order: "01"
 
+          event-bus:
+            Fields:
+              Name: "event bus"
+              Description: "Event Bus"
+              Order: "03"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  event-bus:
+                    Fields:
+                      Name: "event bus"
+                      Description: "Event Bus"
+                      Order: "01"
+
           api-management:
             Fields:
               Name: "api management"
               Description: "API Management"
-              Order: "03"
+              Order: "04"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
@@ -64,7 +79,7 @@ Definitions:
             Fields:
               Name: "media transcoding"
               Description: "Media Transcoding"
-              Order: "04"
+              Order: "05"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
@@ -75,13 +90,11 @@ Definitions:
                       Description: "Media Transcoding"
                       Order: "01"
 
-
-
           email:
             Fields:
               Name: "email"
               Description: "Email"
-              Order: "05"
+              Order: "06"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
@@ -96,7 +109,7 @@ Definitions:
             Fields:
               Name: "blockchain"
               Description: "Blockchain"
-              Order: "06"
+              Order: "07"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
@@ -111,7 +124,7 @@ Definitions:
             Fields:
               Name: "chatbot"
               Description: "Chatbot"
-              Order: "07"
+              Order: "08"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
