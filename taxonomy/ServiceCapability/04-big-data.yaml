@@ -1,0 +1,41 @@
+Class: "ServiceCapability"
+Definitions:
+  big-data:
+    Fields:
+      Name: "big data"
+      Description: "Big Data"
+      Order: "04"
+
+    SubDefinitions:
+      PROVIDED_BY:
+        Class: "ServiceCategory"
+        Definitions:
+          data-lake:
+            Fields:
+              Name: "data lake"
+              Description: "A centralised repository storing both structured and unstructured data"
+              Order: "01"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  data-lake-storage:
+                    Fields:
+                      Name: "data lake storage"
+                      Description: "data lake storage"
+                      Order: "01"
+
+          data-warehouse:
+            Fields:
+              Name: "data warehouse"
+              Description: "An database optimised for analysis of relational data, where the schema is defined in advance."
+              Order: "02"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  data-warehouse-storage:
+                    Fields:
+                      Name: "data warehouse storage"
+                      Description: "data warehouse storage"
+                      Order: "01"

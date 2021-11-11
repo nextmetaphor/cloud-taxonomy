@@ -1,26 +1,26 @@
 Class: "ServiceCapability"
 Definitions:
-  analytics:
+  migration:
     Fields:
-      Name: "analytics"
-      Description: "Analytics"
-      Order: "07"
+      Name: "migration"
+      Description: "Migration"
+      Order: "11"
 
     SubDefinitions:
       PROVIDED_BY:
         Class: "ServiceCategory"
         Definitions:
-          big-data-query:
+          data-transfer:
             Fields:
-              Name: "big data query"
-              Description: "Big Data Query"
+              Name: "data transfer"
+              Description: "Data Transfer Service"
               Order: "01"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
                 Definitions:
-                  big-data-query:
+                  data-transfer:
                     Fields:
-                      Name: "big data query"
-                      Description: "Big Data Query"
+                      Name: "data transfer"
+                      Description: "Data Transfer"
                       Order: "01"

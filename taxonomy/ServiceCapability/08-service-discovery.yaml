@@ -4,7 +4,7 @@ Definitions:
     Fields:
       Name: "service discovery"
       Description: "Service Discovery"
-      Order: "07"
+      Order: "08"
 
     SubDefinitions:
       PROVIDED_BY:

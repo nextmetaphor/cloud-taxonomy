@@ -4,7 +4,7 @@ Definitions:
     Fields:
       Name: "application integration"
       Description: "Application Integration"
-      Order: "06"
+      Order: "07"
 
     SubDefinitions:
       PROVIDED_BY:
