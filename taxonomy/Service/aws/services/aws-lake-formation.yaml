@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-lake-formation:
+    Fields:
+      Name: "AWS Lake Formation"
+      Description: "AWS Lake Formation"
+      Link: "https://aws.amazon.com/lake-formation"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Machine-Learning/16/Arch_Amazon-HealthLake_16.svg", Prefix: "svg+xml;base64," }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-lake-formation-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "data-lake-automation", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

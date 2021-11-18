@@ -34,7 +34,7 @@ yaml-graph report -f report/template-format.yaml -t report/output-template.gohtm
 
 ### Building a Table
 ```bash
-yaml-graph report --load -f report/table-report/fields.yaml -t report/table-report/template.gohtml > report/table-report/table-report.html
+yaml-graph validate -f definition/definition-format.yml && yaml-graph report --load -f report/table-report/fields.yaml -t report/table-report/template.gohtml > report/table-report/table-report.html
  ```
 
 ## Licence

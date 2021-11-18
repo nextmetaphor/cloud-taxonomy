@@ -15,6 +15,13 @@ Definitions:
       CONFIGURED_IN:
         Class: "ServiceConfiguration"
         Definitions:
+          aws-s3:
+            Fields:
+              Name: "AWS S3"
+            References: [
+              { Class: "ServiceSubcategory", ID: "data-lake-storage", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]
           aws-s3-hot:
             Fields:
               Name: "AWS S3 [Standard]"
@@ -22,7 +29,6 @@ Definitions:
               Link: "https://aws.amazon.com/s3/storage-classes#General_purpose"
             References: [
               { Class: "ServiceSubcategory", ID: "hot-object-storage", Relationship: "BELONGS_TO" },
-              { Class: "ServiceSubcategory", ID: "data-lake-storage", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]
           aws-s3-cool:
@@ -34,7 +40,6 @@ Definitions:
               ImgSrc: {Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Storage/Res_48_Dark/Res_Amazon-Simple-Storage-Service_S3-Standard-IA_48_Dark.svg", Prefix: "svg+xml;base64,"}
             References: [
               { Class: "ServiceSubcategory", ID: "cool-object-storage", Relationship: "BELONGS_TO" },
-              { Class: "ServiceSubcategory", ID: "data-lake-storage", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]
           aws-s3-cool-1-zone:
@@ -46,7 +51,6 @@ Definitions:
               ImgSrc: {Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Storage/Res_48_Dark/Res_Amazon-Simple-Storage-Service_S3-One-Zone-IA_48_Dark.svg", Prefix: "svg+xml;base64,"}
             References: [
               { Class: "ServiceSubcategory", ID: "cool-object-storage", Relationship: "BELONGS_TO" },
-              { Class: "ServiceSubcategory", ID: "data-lake-storage", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]
           aws-s3-archive:
@@ -58,7 +62,6 @@ Definitions:
               ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Storage/16/Arch_Amazon-Simple-Storage-Service-Glacier_16.svg", Prefix: "svg+xml;base64,"}
             References: [
               { Class: "ServiceSubcategory", ID: "archive-object-storage", Relationship: "BELONGS_TO" },
-              { Class: "ServiceSubcategory", ID: "data-lake-storage", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]
           aws-s3-deep-archive:
@@ -70,7 +73,6 @@ Definitions:
               ImgSrc: {Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Storage/Res_48_Dark/Res_Amazon-Simple-Storage-Service_S3-Glacier-Deep-Archive_48_Dark.svg", Prefix: "svg+xml;base64,"}
             References: [
               { Class: "ServiceSubcategory", ID: "archive-object-storage", Relationship: "BELONGS_TO" },
-              { Class: "ServiceSubcategory", ID: "data-lake-storage", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]
           aws-s3-intelligent-tiering:
@@ -82,6 +84,5 @@ Definitions:
               ImgSrc: {Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Storage/Res_48_Dark/Res_Amazon-Simple-Storage-Service_S3-Intelligent-Tiering_48_Dark.svg", Prefix: "svg+xml;base64,"}
             References: [
               { Class: "ServiceSubcategory", ID: "intelligent-object-storage", Relationship: "BELONGS_TO" },
-              { Class: "ServiceSubcategory", ID: "data-lake-storage", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]

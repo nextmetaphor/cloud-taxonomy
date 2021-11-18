@@ -19,8 +19,3 @@ Definitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
                 Definitions:
-                  big-data-query:
-                    Fields:
-                      Name: "big data query"
-                      Description: "Big Data Query"
-                      Order: "01"

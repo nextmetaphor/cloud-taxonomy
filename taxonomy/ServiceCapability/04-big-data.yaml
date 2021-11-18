@@ -24,7 +24,16 @@ Definitions:
                       Name: "data lake storage"
                       Description: "data lake storage"
                       Order: "01"
-
+                  data-lake-automation:
+                    Fields:
+                      Name: "data lake automation"
+                      Description: "data lake automation"
+                      Order: "02"
+                  data-lake-query:
+                    Fields:
+                      Name: "data lake query"
+                      Description: "Data Lake Query"
+                      Order: "03"
           data-warehouse:
             Fields:
               Name: "data warehouse"
