@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-emr:
+    Fields:
+      Name: "AWS EMR"
+      Description: "Amazon EMR is a platform for rapidly processing, analyzing, and applying machine learning (ML) to big data using open-source frameworks."
+      Link: "https://aws.amazon.com/emr/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Analytics/Arch_16/Arch_Amazon-EMR_16.svg", Prefix: "svg+xml;base64," }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-emr-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "big-data-provisioned-framework", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
+            ]

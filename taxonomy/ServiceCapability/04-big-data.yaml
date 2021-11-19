@@ -29,11 +29,6 @@ Definitions:
                       Name: "data lake automation"
                       Description: "data lake automation"
                       Order: "02"
-                  data-lake-query:
-                    Fields:
-                      Name: "data lake query"
-                      Description: "Data Lake Query"
-                      Order: "03"
           data-warehouse:
             Fields:
               Name: "data warehouse"
@@ -48,3 +43,22 @@ Definitions:
                       Name: "data warehouse storage"
                       Description: "data warehouse storage"
                       Order: "01"
+          analytics:
+            Fields:
+              Name: "analytics"
+              Description: "BigData query and analytics"
+              Order: "03"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  big-data-query:
+                    Fields:
+                      Name: "big data query"
+                      Description: "Big Data Query"
+                      Order: "01"
+                  big-data-provisioned-framework:
+                    Fields:
+                      Name: "big data provisioned framework"
+                      Description: "Big Data Provisioned Framework"
+                      Order: "02"
