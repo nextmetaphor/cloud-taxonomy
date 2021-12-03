@@ -10,10 +10,10 @@ Definitions:
       PROVIDED_BY:
         Class: "ServiceCategory"
         Definitions:
-          document-dbms:
+          no-sql:
             Fields:
-              Name: "document dbms"
-              Description: "Document Database Management Service"
+              Name: "noSQL"
+              Description: "noSQL Database Management Service"
               Order: "01"
             SubDefinitions:
               GROUPED_BY:
@@ -25,20 +25,23 @@ Definitions:
                       Description: "Document Database Management Service"
                       Order: "01"
 
-          key-value-dbms:
-            Fields:
-              Name: "key/value dbms"
-              Description: "Key/Value Database Management Service"
-              Order: "02"
-            SubDefinitions:
-              GROUPED_BY:
-                Class: "ServiceSubcategory"
-                Definitions:
                   key-value-dbms:
                     Fields:
                       Name: "key/value dbms"
                       Description: "Key/Value Database Management Service"
-                      Order: "01"
+                      Order: "02"
+
+                  tabular-dbms:
+                    Fields:
+                      Name: "tabular dbms"
+                      Description: "Tabular Database Management Service"
+                      Order: "03"
+
+                  graph-dbms:
+                    Fields:
+                      Name: "graph dbms"
+                      Description: "Graph Database Management Service"
+                      Order: "04"
 
           rdbms:
             Fields:
