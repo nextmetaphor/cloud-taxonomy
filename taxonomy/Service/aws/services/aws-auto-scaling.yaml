@@ -6,7 +6,7 @@ Definitions:
       Description: "AWS Auto Scaling"
       Link: "https://aws.amazon.com/autoscaling/"
     FileFields:
-      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Compute/16/Arch_Amazon-EC2-Auto-Scaling_16.svg", Prefix: "svg+xml;base64," }
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Compute/16/Arch_Amazon-EC2-Auto-Scaling_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
     ]

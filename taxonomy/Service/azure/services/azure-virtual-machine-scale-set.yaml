@@ -6,7 +6,7 @@ Definitions:
       Description: "Azure Virtual Machine Scale Set"
       Link: "https://azure.microsoft.com/en-gb/services/virtual-machine-scale-sets/"
     FileFields:
-      ImgSrc: { Path: "../icons/Azure_Public_Service_Icons/Icons/Compute/10034-icon-service-VM-Scale-Sets.svg", Prefix: "svg+xml;base64," }
+      ImgSrc: { Path: "../icons/Azure_Public_Service_Icons/Icons/Compute/10034-icon-service-VM-Scale-Sets.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
     References: [
       { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
     ]

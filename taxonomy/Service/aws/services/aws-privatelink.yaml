@@ -6,7 +6,7 @@ Definitions:
       Description: "AWS PrivateLink provides private connectivity between VPCs, AWS services, and your on-premises networks, without exposing your traffic to the public internet."
       Link: "https://aws.amazon.com/privatelink/"
     FileFields:
-      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Networking-Content-Delivery/16/Arch_AWS-PrivateLink_16.svg", Prefix: "svg+xml;base64," }
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Networking-Content-Delivery/16/Arch_AWS-PrivateLink_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
     ]

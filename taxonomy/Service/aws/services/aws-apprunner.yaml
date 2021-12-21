@@ -6,7 +6,7 @@ Definitions:
       Description: "AWS App Runner is a fully managed service that makes it easy for developers to quickly deploy containerized web applications and APIs, at scale and with no prior infrastructure experience required."
       Link: "https://aws.amazon.com/apprunner/"
     FileFields:
-      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Compute/16/Arch_AWS-App-Runner_16.svg", Prefix: "svg+xml;base64," }
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Compute/16/Arch_AWS-App-Runner_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
     ]

@@ -6,7 +6,7 @@ Definitions:
       Description: "AWS Global Accelerator is a networking service that improves the performance of your users’ traffic by up to 60% using Amazon Web Services’ global network infrastructure."
       Link: "https://aws.amazon.com/global-accelerator/"
     FileFields:
-      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Networking-Content-Delivery/16/Arch_AWS-Global-Accelerator_16.svg", Prefix: "svg+xml;base64," }
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Networking-Content-Delivery/16/Arch_AWS-Global-Accelerator_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
 
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },

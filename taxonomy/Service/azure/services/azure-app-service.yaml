@@ -6,7 +6,7 @@ Definitions:
       Description: "A fully managed platform for building, deploying and scaling your web apps"
       Link: "https://azure.microsoft.com/en-gb/services/app-service/"
     FileFields:
-      ImgSrc: { Path: "../icons/Azure_Public_Service_Icons/Icons/Compute/10035-icon-service-App-Services.svg", Prefix: "svg+xml;base64," }
+      ImgSrc: { Path: "../icons/Azure_Public_Service_Icons/Icons/Compute/10035-icon-service-App-Services.svg", Prefix: "svg+xml;base64," , Encoding: "base64" }
     References: [
       { Class: "ServiceProvider", ID: "azure", Relationship: "PROVIDED_BY" },
     ]

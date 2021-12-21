@@ -6,7 +6,7 @@ Definitions:
       Description: "Amazon FSx makes it easy and cost effective to launch, run, and scale feature-rich, high-performance file systems in the cloud. It supports a wide range of workloads with its reliability, security, scalability, and broad set of capabilities."
       Link: "https://aws.amazon.com/fsx/"
     FileFields:
-      ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Storage/16/Arch_Amazon-FSx_16.svg", Prefix: "svg+xml;base64,"}
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Storage/16/Arch_Amazon-FSx_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
     References: [
       { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
     ]
@@ -21,7 +21,7 @@ Definitions:
               Description: "Amazon FSx for Windows File Server provides fully managed, highly reliable, and scalable file storage that is accessible over the industry-standard Server Message Block (SMB) protocol."
               Link: "https://aws.amazon.com/fsx/windows/"
             FileFields:
-              ImgSrc: {Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Storage/16/Arch_Amazon-FSx-for-Windows-File-Server_16.svg", Prefix: "svg+xml;base64,"}
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Storage/16/Arch_Amazon-FSx-for-Windows-File-Server_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
             References: [
               { Class: "ServiceSubcategory", ID: "smb-file-storage", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
@@ -32,7 +32,7 @@ Definitions:
               Description: "Amazon FSx for Lustre is a fully managed service that provides cost-effective, high-performance, scalable storage for compute workloads. Many workloads such as machine learning, high performance computing (HPC), video rendering, and financial simulations depend on compute instances accessing the same set of data through high-performance shared storage."
               Link: "https://aws.amazon.com/fsx/lustre/"
             FileFields:
-              ImgSrc: {Path: "..//icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Storage/16/Arch_Amazon-FSx-for-Lustre_16.svg", Prefix: "svg+xml;base64,"}
+              ImgSrc: { Path: "..//icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Storage/16/Arch_Amazon-FSx-for-Lustre_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
             References: [
               { Class: "ServiceSubcategory", ID: "lustre-file-storage", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },

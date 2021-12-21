@@ -19,7 +19,7 @@ Definitions:
               Description: "Amazon Elastic Kubernetes Service (EKS) [Hosted Node Groups]"
               Link: "https://aws.amazon.com/eks/"
             FileFields:
-              ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Containers/16/Arch_Amazon-EKS-Cloud_16.svg", Prefix: "svg+xml;base64," }
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Containers/16/Arch_Amazon-EKS-Cloud_16.svg", Prefix: "svg+xml;base64," , Encoding: "base64" }
             References: [
               { Class: "ServiceSubcategory", ID: "kubernetes-management", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
@@ -31,7 +31,7 @@ Definitions:
               Description: "Amazon Elastic Kubernetes Service (EKS) [Managed Node Groups]"
               Link: "https://aws.amazon.com/eks/features/#Managed_node_groups"
             FileFields:
-              ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Containers/16/Arch_Amazon-EKS-Cloud_16.svg", Prefix: "svg+xml;base64," }
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Containers/16/Arch_Amazon-EKS-Cloud_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
             References: [
               { Class: "ServiceSubcategory", ID: "kubernetes-management", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
@@ -43,7 +43,7 @@ Definitions:
               Description: "Amazon Elastic Kubernetes Service (EKS) [Fargate Nodes]"
               Link: "https://aws.amazon.com/eks/features/#Serverless_Compute"
             FileFields:
-              ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Containers/16/Arch_Amazon-EKS-Cloud_16.svg", Prefix: "svg+xml;base64," }
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Containers/16/Arch_Amazon-EKS-Cloud_16.svg", Prefix: "svg+xml;base64," , Encoding: "base64" }
             References: [
               { Class: "ServiceSubcategory", ID: "kubernetes-management", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
