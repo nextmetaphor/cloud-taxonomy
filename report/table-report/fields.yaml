@@ -1,75 +1,37 @@
 SectionClass:
   Class: ServiceCapability
-  Fields:
-    - ID
-    - Name
-    - Description
-    - Order
-  OrderFields:
-    - Order
+  Fields: [ ID, Name, Description, Order ]
+  OrderFields: [ Order ]
 CompositeSections:
   - SectionClass:
       Class: ServiceCategory
-      Fields:
-        - ID
-        - Name
-        - Description
-        - Order
+      Fields: [ ID, Name, Description, Order ]
       Relationship: PROVIDED_BY
-      OrderFields:
-        - Order
+      OrderFields: [ Order ]
     CompositeSections:
       - SectionClass:
           Class: ServiceSubcategory
-          Fields:
-            - ID
-            - Name
-            - Description
-            - Order
+          Fields: [ ID, Name, Description, Order ]
           Relationship: GROUPED_BY
-          OrderFields:
-            - Order
+          OrderFields: [ Order ]
         CompositeSections:
           - SectionClass:
               Class: ServiceConfiguration
-              Fields:
-                - ID
-                - Name
-                - Link
-                - Description
-                - ImgSrc
+              Fields: [ ID, Name, Link, Description, ImgSrc ]
               Relationship: BELONGS_TO
-              OrderFields:
-                - Name
+              OrderFields: [ Name ]
             CompositeSections:
               - SectionClass:
                   Class: Service
-                  Fields:
-                    - ID
-                    - Name
-                    - Link
-                    - Description
-                    - ImgSrc
+                  Fields: [ ID,Name, Link, Description, ImgSrc ]
                   Relationship: CONFIGURED_IN
-                  OrderFields:
-                    - Name
+                  OrderFields: [ Name ]
                 AggregateClasses:
                   - Class: ServiceProvider
-                    Fields:
-                      - ID
-                      - Name
-                      - Description
-                      - Order
+                    Fields: [ ID, Name, Description, Order ]
                     Relationship: PROVIDED_BY
-                    OrderFields:
-                      - Order
+                    OrderFields: [ Order ]
                   - Class: ServiceTenancy
-                    Fields:
-                      - ID
-                      - Name
-                      - Description
-                      - BackgroundColour
-                      - FontColour
+                    Fields: [ ID, Name, Description,BackgroundColour, FontColour ]
                     Relationship: HAS_TENANCY_OF
-                    OrderFields:
-                      - Name
+                    OrderFields: [ Name ]
