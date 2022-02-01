@@ -1,0 +1,21 @@
+SectionClass:
+  Class: ServiceProvider
+  Fields: [ ID, Name, Description, Order ]
+  OrderFields: [ Order ]
+CompositeSections:
+  - SectionClass:
+      Class: Service
+      Fields: [ ID,Name, Link, Description, ImgSrc ]
+      Relationship: PROVIDED_BY
+      OrderFields: [ Name ]
+    AggregateClasses:
+      - Class: ServiceTenancy
+        Fields: [ ID, Name, Description,BackgroundColour, FontColour ]
+        Relationship: HAS_TENANCY_OF
+        OrderFields: [ Name ]
+    CompositeSections:
+      - SectionClass:
+          Class: ServiceConfiguration
+          Fields: [ ID, Name, Link, Description, ImgSrc ]
+          Relationship: CONFIGURED_IN
+          OrderFields: [ Name ]

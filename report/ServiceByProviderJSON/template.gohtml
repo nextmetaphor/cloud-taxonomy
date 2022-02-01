@@ -1,0 +1,57 @@
+[
+{{- $firstProvider := true -}}
+{{- range $provider := . }}
+    {{- if $firstProvider -}}
+        {{- $firstProvider = false }}
+        {
+    {{- else -}}
+        ,{
+    {{- end }}
+    "provider-ID": "{{$provider.ID | js}}",
+    "provider-name": "{{index $provider.Fields "ServiceProvider.Name" }}",
+    "provider-description": "{{index $provider.Fields "ServiceProvider.Description" }}",
+    "services": [
+    {{- range $key,$value := $provider.CompositeSectionDefinitions -}}
+        {{- if eq $key "PROVIDED_BY" -}}
+            {{- $firstService := true -}}
+            {{- range $service := $value }}
+                {{- if $firstService -}}
+                    {{- $firstService = false }}
+                    {
+                {{- else -}}
+                    ,{
+                {{- end }}
+                "service-ID": "{{$service.ID | js}}",
+                "service-name": "{{index $service.Fields "Service.Name" }}",
+                "service-description": "{{index $service.Fields "Service.Description" }}",
+                "service-Link": "{{index $service.Fields "Service.Link" }}",
+{{/*                "service-imgsrc": "{{index $service.Fields "Service.ImgSrc" }}",*/}}
+                "configurations": [
+                {{- range $key,$value := $service.CompositeSectionDefinitions -}}
+                    {{- if eq $key "CONFIGURED_IN" -}}
+                        {{- $firstConfiguration := true -}}
+                        {{- range $configuration := $value -}}
+                            {{- if $firstConfiguration -}}
+                                {{- $firstConfiguration = false }}
+                                {
+                            {{- else -}}
+                                ,{
+                            {{- end }}
+                            "service-configuration-ID": "{{$configuration.ID | js}}",
+                            "service-configuration-name": "{{index $configuration.Fields "ServiceConfiguration.Name" }}",
+                            "service-configuration-description": "{{index $configuration.Fields "ServiceConfiguration.Description" }}",
+                            "service-configuration-link": "{{index $configuration.Fields "ServiceConfiguration.Link" }}"
+{{/*                            "service-configuration-imgsrc": "{{index $configuration.Fields "ServiceConfiguration.ImgSrc" }}"*/}}
+                            }
+                        {{end -}}
+                    {{- end -}}
+                {{- end }}
+                ]
+                }
+            {{- end -}}
+        {{- end -}}
+    {{- end }}
+    ]
+    }
+{{- end }}
+]

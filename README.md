@@ -37,6 +37,11 @@ yaml-graph report -f report/template-format.yaml -t report/output-template.gohtm
 yaml-graph validate -f definition/definition-format.yml && yaml-graph report --load -f report/table-report/fields.yaml -t report/table-report/template.gohtml > report/table-report/table-report.html
  ```
 
+### Building a JSON Document
+```bash
+yaml-graph report -f report/ServiceByProviderJSON/fields.yaml -t report/ServiceByProviderJSON/template.gohtml > report/ServiceByProviderJSON/ServiceByProvider.json
+```
+
 ## Licence
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
