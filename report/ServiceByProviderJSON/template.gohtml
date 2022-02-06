@@ -7,9 +7,9 @@
     {{- else -}}
         ,{
     {{- end }}
-    "provider-ID": "{{$provider.ID | js}}",
-    "provider-name": "{{index $provider.Fields "ServiceProvider.Name" }}",
-    "provider-description": "{{index $provider.Fields "ServiceProvider.Description" }}",
+    "providerID": "{{$provider.ID | js}}",
+    "providerName": "{{index $provider.Fields "ServiceProvider.Name" }}",
+    "providerDescription": "{{index $provider.Fields "ServiceProvider.Description" }}",
     "services": [
     {{- range $key,$value := $provider.CompositeSectionDefinitions -}}
         {{- if eq $key "PROVIDED_BY" -}}
@@ -21,10 +21,10 @@
                 {{- else -}}
                     ,{
                 {{- end }}
-                "service-ID": "{{$service.ID | js}}",
-                "service-name": "{{index $service.Fields "Service.Name" }}",
-                "service-description": "{{index $service.Fields "Service.Description" }}",
-                "service-Link": "{{index $service.Fields "Service.Link" }}",
+                "serviceID": "{{$service.ID | js}}",
+                "serviceName": "{{index $service.Fields "Service.Name" }}",
+                "serviceDescription": "{{index $service.Fields "Service.Description" }}",
+                "serviceLink": "{{index $service.Fields "Service.Link" }}",
 {{/*                "service-imgsrc": "{{index $service.Fields "Service.ImgSrc" }}",*/}}
                 "configurations": [
                 {{- range $key,$value := $service.CompositeSectionDefinitions -}}
@@ -37,10 +37,10 @@
                             {{- else -}}
                                 ,{
                             {{- end }}
-                            "service-configuration-ID": "{{$configuration.ID | js}}",
-                            "service-configuration-name": "{{index $configuration.Fields "ServiceConfiguration.Name" }}",
-                            "service-configuration-description": "{{index $configuration.Fields "ServiceConfiguration.Description" }}",
-                            "service-configuration-link": "{{index $configuration.Fields "ServiceConfiguration.Link" }}"
+                            "serviceConfigurationID": "{{$configuration.ID | js}}",
+                            "serviceConfigurationName": "{{index $configuration.Fields "ServiceConfiguration.Name" }}",
+                            "serviceConfigurationDescription": "{{index $configuration.Fields "ServiceConfiguration.Description" }}",
+                            "serviceConfigurationLink": "{{index $configuration.Fields "ServiceConfiguration.Link" }}"
 {{/*                            "service-configuration-imgsrc": "{{index $configuration.Fields "ServiceConfiguration.ImgSrc" }}"*/}}
                             }
                         {{end -}}
