@@ -7,7 +7,7 @@ pages:
     - yaml-graph load
     - yaml-graph report -f report/table-report/fields.yaml -t report/table-report/template.gohtml > report/table-report/table-report.html
     - yaml-graph report -f report/ServiceByProviderJSON/fields.yaml -t report/ServiceByProviderJSON/template.gohtml > report/ServiceByProviderJSON/ServiceByProvider.json
-    - cp report/by-blueprint-category/by-blueprint-category.html public/index.html
+    - cp report/table-report/table-report.html public/index.html
     - cp report/ServiceByProviderJSON/ServiceByProvider.json public/ServiceByProvider.json
   artifacts:
     paths:
