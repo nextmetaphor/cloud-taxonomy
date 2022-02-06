@@ -1,15 +1,13 @@
 # cloud-taxonomy
 Project to model the Cloud Computing taxonomy in a graph representation using [yaml-graph](https://github.com/nextmetaphor/yaml-graph) definitions.
 
-![Azure Virtual Machine](terraform-azure-vm.jpg)
-
 ## Installation
 ### Install `yaml-graph`
 First, follow the [installation instructions](https://github.com/nextmetaphor/yaml-graph/blob/main/README.md) to build `yaml-graph`. 
 Once this is complete, at the root of the `cloud-taxonomy` repository execute the following to create a `yaml-graph`
 container:
 ```bash
-docker run -it -p7474:7474 -p7687:7687 -v $(PWD)/taxonomy:/home/ymlgraph/definition -v $(PWD)/report:/home/ymlgraph/report nextmetaphor/yaml-graph
+docker run -it -p7474:7474 -p7687:7687 -v $(PWD)/definition:/home/ymlgraph/definition -v $(PWD)/report:/home/ymlgraph/report nextmetaphor/yaml-graph
 ```
 ## Usage
 All of the following commands should be executed from within the `yaml-graph` container.
