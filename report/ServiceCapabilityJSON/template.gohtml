@@ -1,0 +1,54 @@
+[
+{{- $firstCapability := true -}}
+{{- range $capability := . }}
+    {{- if $firstCapability -}}
+        {{- $firstCapability = false -}}
+    {
+    {{- else -}}
+    ,{
+    {{- end }}
+    "ID": "{{$capability.ID | js}}",
+    "name": "{{index $capability.Fields "ServiceCapability.Name" | js }}",
+    "description": "{{index $capability.Fields "ServiceCapability.Description" | js }}",
+    "order": "{{index $capability.Fields "ServiceCapability.Order" | js }}",
+    "categories": [
+    {{- range $key,$value := $capability.CompositeSectionDefinitions -}}
+        {{- if eq $key "PROVIDED_BY" -}}
+            {{- $firstCategory := true -}}
+            {{- range $category := $value }}
+                {{- if $firstCategory -}}
+                    {{- $firstCategory = false -}}
+                    {
+                {{- else -}}
+                    ,{
+                {{- end }}
+        "ID": "{{$category.ID | js}}",
+        "name": "{{index $category.Fields "ServiceCategory.Name" | js }}",
+        "description": "{{index $category.Fields "ServiceCategory.Description" | js }}",
+        "order": "{{index $category.Fields "ServiceCategory.Order" | js }}",
+        "subcategories": [
+                {{- range $key,$value := $category.CompositeSectionDefinitions -}}
+                    {{- if eq $key "GROUPED_BY" -}}
+                        {{- $firstSubcategory := true -}}
+                        {{- range $subcategory := $value -}}
+                            {{- if $firstSubcategory -}}
+                                {{- $firstSubcategory = false -}}
+                                {
+                            {{- else -}}
+                                ,{
+                            {{- end }}
+            "ID": "{{$subcategory.ID | js}}",
+            "name": "{{index $subcategory.Fields "ServiceSubcategory.Name" | js }}",
+            "description": "{{index $subcategory.Fields "ServiceSubcategory.Description" | js }}",
+            "order": "{{index $subcategory.Fields "ServiceSubcategory.Order" | js }}"
+            }
+                        {{- end -}}
+                    {{- end -}}
+                {{- end }}
+        ]}
+            {{- end -}}
+        {{- end -}}
+    {{- end }}
+    ]}
+{{- end }}
+]

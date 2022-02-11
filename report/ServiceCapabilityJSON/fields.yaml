@@ -1,0 +1,16 @@
+SectionClass:
+  Class: ServiceCapability
+  Fields: [ ID, Name, Description, Order ]
+  OrderFields: [ Order, Name ]
+CompositeSections:
+  - SectionClass:
+      Class: ServiceCategory
+      Fields: [ ID, Name, Description, Order ]
+      Relationship: PROVIDED_BY
+      OrderFields: [ Order, Name ]
+    CompositeSections:
+      - SectionClass:
+          Class: ServiceSubcategory
+          Fields: [ ID, Name, Description, Order ]
+          Relationship: GROUPED_BY
+          OrderFields: [ Order, Name ]

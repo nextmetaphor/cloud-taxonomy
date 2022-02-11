@@ -37,7 +37,16 @@ yaml-graph validate -f definition/definition-format.yml && yaml-graph report --l
 
 ### Building a JSON Document
 ```bash
-yaml-graph report -f report/ServiceByProviderJSON/fields.yaml -t report/ServiceByProviderJSON/template.gohtml > report/ServiceByProviderJSON/ServiceByProvider.json
+yaml-graph report -f report/ServiceByProviderJSON/fields.yaml -t report/ServiceByProviderJSON/template.gohtml > report/ServiceByProviderJSON/document.json
+
+# ServiceProvider
+yaml-graph report -f report/ServiceProviderJSON/fields.yaml -t report/ServiceProviderJSON/template.gohtml > report/ServiceProviderJSON/document.json
+
+# ServiceTenancy
+yaml-graph report -f report/ServiceTenancyJSON/fields.yaml -t report/ServiceTenancyJSON/template.gohtml > report/ServiceTenancyJSON/document.json
+
+# ServiceCapability
+yaml-graph report -f report/ServiceCapabilityJSON/fields.yaml -t report/ServiceCapabilityJSON/template.gohtml > report/ServiceCapabilityJSON/document.json
 ```
 
 ## Licence

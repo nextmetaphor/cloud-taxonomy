@@ -1,0 +1,16 @@
+[
+{{- $firstProvider := true -}}
+{{- range $provider := . }}
+    {{- if $firstProvider -}}
+        {{- $firstProvider = false }}
+    {
+    {{- else -}}
+    ,{
+    {{- end }}
+    "ID": "{{$provider.ID | js }}",
+    "name": "{{index $provider.Fields "ServiceProvider.Name" | js }}",
+    "description": "{{index $provider.Fields "ServiceProvider.Description" | js }}",
+    "order": "{{index $provider.Fields "ServiceProvider.Order" | js }}"
+    }
+{{- end }}
+]

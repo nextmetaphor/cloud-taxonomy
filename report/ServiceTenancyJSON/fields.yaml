@@ -1,0 +1,4 @@
+SectionClass:
+  Class: ServiceTenancy
+  Fields: [ ID, Name ]
+  OrderFields: [ Name ]

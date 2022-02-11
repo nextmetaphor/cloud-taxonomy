@@ -5,10 +5,24 @@ pages:
     - sleep 20
     - yaml-graph validate -f definition/definition-format.yml
     - yaml-graph load
+
+    # generate table report
     - yaml-graph report -f report/table-report/fields.yaml -t report/table-report/template.gohtml > report/table-report/table-report.html
-    - yaml-graph report -f report/ServiceByProviderJSON/fields.yaml -t report/ServiceByProviderJSON/template.gohtml > report/ServiceByProviderJSON/ServiceByProvider.json
     - cp report/table-report/table-report.html public/index.html
+
+    # generate JSON documents
+    - yaml-graph report -f report/ServiceByProviderJSON/fields.yaml -t report/ServiceByProviderJSON/template.gohtml > report/ServiceByProviderJSON/document.json
     - cp report/ServiceByProviderJSON/ServiceByProvider.json public/ServiceByProvider.json
+
+    - yaml-graph report -f report/ServiceProviderJSON/fields.yaml -t report/ServiceProviderJSON/template.gohtml > report/ServiceProviderJSON/document.json
+    - cp report/ServiceProviderJSON/document.json public/ServiceProviderJSON.json
+
+    - yaml-graph report -f report/ServiceTenancyJSON/fields.yaml -t report/ServiceTenancyJSON/template.gohtml > report/ServiceTenancyJSON/document.json
+    - cp report/ServiceTenancyJSON/document.json public/ServiceTenancyJSON.json
+
+    - yaml-graph report -f report/ServiceCapabilityJSON/fields.yaml -t report/ServiceCapabilityJSON/template.gohtml > report/ServiceCapabilityJSON/document.json
+    - cp report/ServiceCapabilityJSON/document.json public/ServiceCapabilityJSON.json
+
   artifacts:
     paths:
       - public

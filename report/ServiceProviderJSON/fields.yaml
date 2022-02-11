@@ -1,0 +1,4 @@
+SectionClass:
+  Class: ServiceProvider
+  Fields: [ ID, Name, Description, Order ]
+  OrderFields: [ Order ]

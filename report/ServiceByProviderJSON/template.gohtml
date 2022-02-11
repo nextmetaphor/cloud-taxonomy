@@ -2,56 +2,52 @@
 {{- $firstProvider := true -}}
 {{- range $provider := . }}
     {{- if $firstProvider -}}
-        {{- $firstProvider = false }}
+        {{- $firstProvider = false -}}
         {
     {{- else -}}
         ,{
     {{- end }}
-    "providerID": "{{$provider.ID | js}}",
-    "providerName": "{{index $provider.Fields "ServiceProvider.Name" }}",
-    "providerDescription": "{{index $provider.Fields "ServiceProvider.Description" }}",
+    "ID": "{{$provider.ID | js}}",
+    "name": "{{index $provider.Fields "ServiceProvider.Name" }}",
+    "description": "{{index $provider.Fields "ServiceProvider.Description" }}",
     "services": [
     {{- range $key,$value := $provider.CompositeSectionDefinitions -}}
         {{- if eq $key "PROVIDED_BY" -}}
             {{- $firstService := true -}}
             {{- range $service := $value }}
                 {{- if $firstService -}}
-                    {{- $firstService = false }}
+                    {{- $firstService = false -}}
                     {
                 {{- else -}}
                     ,{
                 {{- end }}
-                "serviceID": "{{$service.ID | js}}",
-                "serviceName": "{{index $service.Fields "Service.Name" }}",
-                "serviceDescription": "{{index $service.Fields "Service.Description" }}",
-                "serviceLink": "{{index $service.Fields "Service.Link" }}",
-{{/*                "service-imgsrc": "{{index $service.Fields "Service.ImgSrc" }}",*/}}
-                "configurations": [
+        "ID": "{{$service.ID | js}}",
+        "name": "{{index $service.Fields "Service.Name" }}",
+        "description": "{{index $service.Fields "Service.Description" }}",
+        "link": "{{index $service.Fields "Service.Link" }}",
+        "configurations": [
                 {{- range $key,$value := $service.CompositeSectionDefinitions -}}
                     {{- if eq $key "CONFIGURED_IN" -}}
                         {{- $firstConfiguration := true -}}
                         {{- range $configuration := $value -}}
                             {{- if $firstConfiguration -}}
-                                {{- $firstConfiguration = false }}
+                                {{- $firstConfiguration = false -}}
                                 {
                             {{- else -}}
                                 ,{
                             {{- end }}
-                            "serviceConfigurationID": "{{$configuration.ID | js}}",
-                            "serviceConfigurationName": "{{index $configuration.Fields "ServiceConfiguration.Name" }}",
-                            "serviceConfigurationDescription": "{{index $configuration.Fields "ServiceConfiguration.Description" }}",
-                            "serviceConfigurationLink": "{{index $configuration.Fields "ServiceConfiguration.Link" }}"
-{{/*                            "service-configuration-imgsrc": "{{index $configuration.Fields "ServiceConfiguration.ImgSrc" }}"*/}}
-                            }
-                        {{end -}}
+            "ID": "{{$configuration.ID | js}}",
+            "name": "{{index $configuration.Fields "ServiceConfiguration.Name" }}",
+            "description": "{{index $configuration.Fields "ServiceConfiguration.Description" }}",
+            "link": "{{index $configuration.Fields "ServiceConfiguration.Link" }}"
+            }
+                        {{- end -}}
                     {{- end -}}
-                {{- end }}
-                ]
-                }
+                {{- end -}}
+        ]}
             {{- end -}}
         {{- end -}}
     {{- end }}
-    ]
-    }
+    ]}
 {{- end }}
 ]

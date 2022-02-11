@@ -1,0 +1,14 @@
+[
+{{- $firstTenancy := true -}}
+{{- range $provider := . }}
+    {{- if $firstTenancy -}}
+        {{- $firstTenancy = false }}
+    {
+    {{- else -}}
+    ,{
+    {{- end }}
+    "ID": "{{$provider.ID | js }}",
+    "name": "{{index $provider.Fields "ServiceTenancy.Name" | js }}"
+    }
+{{- end }}
+]
