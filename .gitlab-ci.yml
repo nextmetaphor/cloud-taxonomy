@@ -12,7 +12,7 @@ pages:
 
     # generate JSON documents
     - yaml-graph report -f report/ServiceByProviderJSON/fields.yaml -t report/ServiceByProviderJSON/template.gohtml > report/ServiceByProviderJSON/document.json
-    - cp report/ServiceByProviderJSON/ServiceByProvider.json public/ServiceByProvider.json
+    - cp report/ServiceByProviderJSON/document.json public/ServiceByProvider.json
 
     - yaml-graph report -f report/ServiceProviderJSON/fields.yaml -t report/ServiceProviderJSON/template.gohtml > report/ServiceProviderJSON/document.json
     - cp report/ServiceProviderJSON/document.json public/ServiceProviderJSON.json
