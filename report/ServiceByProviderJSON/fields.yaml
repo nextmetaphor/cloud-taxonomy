@@ -19,3 +19,9 @@ CompositeSections:
           Fields: [ ID, Name, Link, Description, ImgSrc ]
           Relationship: CONFIGURED_IN
           OrderFields: [ Name ]
+        CompositeSections:
+          - SectionClass:
+              Class: ServiceSubcategory
+              Fields: [ ID, Name, Description ]
+              Relationship: BELONGS_TO
+              OrderFields: [ Name ]
