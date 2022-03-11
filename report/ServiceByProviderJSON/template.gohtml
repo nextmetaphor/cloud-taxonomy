@@ -39,13 +39,25 @@
                                 ,{
                             {{- end }}
 
-                            "ID": "{{$configuration.ID | js}}",
-                            "name": "{{index $configuration.Fields "ServiceConfiguration.Name" }}",
-                            "description": "{{index $configuration.Fields "ServiceConfiguration.Description" }}",
-                            "link": "{{index $configuration.Fields "ServiceConfiguration.Link" }}",
+                            {{- $configurationName := index $configuration.Fields "ServiceConfiguration.Name" -}}
+                            {{ if $configurationName }}
+                                "name": "{{ $configurationName }}",
+                            {{- end -}}
+
+                            {{- $configurationDescription := index $configuration.Fields "ServiceConfiguration.Description" -}}
+                            {{ if $configurationDescription }}
+                                "description": "{{ $configurationDescription  }}",
+                            {{- end -}}
+
+                            {{- $configurationLink := index $configuration.Fields "ServiceConfiguration.Link" -}}
+                            {{ if $configurationLink }}
+                                "link": "{{ $configurationLink  }}",
+                            {{- end -}}
+                            "ID": "{{$configuration.ID | js}}"
 
                             {{- range $key,$value := $configuration.CompositeSectionDefinitions -}}
-                                {{- if eq $key "BELONGS_TO" }}
+                                {{- if eq $key "BELONGS_TO" -}}
+                                    ,
                                     "subcategories": [
                                     {{- $firstSubcategory := true -}}
                                     {{- range $subcategory := $value -}}
