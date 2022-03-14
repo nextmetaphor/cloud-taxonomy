@@ -8,8 +8,8 @@
         ,{
     {{- end }}
     "ID": "{{$provider.ID | js}}",
-    "name": "{{index $provider.Fields "ServiceProvider.Name" }}",
-    "description": "{{index $provider.Fields "ServiceProvider.Description" }}",
+    "name": "{{index $provider.Fields "ServiceProvider.Name" | js }}",
+    "description": "{{index $provider.Fields "ServiceProvider.Description" | js }}",
 
     "services": [
     {{- range $key,$value := $provider.CompositeSectionDefinitions -}}
@@ -22,14 +22,19 @@
                 {{- else -}}
                     ,{
                 {{- end }}
+
+                {{- $imgSrc := index $service.Fields "Service.ImgSrc" -}}
+                {{- if $imgSrc -}}
+                    "imgSrc": "{{ $imgSrc }}",
+                {{- end }}
                 "ID": "{{$service.ID | js}}",
-                "name": "{{index $service.Fields "Service.Name" }}",
-                "description": "{{index $service.Fields "Service.Description" }}",
-                "link": "{{index $service.Fields "Service.Link" }}",
+                "name": "{{index $service.Fields "Service.Name" | js }}",
+                "description": "{{index $service.Fields "Service.Description" | js }}",
+                "link": "{{index $service.Fields "Service.Link" | js }}"
 
                 {{- range $key,$value := $service.CompositeSectionDefinitions -}}
                     {{- if eq $key "CONFIGURED_IN" }}
-                        "configurations": [
+                        ,"configurations": [
                         {{- $firstConfiguration := true -}}
                         {{- range $configuration := $value -}}
                             {{- if $firstConfiguration -}}
@@ -41,18 +46,24 @@
 
                             {{- $configurationName := index $configuration.Fields "ServiceConfiguration.Name" -}}
                             {{ if $configurationName }}
-                                "name": "{{ $configurationName }}",
+                                "name": "{{ $configurationName | js}}",
                             {{- end -}}
 
                             {{- $configurationDescription := index $configuration.Fields "ServiceConfiguration.Description" -}}
                             {{ if $configurationDescription }}
-                                "description": "{{ $configurationDescription  }}",
+                                "description": "{{ $configurationDescription | js }}",
                             {{- end -}}
 
                             {{- $configurationLink := index $configuration.Fields "ServiceConfiguration.Link" -}}
                             {{ if $configurationLink }}
-                                "link": "{{ $configurationLink  }}",
+                                "link": "{{ $configurationLink | js }}",
                             {{- end -}}
+
+                            {{- $imgSrc := index $configuration.Fields "ServiceConfiguration.ImgSrc" -}}
+                            {{ if $imgSrc }}
+                                "imgSrc": "{{ $imgSrc | js }}",
+                            {{- end -}}
+
                             "ID": "{{$configuration.ID | js}}"
 
                             {{- range $key,$value := $configuration.CompositeSectionDefinitions -}}
@@ -68,8 +79,8 @@
                                             ,{
                                         {{- end }}
                                         "ID": "{{$subcategory.ID | js}}",
-                                        "name": "{{index $subcategory.Fields "ServiceSubcategory.Name" }}",
-                                        "description": "{{index $subcategory.Fields "ServiceSubcategory.Description" }}"
+                                        "name": "{{index $subcategory.Fields "ServiceSubcategory.Name" | js }}",
+                                        "description": "{{index $subcategory.Fields "ServiceSubcategory.Description" | js }}"
                                         }
                                     {{- end }}
                                     ]
