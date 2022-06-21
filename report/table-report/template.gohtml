@@ -109,9 +109,9 @@
     {{- $capabilityDescription := index $capability.Fields "ServiceCapability.Description"}}
 
     <script>
-        serviceCapabilityMap.set({{$capabilityID}}, {
-            Name: {{$capabilityName}},
-            Description: {{$capabilityDescription}},
+        serviceCapabilityMap.set("{{$capabilityID}}", {
+            Name: "{{$capabilityName}}",
+            Description: "{{$capabilityDescription}}",
             CategoryMap: new Map(),
         })
     </script>
@@ -119,16 +119,16 @@
     {{- range $key,$value := $capability.CompositeSectionDefinitions -}}
         {{- if eq $key "PROVIDED_BY" -}}
             {{- range $category := $value -}}
-                {{- $categoryClass := $category.Class -}}
-                {{- $categoryID := $category.ID -}}
+                {{- $categoryClass := $category.Class | nilToStr | js -}}
+                {{- $categoryID := $category.ID | nilToStr | js -}}
                 {{- $categoryUID := (print $categoryClass "-" $categoryID)}}
-                {{- $categoryName := index $category.Fields "ServiceCategory.Name"}}
-                {{- $categoryDescription := index $category.Fields "ServiceCategory.Description"}}
+                {{- $categoryName := index $category.Fields "ServiceCategory.Name" | nilToStr | js }}
+                {{- $categoryDescription := index $category.Fields "ServiceCategory.Description" | nilToStr | js }}
 
                 <script>
-                    serviceCapabilityMap.get({{$capabilityID}}).CategoryMap.set({{$categoryID}}, {
-                        Name: {{$categoryName}},
-                        Description: {{$categoryDescription}},
+                    serviceCapabilityMap.get("{{$capabilityID}}").CategoryMap.set("{{$categoryID}}", {
+                        Name: "{{$categoryName}}",
+                        Description: "{{$categoryDescription}}",
                         SubcategoryMap: new Map(),
                     })
                 </script>
@@ -136,16 +136,16 @@
                 {{- range $key,$value := $category.CompositeSectionDefinitions -}}
                     {{- if eq $key "GROUPED_BY" -}}
                         {{- range $subcategory := $value -}}
-                            {{- $subcategoryClass := $subcategory.Class -}}
-                            {{- $subcategoryID := $subcategory.ID -}}
+                            {{- $subcategoryClass := $subcategory.Class | nilToStr | js -}}
+                            {{- $subcategoryID := $subcategory.ID | nilToStr | js -}}
                             {{- $subcategoryUID := (printf "%s-%s" $subcategoryClass $subcategoryID)}}
-                            {{- $subcategoryName := index $subcategory.Fields "ServiceSubcategory.Name" -}}
-                            {{- $subcategoryDescription := index $subcategory.Fields "ServiceSubcategory.Description" -}}
+                            {{- $subcategoryName := index $subcategory.Fields "ServiceSubcategory.Name" | nilToStr | js -}}
+                            {{- $subcategoryDescription := index $subcategory.Fields "ServiceSubcategory.Description" | nilToStr | js -}}
 
                             <script>
-                                serviceCapabilityMap.get({{$capabilityID}}).CategoryMap.get({{$categoryID}}).SubcategoryMap.set({{$subcategoryID}}, {
-                                    Name: {{$subcategoryName}},
-                                    Description: {{$subcategoryDescription}},
+                                serviceCapabilityMap.get("{{$capabilityID}}").CategoryMap.get("{{$categoryID}}").SubcategoryMap.set("{{$subcategoryID}}", {
+                                    Name: "{{$subcategoryName}}",
+                                    Description: "{{$subcategoryDescription}}",
                                     ServiceByTenancyMap: new Map()
                                 })
                             </script>
@@ -153,69 +153,69 @@
                             {{- range $key,$value := $subcategory.CompositeSectionDefinitions -}}
                                 {{- if eq $key "BELONGS_TO" -}}
                                     {{- range $serviceConfiguration := $value -}}
-                                        {{- $serviceConfigurationClass := $serviceConfiguration.Class -}}
-                                        {{- $serviceConfigurationID := $serviceConfiguration.ID -}}
+                                        {{- $serviceConfigurationClass := $serviceConfiguration.Class | nilToStr | js -}}
+                                        {{- $serviceConfigurationID := $serviceConfiguration.ID | nilToStr | js -}}
                                         {{- $serviceConfigurationUID := (printf "%s-%s" $serviceConfigurationClass $serviceConfigurationID)}}
-                                        {{- $serviceConfigurationName := index $serviceConfiguration.Fields "ServiceConfiguration.Name" -}}
-                                        {{- $serviceConfigurationDescription := index $serviceConfiguration.Fields "ServiceConfiguration.Description" -}}
-                                        {{- $serviceConfigurationLink := index $serviceConfiguration.Fields "ServiceConfiguration.Link" -}}
-                                        {{- $serviceConfigurationImgSrc := index $serviceConfiguration.Fields "ServiceConfiguration.ImgSrc" -}}
+                                        {{- $serviceConfigurationName := index $serviceConfiguration.Fields "ServiceConfiguration.Name" | nilToStr | js -}}
+                                        {{- $serviceConfigurationDescription := index $serviceConfiguration.Fields "ServiceConfiguration.Description" | nilToStr | js -}}
+                                        {{- $serviceConfigurationLink := index $serviceConfiguration.Fields "ServiceConfiguration.Link" | nilToStr | js -}}
+                                        {{- $serviceConfigurationImgSrc := index $serviceConfiguration.Fields "ServiceConfiguration.ImgSrc" | nilToStr | js -}}
 
                                         {{- range $key,$value := $serviceConfiguration.CompositeSectionDefinitions -}}
                                             {{- if eq $key "CONFIGURED_IN" -}}
                                                 {{- range $service := $value -}}
-                                                    {{- $serviceClass := $service.Class -}}
-                                                    {{- $serviceID := $service.ID -}}
+                                                    {{- $serviceClass := $service.Class | nilToStr | js -}}
+                                                    {{- $serviceID := $service.ID | nilToStr | js -}}
                                                     {{- $serviceUID := (printf "%s-%s" $serviceClass $serviceID)}}
-                                                    {{- $serviceName := index $service.Fields "Service.Name" -}}
-                                                    {{- $serviceDescription := index $service.Fields "Service.Description" -}}
-                                                    {{- $serviceLink := index $service.Fields "Service.Link" -}}
-                                                    {{- $serviceImgSrc := index $service.Fields "Service.ImgSrc" -}}
+                                                    {{- $serviceName := index $service.Fields "Service.Name" | nilToStr | js -}}
+                                                    {{- $serviceDescription := index $service.Fields "Service.Description" | nilToStr | js -}}
+                                                    {{- $serviceLink := index $service.Fields "Service.Link" | nilToStr | js -}}
+                                                    {{- $serviceImgSrc := index $service.Fields "Service.ImgSrc" | js | nilToStr | js -}}
 
-                                                    {{- $providerID := index $service.Fields "ServiceProvider.ID" -}}
-                                                    {{- $providerName := index $service.Fields "ServiceProvider.Name" -}}
-                                                    {{- $tenancyID := index $service.Fields "ServiceTenancy.ID" -}}
-                                                    {{- $tenancyName := index $service.Fields "ServiceTenancy.Name" -}}
-                                                    {{- $tenancyBackgroundColour := index $service.Fields "ServiceTenancy.BackgroundColour" -}}
-                                                    {{- $tenancyFontColour := index $service.Fields "ServiceTenancy.FontColour" -}}
+                                                    {{- $providerID := index $service.Fields "ServiceProvider.ID" | nilToStr | js -}}
+                                                    {{- $providerName := index $service.Fields "ServiceProvider.Name" | nilToStr | js -}}
+                                                    {{- $tenancyID := index $service.Fields "ServiceTenancy.ID" | nilToStr | js -}}
+                                                    {{- $tenancyName := index $service.Fields "ServiceTenancy.Name" | nilToStr | js -}}
+                                                    {{- $tenancyBackgroundColour := index $service.Fields "ServiceTenancy.BackgroundColour" | nilToStr | js -}}
+                                                    {{- $tenancyFontColour := index $service.Fields "ServiceTenancy.FontColour" | nilToStr | js -}}
 
                                                     <script>
-                                                        serviceConfigurationMap.set({{$serviceConfigurationID}}, {
-                                                            Name: {{$serviceConfigurationName}},
-                                                            Description: {{$serviceConfigurationDescription}},
-                                                            Link: {{$serviceConfigurationLink}},
-                                                            ImgSrc: {{$serviceConfigurationImgSrc}},
-                                                            ServiceID: {{$serviceID}},
+                                                        serviceConfigurationMap.set("{{$serviceConfigurationID}}", {
+                                                            Name: "{{$serviceConfigurationName}}",
+                                                            Description: "{{$serviceConfigurationDescription}}",
+                                                            Link: "{{$serviceConfigurationLink}}",
+                                                            ImgSrc: "{{$serviceConfigurationImgSrc}}",
+                                                            ServiceID: "{{$serviceID}}",
                                                         })
 
-                                                        serviceMap.set({{$serviceID}}, {
-                                                            Name: {{$serviceName}},
-                                                            Description: {{$serviceDescription}},
-                                                            Link: {{$serviceLink}},
-                                                            ImgSrc: {{$serviceImgSrc}},
-                                                            ProviderID: {{$providerID}},
-                                                            TenancyID: {{$tenancyID}},
+                                                        serviceMap.set("{{$serviceID}}", {
+                                                            Name: "{{$serviceName}}",
+                                                            Description: "{{$serviceDescription}}",
+                                                            Link: "{{$serviceLink}}",
+                                                            ImgSrc: "{{$serviceImgSrc}}",
+                                                            ProviderID: "{{$providerID}}",
+                                                            TenancyID: "{{$tenancyID}}",
                                                         })
 
-                                                        serviceProviderMap.set({{$providerID}}, {
-                                                            Name: {{$providerName}},
+                                                        serviceProviderMap.set("{{$providerID}}", {
+                                                            Name: "{{$providerName}}",
                                                         })
 
-                                                        serviceTenancyMap.set({{$tenancyID}}, {
-                                                            Name: {{$tenancyName}},
-                                                            BackgroundColour: {{$tenancyBackgroundColour}},
-                                                            FontColour: {{$tenancyFontColour}},
+                                                        serviceTenancyMap.set("{{$tenancyID}}", {
+                                                            Name: "{{$tenancyName}}",
+                                                            BackgroundColour: "{{$tenancyBackgroundColour}}",
+                                                            FontColour: "{{$tenancyFontColour}}",
                                                         })
 
                                                         // TODO this breaks if we have more than one service per subcategory
-                                                        tm = serviceCapabilityMap.get({{$capabilityID}}).CategoryMap.get({{$categoryID}}).SubcategoryMap.get({{$subcategoryID}}).ServiceByTenancyMap
-                                                        if (tm.get({{$providerID}}) === undefined ) {
-                                                            tm.set({{$providerID}}, new Map())
+                                                        tm = serviceCapabilityMap.get("{{$capabilityID}}").CategoryMap.get("{{$categoryID}}").SubcategoryMap.get("{{$subcategoryID}}").ServiceByTenancyMap
+                                                        if (tm.get("{{$providerID}}") === undefined ) {
+                                                            tm.set("{{$providerID}}", new Map())
                                                         }
-                                                        tm.get({{$providerID}}).set({{$serviceConfigurationID}}, {
-                                                                ServiceConfigurationID: {{$serviceConfigurationID}}}
+                                                        tm.get("{{$providerID}}").set("{{$serviceConfigurationID}}", {
+                                                                ServiceConfigurationID: "{{$serviceConfigurationID}}"}
                                                         )
-                                                        {{/*serviceCapabilityMap.get({{$capabilityID}}).CategoryMap.get({{$categoryID}}).SubcategoryMap.get({{$subcategoryID}}).ServiceByTenancyMap.set({{$providerID}}, {*/}}
+                                                        {{/*serviceCapabilityMap.get("{{$capabilityID}}").CategoryMap.get("{{$categoryID}}").SubcategoryMap.get("{{$subcategoryID}}").ServiceByTenancyMap.set("{{$providerID}}", {*/}}
                                                         {{/*    ServiceConfigurationID: {{$serviceConfigurationID}}*/}}
                                                         {{/*});*/}}
                                                     </script>
