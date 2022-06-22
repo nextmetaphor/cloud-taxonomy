@@ -1,5 +1,7 @@
 # cloud-taxonomy
-Project to model the Cloud Computing taxonomy in a graph representation using [yaml-graph](https://github.com/nextmetaphor/yaml-graph) definitions.
+Project to model the Cloud Computing taxonomy in a graph representation using [yaml-graph](https://github.com/nextmetaphor/yaml-graph) definitions. The data model for this is shown below:
+
+![Cloud Taxonomy](cloud-taxonomy.jpg)
 
 ## Installation
 ### Install `yaml-graph`
