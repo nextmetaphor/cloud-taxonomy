@@ -170,7 +170,7 @@
                                                     {{- $serviceName := index $service.Fields "Service.Name" | nilToStr | js -}}
                                                     {{- $serviceDescription := index $service.Fields "Service.Description" | nilToStr | js -}}
                                                     {{- $serviceLink := index $service.Fields "Service.Link" | nilToStr | js -}}
-                                                    {{- $serviceImgSrc := index $service.Fields "Service.ImgSrc" | js | nilToStr | js -}}
+                                                    {{- $serviceImgSrc := index $service.Fields "Service.ImgSrc" | nilToStr | js -}}
 
                                                     {{- $providerID := index $service.Fields "ServiceProvider.ID" | nilToStr | js -}}
                                                     {{- $providerName := index $service.Fields "ServiceProvider.Name" | nilToStr | js -}}
@@ -178,6 +178,19 @@
                                                     {{- $tenancyName := index $service.Fields "ServiceTenancy.Name" | nilToStr | js -}}
                                                     {{- $tenancyBackgroundColour := index $service.Fields "ServiceTenancy.BackgroundColour" | nilToStr | js -}}
                                                     {{- $tenancyFontColour := index $service.Fields "ServiceTenancy.FontColour" | nilToStr | js -}}
+
+                                                    {{ if not $serviceConfigurationName }}
+                                                        {{ $serviceConfigurationName = $serviceName}}
+                                                    {{ end }}
+                                                    {{ if not $serviceConfigurationDescription }}
+                                                        {{ $serviceConfigurationDescription = $serviceDescription}}
+                                                    {{ end }}
+                                                    {{ if not $serviceConfigurationLink }}
+                                                        {{ $serviceConfigurationLink = $serviceLink}}
+                                                    {{ end }}
+                                                    {{ if not $serviceConfigurationImgSrc }}
+                                                        {{ $serviceConfigurationImgSrc = $serviceImgSrc}}
+                                                    {{ end }}
 
                                                     <script>
                                                         serviceConfigurationMap.set("{{$serviceConfigurationID}}", {
