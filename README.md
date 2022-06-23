@@ -1,7 +1,16 @@
 # cloud-taxonomy
-Project to model the Cloud Computing taxonomy in a graph representation using [yaml-graph](https://github.com/nextmetaphor/yaml-graph) definitions. The data model for this is shown below:
+Project to model the Cloud Computing taxonomy in a graph representation using [yaml-graph](https://github.com/nextmetaphor/yaml-graph) definitions. 
 
+The data model used for this is as follows:
 ![Cloud Taxonomy](cloud-taxonomy.jpg)
+
+The following reports are automatically generated from these definitions:
+* [table of services from each provider broken down by capability, category and subcategory](https://nextmetaphor.gitlab.io/cloud-taxonomy/index.html)
+  ![Cloud Taxonomy HTML generated from yaml-graph definitions](cloud-taxonomy-html.jpg)
+* [service by provider in JSON format](https://nextmetaphor.gitlab.io/cloud-taxonomy/ServiceByProvider.json)
+* [categories and subcategories by capability in JSON format](https://nextmetaphor.gitlab.io/cloud-taxonomy/ServiceCapabilityJSON.json)
+* [service providers in JSON format](https://nextmetaphor.gitlab.io/cloud-taxonomy/ServiceProviderJSON.json)
+* [service tenancies in JSON format](https://nextmetaphor.gitlab.io/cloud-taxonomy/ServiceTenancyJSON.json)
 
 ## Installation
 ### Install `yaml-graph`
