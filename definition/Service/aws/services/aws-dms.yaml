@@ -1,0 +1,42 @@
+Class: "Service"
+Definitions:
+  aws-dms-schema-conversion-tool:
+    Fields:
+      Name: "AWS Schema Conversion Tool"
+      Description: "The AWS Schema Conversion Tool (AWS SCT) makes heterogeneous database migrations predictable. It automatically converts the source database schema and a majority of the database code objects, including views, stored procedures, and functions, to a format compatible with the target database. Any objects that cannot be automatically converted are clearly marked so that they can be manually converted to complete the migration."
+      Link: "https://aws.amazon.com/dms/schema-conversion-tool/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Database/16/Arch_AWS-Database-Migration-Service_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-dms-schema-conversion-tool-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "heterogeneous-database-migration", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]
+
+  aws-dms:
+    Fields:
+      Name: "AWS DMS"
+      Description: "AWS Database Migration Service (AWS DMS) helps you migrate databases to AWS quickly and securely. The source database remains fully operational during the migration, minimizing downtime to applications that rely on the database. The AWS Database Migration Service can migrate your data to and from the most widely used commercial and open-source databases."
+      Link: "https://aws.amazon.com/dms/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Database/16/Arch_AWS-Database-Migration-Service_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-dms-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "homogeneous-database-migration", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "heterogeneous-database-migration", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

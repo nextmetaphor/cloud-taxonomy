@@ -17,6 +17,6 @@ Definitions:
         Definitions:
           aws-data-sync-default:
             References: [
-              { Class: "ServiceSubcategory", ID: "data-transfer", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "data-transfer-terabyte-scale", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]
