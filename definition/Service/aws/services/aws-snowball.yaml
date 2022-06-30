@@ -1,0 +1,33 @@
+Class: "Service"
+Definitions:
+  aws-snowball:
+    Fields:
+      Name: "AWS Snowball"
+      Description: "Accelerate moving offline data or remote storage to the cloud."
+      Link: "https://aws.amazon.com/snowball/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Storage/16/Arch_AWS-Snowball_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-snowball-edge-storage-optimised:
+            Fields:
+              Name: "AWS Snowball Edge Storage Optimised"
+            References: [
+              { Class: "ServiceSubcategory", ID: "data-migration-terabyte-scale", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "data-migration-petabyte-scale", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]
+          aws-snowball-edge-compute-optimised:
+            Fields:
+              Name: "AWS Snowball Edge Compute Optimised"
+            References: [
+              { Class: "ServiceSubcategory", ID: "data-migration-terabyte-scale", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "data-migration-petabyte-scale", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

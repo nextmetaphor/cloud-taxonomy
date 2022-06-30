@@ -19,35 +19,40 @@ Definitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
                 Definitions:
+                  application-discovery:
+                    Fields:
+                      Name: "application discovery"
+                      Description: "Application Discovery"
+                      Order: "01"
                   migration-management:
                     Fields:
                       Name: "migration management"
                       Description: "Migration Management"
-                      Order: "01"
+                      Order: "02"
 
-          data-transfer:
+          data-migration:
             Fields:
-              Name: "data transfer"
-              Description: "Data Transfer Service"
+              Name: "data migration"
+              Description: "Data Migration Service"
               Order: "02"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
                 Definitions:
-                  data-transfer-terabyte-scale:
+                  data-migration-terabyte-scale:
                     Fields:
-                      Name: "data transfer (terabyte scale)"
-                      Description: "Terabyte Scale Data Transfer"
+                      Name: "data migration (terabyte scale)"
+                      Description: "Terabyte Scale Data Migration"
                       Order: "01"
-                  data-transfer-petabyte-scale:
+                  data-migration-petabyte-scale:
                     Fields:
-                      Name: "data transfer (petabyte scale)"
-                      Description: "Petabyte Scale Data Transfer"
+                      Name: "data migration (petabyte scale)"
+                      Description: "Petabyte Scale Data Migration"
                       Order: "02"
-                  data-transfer-exabyte-scale:
+                  data-migration-exabyte-scale:
                     Fields:
-                      Name: "data transfer (exabyte scale)"
-                      Description: "Exabyte Scale Data Transfer"
+                      Name: "data migration (exabyte scale)"
+                      Description: "Exabyte Scale Data Migration"
                       Order: "03"
 
           database-migration:
@@ -68,4 +73,24 @@ Definitions:
                     Fields:
                       Name: "heterogeneous database migration"
                       Description: "Database Migration where the source and target database engines are different."
+                      Order: "02"
+
+          server-migration:
+            Fields:
+              Name: "server migration"
+              Description: "Server Migration"
+              Order: "04"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  physical-server-migration:
+                    Fields:
+                      Name: "physical server migration"
+                      Description: "Non-VM server migration"
+                      Order: "01"
+                  vm-server-migration:
+                    Fields:
+                      Name: "vm server migration"
+                      Description: "VM server migration"
                       Order: "02"

@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-application-discovery-service:
+    Fields:
+      Name: "AWS Application Discovery Service"
+      Description: "AWS Application Discovery Service helps enterprise customers plan migration projects by gathering information about their on-premises data centers."
+      Link: "https://aws.amazon.com/application-discovery/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Migration-Transfer/16/Arch_AWS-Application-Discovery-Service_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-application-discovery-service-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "application-discovery", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

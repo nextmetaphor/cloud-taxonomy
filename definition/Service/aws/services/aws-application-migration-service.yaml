@@ -1,0 +1,23 @@
+Class: "Service"
+Definitions:
+  aws-application-migration-service:
+    Fields:
+      Name: "AWS Application Migration Service"
+      Description: "AWS Application Migration Service (AWS MGN) allows you to quickly realize the benefits of migrating applications to the cloud with minimal downtime. AWS Application Migration Service minimizes time-intensive, error-prone manual processes by automatically converting your source servers from physical, virtual, and cloud infrastructure to run natively on AWS. It further simplifies your migration by allowing you to use the same automated process for a wide range of applications."
+      Link: "https://aws.amazon.com/application-migration-service/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Migration-Transfer/16/Arch_AWS-Server-Migration-Service_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-application-migration-service-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "physical-server-migration", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "vm-server-migration", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]
