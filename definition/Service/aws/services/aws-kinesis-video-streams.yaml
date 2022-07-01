@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-kinesis-video-streams:
+    Fields:
+      Name: "Amazon Kinesis Video Streams"
+      Description: "Capture, process, and store media streams for playback, analytics, and machine learning."
+      Link: "https://aws.amazon.com/kinesis/video-streams"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Analytics/Arch_16/Arch_Amazon-Kinesis-Video-Streams_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-kinesis-video-streams-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "big-data-streaming-ingestion", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
+            ]

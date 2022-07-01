@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-kinesis-data-streams:
+    Fields:
+      Name: "Amazon Kinesis Data Streams"
+      Description: "Amazon Kinesis Data Streams is a serverless streaming data service that makes it easy to capture, process, and store data streams at any scale."
+      Link: "https://aws.amazon.com/kinesis/data-streams/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Analytics/Arch_16/Arch_Amazon-Kinesis-Data-Streams_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-kinesis-data-streams-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "big-data-streaming-ingestion", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
+            ]

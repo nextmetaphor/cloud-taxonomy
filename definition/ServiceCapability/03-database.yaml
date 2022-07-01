@@ -14,7 +14,7 @@ Definitions:
             Fields:
               Name: "noSQL"
               Description: "noSQL Database Management Service"
-              Order: "01"
+              Order: "02"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
@@ -47,7 +47,7 @@ Definitions:
             Fields:
               Name: "relational dbms"
               Description: "Relational Database Management Service"
-              Order: "03"
+              Order: "01"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
@@ -57,3 +57,23 @@ Definitions:
                       Name: "relational dbms"
                       Description: "Relational Database Management Service"
                       Order: "01"
+
+          in-memory-cache:
+            Fields:
+              Name: "in-memory-cache"
+              Description: "In-Memory Cache"
+              Order: "03"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  in-memory-cache-redis:
+                    Fields:
+                      Name: "redis cache"
+                      Description: "Redis cache"
+                      Order: "01"
+                  in-memory-cache-memcached:
+                    Fields:
+                      Name: "memcached cache"
+                      Description: "Memcached cache"
+                      Order: "02"

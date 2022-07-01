@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-documentdb:
+    Fields:
+      Name: "Amazon DocumentDB (with MongoDB compatibility)"
+      Description: "Scale JSON workloads with ease using a fully managed document database service."
+      Link: "https://aws.amazon.com/documentdb/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Database/16/Arch_Amazon-DocumentDB_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-documentdb-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "document-dbms", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
+            ]

@@ -62,3 +62,22 @@ Definitions:
                       Name: "big data provisioned framework"
                       Description: "Big Data Provisioned Framework"
                       Order: "02"
+          streaming:
+            Fields:
+              Name: "streaming"
+              Description: "Streaming"
+              Order: "04"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  big-data-streaming-ingestion:
+                    Fields:
+                      Name: "streaming ingestion"
+                      Description: "Streaming Ingestion"
+                      Order: "01"
+                  big-data-streaming-analysis:
+                    Fields:
+                      Name: "streaming analysis"
+                      Description: "Streaming Analysis"
+                      Order: "02"

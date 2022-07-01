@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-kinesis-data-analytics:
+    Fields:
+      Name: "Amazon Kinesis Data Analytics"
+      Description: "Amazon Kinesis Data Analytics is the easiest way to transform and analyze streaming data in real time using Apache Flink."
+      Link: "https://aws.amazon.com/kinesis/data-analytics/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Analytics/Arch_16/Arch_Amazon-Kinesis-Data-Analytics_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-kinesis-data-analytics-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "big-data-streaming-analysis", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
+            ]
