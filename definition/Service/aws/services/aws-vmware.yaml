@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-vmware:
+    Fields:
+      Name: "VMware Cloud on AWS"
+      Description: "AWS is the VMware preferred public cloud partner for all vSphere-based workloads. The VMware and AWS partnership delivers a faster, easier, and cost-effective path to the hybrid cloud while allowing customers to modernize applications enabling faster time-to-market and increased innovation."
+      Link: "https://aws.amazon.com/vmware/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Compute/16/Arch_VMware-Cloud-on-AWS_16.svg", Prefix: "svg+xml;base64," , Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-vmware-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "vmware", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

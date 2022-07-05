@@ -39,6 +39,11 @@ Definitions:
                       Name: "confidential server"
                       Description: "confidential server host"
                       Order: "04"
+                  vmware:
+                    Fields:
+                      Name: "vmware"
+                      Description: "VMWare"
+                      Order: "05"
 
           container:
             Fields:
@@ -129,3 +134,38 @@ Definitions:
                       Name: "batch"
                       Description: "Batch"
                       Order: 01"
+
+          hpc:
+            Fields:
+              Name: "hpc"
+              Description: "High Performance Computing (HPC)"
+              Order: "06"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  hpc-compute:
+                    Fields:
+                      Name: "compute"
+                      Description: "Compute"
+                      Order: 01"
+                  hpc-networking:
+                    Fields:
+                      Name: "networking"
+                      Description: "Networking"
+                      Order: 02"
+                  hpc-storage:
+                    Fields:
+                      Name: "storage"
+                      Description: "Storage"
+                      Order: 03"
+                  hpc-environment:
+                    Fields:
+                      Name: "environment"
+                      Description: "Environment"
+                      Order: 04"
+                  hpc-ui:
+                    Fields:
+                      Name: "ui"
+                      Description: "UI"
+                      Order: 05"
