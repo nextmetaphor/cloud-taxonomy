@@ -1,0 +1,9 @@
+Class: "Attribute"
+Definitions:
+  operability:
+    Fields:
+      Name: "operability"
+      Tag: "...use the managed and supported architectural building blocks provided"
+      Description: "standard services (e.g. database, queue, notification, email...) plus specialist services
+        (e.g. security, big data, machine learning...) are all provided, complete with inherent high-availability,
+        security, durability, operational support..."

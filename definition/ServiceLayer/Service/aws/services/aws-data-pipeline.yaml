@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-data-pipeline:
+    Fields:
+      Name: "AWS Data Pipeline"
+      Description: "AWS Data Pipeline is a web service that helps you reliably process and move data between different AWS compute and storage services, as well as on-premises data sources, at specified intervals."
+      Link: "https://aws.amazon.com/datapipeline/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Analytics/Arch_16/Arch_AWS-Data-Pipeline_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-pipeline-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "etl", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
+            ]

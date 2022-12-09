@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-glue-databrew:
+    Fields:
+      Name: "AWS Glue DataBrew"
+      Description: "AWS Glue DataBrew is a visual data preparation tool that enables users to clean and normalize data without writing any code."
+      Link: "https://docs.aws.amazon.com/databrew/latest/dg/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Analytics/Arch_16/Arch_AWS-Glue-DataBrew_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-glue-databrew-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "etl", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

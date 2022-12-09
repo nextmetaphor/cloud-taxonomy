@@ -1,0 +1,7 @@
+Class: "CloudArchitecturalAttribute"
+Definitions:
+  agility:
+    Fields:
+      Name: "agility"
+      Tag: "...get what you need, when you need it"
+      Description: "on-demand resourcing: removes the need to provision hardware up-front"

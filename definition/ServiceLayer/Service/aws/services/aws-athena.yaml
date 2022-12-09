@@ -17,6 +17,6 @@ Definitions:
         Definitions:
           aws-athena-default:
             References: [
-              { Class: "ServiceSubcategory", ID: "big-data-query", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "data-lake-query", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]

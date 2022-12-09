@@ -1,0 +1,7 @@
+Class: "CloudArchitecturalAttribute"
+Definitions:
+  redundancy:
+    Fields:
+      Name: "redundancy"
+      Tag: "...built to withstand regional failure"
+      Description: "multiple geographic regions provided"

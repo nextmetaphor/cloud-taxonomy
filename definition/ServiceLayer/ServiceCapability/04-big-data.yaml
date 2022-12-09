@@ -29,6 +29,12 @@ Definitions:
                       Name: "data lake automation"
                       Description: "data lake automation"
                       Order: "02"
+                  data-lake-query:
+                    Fields:
+                      Name: "data query"
+                      Description: "Big Data Query"
+                      Order: "01"
+
           data-warehouse:
             Fields:
               Name: "data warehouse"
@@ -52,16 +58,11 @@ Definitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
                 Definitions:
-                  big-data-query:
-                    Fields:
-                      Name: "big data query"
-                      Description: "Big Data Query"
-                      Order: "01"
                   big-data-provisioned-framework:
                     Fields:
                       Name: "big data provisioned framework"
                       Description: "Big Data Provisioned Framework"
-                      Order: "02"
+                      Order: "01"
           streaming:
             Fields:
               Name: "streaming"
@@ -81,3 +82,18 @@ Definitions:
                       Name: "streaming analysis"
                       Description: "Streaming Analysis"
                       Order: "02"
+
+          etl:
+            Fields:
+              Name: "etl"
+              Description: "Export Transform Load (ETL)"
+              Order: "05"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  etl:
+                    Fields:
+                      Name: "etl"
+                      Description: "Export Transform Load (ETL)"
+                      Order: "01"

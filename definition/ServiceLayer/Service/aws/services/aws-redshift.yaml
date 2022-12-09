@@ -20,3 +20,13 @@ Definitions:
               { Class: "ServiceSubcategory", ID: "data-warehouse-storage", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
             ]
+          aws-redshift-spectrum:
+            Fields:
+              Name: "Amazon Redshift Spectrum"
+              Description: "Using Amazon Redshift Spectrum, you can efficiently query and retrieve structured and semistructured data from files in Amazon S3 without having to load the data into Amazon Redshift tables."
+              Link: "https://docs.aws.amazon.com/redshift/latest/dg/c-using-spectrum.html"
+
+            References: [
+              { Class: "ServiceSubcategory", ID: "data-lake-query", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
+            ]

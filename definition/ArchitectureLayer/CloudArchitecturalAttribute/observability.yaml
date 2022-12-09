@@ -1,0 +1,7 @@
+Class: "CloudArchitecturalAttribute"
+Definitions:
+  observability:
+    Fields:
+      Name: "observability"
+      Tag: "...enable clear visibility into operational status"
+      Description: "logging, monitoring, alerting and auditing all provided"
