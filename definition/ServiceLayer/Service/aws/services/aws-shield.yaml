@@ -1,0 +1,38 @@
+Class: "Service"
+Definitions:
+  aws-shield:
+    Fields:
+      Name: "AWS Shield"
+      Description: "Maximize application availability and responsiveness with managed DDoS protection"
+      Link: "https://aws.amazon.com/shield/"
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-shield-standard:
+            Fields:
+              Name: "AWS Shield Standard"
+              Description: " AWS Shield Standard defends against most common, frequently occurring network and transport layer DDoS attacks that target your website or applications."
+              Link: "https://aws.amazon.com/shield/features/#AWS_Shield_Standard"
+            FileFields:
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Security-Identity-Compliance/16/Arch_AWS-Shield_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+            References: [
+              { Class: "ServiceSubcategory", ID: "ddos-protection", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]
+
+          aws-shield-advanced:
+            Fields:
+              Name: "AWS Shield Advanced"
+              Description: "For higher levels of protection against attacks targeting your applications running on Amazon Elastic Compute Cloud (EC2), Elastic Load Balancing (ELB), Amazon CloudFront, AWS Global Accelerator, and Amazon Route 53 resources, you can subscribe to AWS Shield Advanced."
+              Link: "https://aws.amazon.com/shield/features/#AWS_Shield_Advanced"
+            FileFields:
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Shield_AWS-Shield-Advanced_48_Dark.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+            References: [
+              { Class: "ServiceSubcategory", ID: "ddos-protection", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

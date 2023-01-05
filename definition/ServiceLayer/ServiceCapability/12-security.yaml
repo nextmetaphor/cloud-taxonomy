@@ -1,0 +1,26 @@
+Class: "ServiceCapability"
+Definitions:
+  security:
+    Fields:
+      Name: "security"
+      Description: "Security"
+      Order: "12"
+
+    SubDefinitions:
+      PROVIDED_BY:
+        Class: "ServiceCategory"
+        Definitions:
+          ddos-protection:
+            Fields:
+              Name: "ddos protection"
+              Description: "DDOS Protection"
+              Order: "01"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  ddos-protection:
+                    Fields:
+                      Name: "ddos protection"
+                      Description: "DDOS Protection"
+                      Order: "01"
