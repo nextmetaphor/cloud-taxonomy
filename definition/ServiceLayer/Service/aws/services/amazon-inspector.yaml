@@ -1,0 +1,23 @@
+Class: "Service"
+Definitions:
+  amazon-inspector:
+    Fields:
+      Name: "Amazon Inspector"
+      Description: "Automated and continual vulnerability management at scale"
+      Link: "https://aws.amazon.com/inspector/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Security-Identity-Compliance/16/Arch_Amazon-Inspector_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          amazon-inspector-standard:
+            References: [
+              { Class: "ServiceSubcategory", ID: "vulnerability-detection", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

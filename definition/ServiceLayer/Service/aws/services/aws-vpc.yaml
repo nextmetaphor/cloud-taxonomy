@@ -32,3 +32,25 @@ Definitions:
               { Class: "ServiceSubcategory", ID: "point-to-point-network-peering", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]
+
+          aws-vpc-nacl:
+            Fields:
+              Name: "Amazon VPC [Network ACL]"
+              Description: "A network access control list (ACL) allows or denies specific inbound or outbound traffic at the subnet level."
+              Link: "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html"
+            FileFields:
+              ImgSrc: { Path: "icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-VPC_Network-Access-Control-List_48_Dark.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+            References: [
+              { Class: "ServiceSubcategory", ID: "subnet-level-protection", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]
+
+          aws-vpc-security-group:
+            Fields:
+              Name: "Amazon VPC [Security Group]"
+              Description: "A security group controls the traffic that is allowed to reach and leave the resources that it is associated with."
+              Link: "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html"
+            References: [
+              { Class: "ServiceSubcategory", ID: "network-interface-level-protection", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

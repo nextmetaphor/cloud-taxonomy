@@ -1,0 +1,23 @@
+Class: "Service"
+Definitions:
+  aws-network-firewall:
+    Fields:
+      Name: "AWS Network Firewall"
+      Description: "Deploy network firewall security across your VPCs"
+      Link: "https://aws.amazon.com/network-firewall/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Security-Identity-Compliance/16/Arch_AWS-Network-Firewall_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-network-firewall-standard:
+            References: [
+              { Class: "ServiceSubcategory", ID: "virtual-network-level-protection", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

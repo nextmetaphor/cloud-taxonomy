@@ -21,7 +21,7 @@ Definitions:
             FileFields:
               ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Security-Identity-Compliance/16/Arch_AWS-Shield_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
             References: [
-              { Class: "ServiceSubcategory", ID: "ddos-protection", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "endpoint-network-transport-layer-protection", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]
 
@@ -33,6 +33,7 @@ Definitions:
             FileFields:
               ImgSrc: { Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Shield_AWS-Shield-Advanced_48_Dark.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
             References: [
-              { Class: "ServiceSubcategory", ID: "ddos-protection", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "endpoint-network-transport-layer-protection", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "attack-detection", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]

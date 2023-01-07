@@ -10,17 +10,75 @@ Definitions:
       PROVIDED_BY:
         Class: "ServiceCategory"
         Definitions:
-          ddos-protection:
+          protection:
             Fields:
-              Name: "ddos protection"
-              Description: "DDOS Protection"
+              Name: "attack protection"
+              Description: "Attach Protection"
               Order: "01"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
                 Definitions:
-                  ddos-protection:
+                  network-interface-level-protection:
                     Fields:
-                      Name: "ddos protection"
-                      Description: "DDOS Protection"
+                      Name: "network interface level (layers 3 & 4) protection"
+                      Description: "Network Interface Level Protection (Layers 3 & 4)"
                       Order: "01"
+
+                  subnet-level-protection:
+                    Fields:
+                      Name: "subnet level (layers 3 & 4) protection"
+                      Description: "Subnet Level Protection (Layers 3 & 4)"
+                      Order: "02"
+
+                  virtual-network-level-protection:
+                    Fields:
+                      Name: "virtual network level (layers 3-7) protection"
+                      Description: "Virtual Network Level Protection (layers 3-7)"
+                      Order: "03"
+
+                  endpoint-network-transport-layer-protection:
+                    Fields:
+                      Name: "network & transport (layers 3 & 4) endpoint protection"
+                      Description: "Network (Layer 3) & Transport (Layer 4) Endpoint Protection"
+                      Order: "04"
+
+                  endpoint-application-layer-protection:
+                    Fields:
+                      Name: "transport (layer 7) endpoint protection"
+                      Description: "Transport (Layer 7) Endpoint Protection"
+                      Order: "05"
+
+
+          attack-detection:
+            Fields:
+              Name: "attack detection"
+              Description: "Attack Detection"
+              Order: "02"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  attack-detection:
+                    Fields:
+                      Name: "attack detection"
+                      Description: "Attack Detection"
+                      Order: "01"
+
+
+          vulnerability-detection:
+            Fields:
+              Name: "vulnerability detection"
+              Description: "Vulnerability Detection"
+              Order: "03"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  vulnerability-detection:
+                    Fields:
+                      Name: "vulnerability detection"
+                      Description: "Vulnerability Detection"
+                      Order: "01"
+
+

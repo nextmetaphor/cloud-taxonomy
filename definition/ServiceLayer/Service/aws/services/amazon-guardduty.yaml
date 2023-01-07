@@ -1,0 +1,23 @@
+Class: "Service"
+Definitions:
+  amazon-guardduty:
+    Fields:
+      Name: "Amazon GuardDuty"
+      Description: "Protect your AWS accounts with intelligent threat detection"
+      Link: "https://aws.amazon.com/guardduty/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Security-Identity-Compliance/16/Arch_Amazon-GuardDuty_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          amazon-guardduty-standard:
+            References: [
+              { Class: "ServiceSubcategory", ID: "attack-detection", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

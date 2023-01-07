@@ -1,0 +1,23 @@
+Class: "Service"
+Definitions:
+  aws-waf:
+    Fields:
+      Name: "AWS WAF"
+      Description: "Protect your web applications from common exploits"
+      Link: "https://aws.amazon.com/waf/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Security-Identity-Compliance/16/Arch_AWS-WAF_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-waf-standard:
+            References: [
+              { Class: "ServiceSubcategory", ID: "endpoint-application-layer-protection", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]
