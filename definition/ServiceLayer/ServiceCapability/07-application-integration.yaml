@@ -21,7 +21,7 @@ Definitions:
                 Definitions:
                   unordered-queue:
                     Fields:
-                      Name: "unordered-queue"
+                      Name: "unordered queue"
                       Description: "Queue where the order is not guaranteed"
                       Order: "01"
                   ordered-queue:
@@ -29,6 +29,16 @@ Definitions:
                       Name: "ordered queue"
                       Description: "Queue where the order is guaranteed"
                       Order: "02"
+                  activeMQ-compatible:
+                    Fields:
+                      Name: "activeMQ compatible"
+                      Description: "ActiveMQ compatible"
+                      Order: "03"
+                  rabbitMQ-compatible:
+                    Fields:
+                      Name: "rabbitMQ compatible"
+                      Description: "RabbitMQ compatible"
+                      Order: "04"
 
           notification:
             Fields:
@@ -73,64 +83,4 @@ Definitions:
                     Fields:
                       Name: "api management"
                       Description: "API Management"
-                      Order: "01"
-
-          media-transcoding:
-            Fields:
-              Name: "media transcoding"
-              Description: "Media Transcoding"
-              Order: "05"
-            SubDefinitions:
-              GROUPED_BY:
-                Class: "ServiceSubcategory"
-                Definitions:
-                  media-transcoding:
-                    Fields:
-                      Name: "media transcoding"
-                      Description: "Media Transcoding"
-                      Order: "01"
-
-          email:
-            Fields:
-              Name: "email"
-              Description: "Email"
-              Order: "06"
-            SubDefinitions:
-              GROUPED_BY:
-                Class: "ServiceSubcategory"
-                Definitions:
-                  email:
-                    Fields:
-                      Name: "email"
-                      Description: "Email"
-                      Order: "01"
-
-          blockchain:
-            Fields:
-              Name: "blockchain"
-              Description: "Blockchain"
-              Order: "07"
-            SubDefinitions:
-              GROUPED_BY:
-                Class: "ServiceSubcategory"
-                Definitions:
-                  blockchain:
-                    Fields:
-                      Name: "blockchain"
-                      Description: "Blockchain"
-                      Order: "01"
-
-          chatbot:
-            Fields:
-              Name: "chatbot"
-              Description: "Chatbot"
-              Order: "08"
-            SubDefinitions:
-              GROUPED_BY:
-                Class: "ServiceSubcategory"
-                Definitions:
-                  chatbot:
-                    Fields:
-                      Name: "chatbot"
-                      Description: "Chatbot"
                       Order: "01"

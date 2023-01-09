@@ -1,0 +1,23 @@
+Class: "Service"
+Definitions:
+  amazon-mq:
+    Fields:
+      Name: "Amazon MQ"
+      Description: "Fully managed service for open-source message brokers."
+      Link: "https://aws.amazon.com/amazon-mq/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_App-Integration/Arch_16/Arch_Amazon-MQ_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          amazon-mq-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "activeMQ-compatible", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "rabbitMQ-compatible", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
+            ]

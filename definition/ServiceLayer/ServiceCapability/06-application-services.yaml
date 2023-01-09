@@ -29,3 +29,63 @@ Definitions:
                       Name: "web app hosting"
                       Description: "Web App Hosting"
                       Order: "02"
+
+          media-transcoding:
+            Fields:
+              Name: "media transcoding"
+              Description: "Media Transcoding"
+              Order: "05"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  media-transcoding:
+                    Fields:
+                      Name: "media transcoding"
+                      Description: "Media Transcoding"
+                      Order: "01"
+
+          email:
+            Fields:
+              Name: "email"
+              Description: "Email"
+              Order: "06"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  email:
+                    Fields:
+                      Name: "email"
+                      Description: "Email"
+                      Order: "01"
+
+          blockchain:
+            Fields:
+              Name: "blockchain"
+              Description: "Blockchain"
+              Order: "07"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  blockchain:
+                    Fields:
+                      Name: "blockchain"
+                      Description: "Blockchain"
+                      Order: "01"
+
+          chatbot:
+            Fields:
+              Name: "chatbot"
+              Description: "Chatbot"
+              Order: "08"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  chatbot:
+                    Fields:
+                      Name: "chatbot"
+                      Description: "Chatbot"
+                      Order: "01"
