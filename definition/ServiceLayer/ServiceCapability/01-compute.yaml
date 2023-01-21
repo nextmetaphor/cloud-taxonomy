@@ -59,16 +59,21 @@ Definitions:
                       Name: "container orchestration"
                       Description: "Container Management"
                       Order: "01"
+                  hybrid-container-orchestration:
+                    Fields:
+                      Name: "hybrid container orchestration"
+                      Description: "Hybrid Container Management"
+                      Order: "02"
                   container-registry:
                     Fields:
                       Name: "container registry"
                       Description: "Container Registry"
-                      Order: "02"
+                      Order: "03"
                   container-runtime:
                     Fields:
                       Name: "container runtime"
                       Description: "Container Runtime"
-                      Order: "03"
+                      Order: "04"
 
           kubernetes:
             Fields:
@@ -84,11 +89,21 @@ Definitions:
                       Name: "kubernetes management"
                       Description: "Kubernetes Management"
                       Order: "01"
+                  hybrid-kubernetes-management:
+                    Fields:
+                      Name: "hybrid kubernetes management"
+                      Description: "Hybrid Kubernetes Management"
+                      Order: "02"
+                  opensource-kubernetes-distribution:
+                    Fields:
+                      Name: "open source kubernetes distribution"
+                      Description: "Open Source Kubernetes Distribution"
+                      Order: "03"
                   openshift-management:
                     Fields:
                       Name: "openshift management"
                       Description: "OpenShift Management"
-                      Order: "02"
+                      Order: "04"
 
           faas:
             Fields:

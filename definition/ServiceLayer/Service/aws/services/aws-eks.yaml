@@ -48,3 +48,28 @@ Definitions:
               { Class: "ServiceSubcategory", ID: "kubernetes-management", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]
+
+          aws-eks-anywhere:
+            Fields:
+              Name: "Amazon EKS Anywhere"
+              Description: "Create and operate Kubernetes clusters on your own infrastructure"
+              Link: "https://aws.amazon.com/eks/eks-anywhere/"
+            FileFields:
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Containers/16/Arch_Amazon-EKS-Anywhere_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+            References: [
+              { Class: "ServiceSubcategory", ID: "hybrid-kubernetes-management", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
+            ]
+
+          amazon-eks-distro:
+            Fields:
+              Name: "Amazon EKS Distro"
+              Description: "Amazon EKS Distro (EKS-D) is a Kubernetes distribution based on and used by Amazon Elastic Kubernetes Service (EKS) to create reliable and secure Kubernetes clusters. "
+              Link: "https://distro.eks.amazonaws.com"
+            FileFields:
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Containers/16/Arch_Amazon-EKS-Distro_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+            References: [
+              { Class: "ServiceSubcategory", ID: "opensource-kubernetes-distribution", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "managed", Relationship: "HAS_TENANCY_OF" },
+            ]
+

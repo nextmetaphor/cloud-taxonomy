@@ -20,3 +20,15 @@ Definitions:
               { Class: "ServiceSubcategory", ID: "container-orchestration", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
             ]
+
+          aws-ecs-anywhere:
+            Fields:
+              Name: "AWS ECS Anywhere"
+              Description: "AWS ECS Anywhere"
+              Link: "https://aws.amazon.com/ecs/anywhere/"
+            FileFields:
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Containers/Res_48_Dark/Res_Amazon-Elastic-Container-Service_ECS-Anywhere_48_Dark.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+            References: [
+              { Class: "ServiceSubcategory", ID: "hybrid-container-orchestration", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]

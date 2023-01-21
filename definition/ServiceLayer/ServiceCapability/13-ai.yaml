@@ -1,0 +1,135 @@
+Class: "ServiceCapability"
+Definitions:
+  ai-ml:
+    Fields:
+      Name: "ai/ml"
+      Description: "Artificial Intelligence and Machine Learning"
+      Order: "13"
+
+    SubDefinitions:
+      PROVIDED_BY:
+        Class: "ServiceCategory"
+        Definitions:
+          text:
+            Fields:
+              Name: "text processing"
+              Description: "Text Processing"
+              Order: "01"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  text-conversational-interfaces:
+                    Fields:
+                      Name: "text conversational interface"
+                      Description: "text conversational interface (e.g. chatbot)"
+                      Order: "01"
+
+                  insight-from-text:
+                    Fields:
+                      Name: "text comprehension"
+                      Description: "text comprehension"
+                      Order: "02"
+
+                  ocr:
+                    Fields:
+                      Name: "text recognition"
+                      Description: "text recognition"
+                      Order: "03"
+
+          speech:
+            Fields:
+              Name: "speech processing"
+              Description: "speech processing"
+              Order: "02"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  speech-generation:
+                    Fields:
+                      Name: "speech generation"
+                      Description: "speech generation"
+                      Order: "01"
+
+                  speech-recognition:
+                    Fields:
+                      Name: "speech transcription"
+                      Description: "speech transcription"
+                      Order: "02"
+
+                  speech-translation:
+                    Fields:
+                      Name: "speech translation"
+                      Description: "speech translation"
+                      Order: "03"
+
+                  speech-conversational-interfaces:
+                    Fields:
+                      Name: "speech conversational interface"
+                      Description: "speech conversational interfaces (e.g. chatbot)"
+                      Order: "04"
+
+          image:
+            Fields:
+              Name: "image processing"
+              Description: "image processing"
+              Order: "03"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  image-comprehension:
+                    Fields:
+                      Name: "image comprehension"
+                      Description: "image comprehension"
+                      Order: "01"
+
+
+          video:
+            Fields:
+              Name: "video processing"
+              Description: "video processing"
+              Order: "04"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  video-comprehension:
+                    Fields:
+                      Name: "video comprehension"
+                      Description: "video comprehension"
+                      Order: "01"
+
+          machine-learning:
+            Fields:
+              Name: "machine learning"
+              Description: "machine learning"
+              Order: "05"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  enterprise-search:
+                    Fields:
+                      Name: "enterprise search"
+                      Description: "enterprise search"
+                      Order: "01"
+
+                  forecasting:
+                    Fields:
+                      Name: "forecasting"
+                      Description: "forecasting"
+                      Order: "02"
+
+                  machine-learning-modelling:
+                    Fields:
+                      Name: "machine learning modelling"
+                      Description: "machine learning modelling"
+                      Order: "03"
+
+                  fraud-detection:
+                    Fields:
+                      Name: "fraud detection"
+                      Description: "fraud detection"
+                      Order: "04"

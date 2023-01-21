@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  amazon-polly:
+    Fields:
+      Name: "Amazon Polly"
+      Description: "Amazon Polly uses deep learning technologies to synthesize natural-sounding human speech, so you can convert articles to speech."
+      Link: "https://aws.amazon.com/polly/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Machine-Learning/16/Arch_Amazon-Polly_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          amazon-polly-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "speech-generation", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]

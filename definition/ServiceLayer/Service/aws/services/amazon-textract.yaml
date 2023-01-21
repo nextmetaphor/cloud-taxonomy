@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  amazon-textract:
+    Fields:
+      Name: "Amazon Textract"
+      Description: "Automatically extract printed text, handwriting, and data from any document."
+      Link: "https://aws.amazon.com/textract/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Machine-Learning/16/Arch_Amazon-Textract_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          amazon-textract-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "ocr", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]

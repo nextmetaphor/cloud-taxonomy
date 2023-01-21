@@ -1,0 +1,23 @@
+Class: "Service"
+Definitions:
+  amazon-rekognition:
+    Fields:
+      Name: "Amazon Rekognition"
+      Description: "Amazon Rekognition is a service that makes it easy to add powerful visual analysis to your applications."
+      Link: "amazon-comprehend.yaml"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Machine-Learning/16/Arch_Amazon-Rekognition_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          amazon-rekognition-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "image-comprehension", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "video-comprehension", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]

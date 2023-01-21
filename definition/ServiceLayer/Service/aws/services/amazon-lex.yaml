@@ -1,0 +1,23 @@
+Class: "Service"
+Definitions:
+  amazon-lex:
+    Fields:
+      Name: "Amazon Lex"
+      Description: "Build chatbots with conversational AI"
+      Link: "https://aws.amazon.com/comprehend/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Machine-Learning/16/Arch_Amazon-Lex_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          amazon-lex-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "text-conversational-interfaces", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "speech-conversational-interfaces", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]

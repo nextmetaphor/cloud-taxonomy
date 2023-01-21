@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  amazon-kendra:
+    Fields:
+      Name: "Amazon Kendra"
+      Description: "Amazon Kendra is an intelligent enterprise search service that helps you search across different content repositories with built-in connectors."
+      Link: "https://aws.amazon.com/kendra/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Machine-Learning/16/Arch_Amazon-Kendra_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          amazon-kendra-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "enterprise-search", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]

@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  amazon-transcribe:
+    Fields:
+      Name: "Amazon Transcribe"
+      Description: "Amazon Transcribe is an AWS Artificial Intelligence (AI) service that makes it easy for you to convert speech to text."
+      Link: "https://aws.amazon.com/transcribe/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Machine-Learning/16/Arch_Amazon-Transcribe_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          amazon-transcribe-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "speech-recognition", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]

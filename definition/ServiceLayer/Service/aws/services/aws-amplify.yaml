@@ -20,3 +20,8 @@ Definitions:
               { Class: "ServiceSubcategory", ID: "static-web-app-hosting", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
             ]
+          aws-amplify-studio:
+            References: [
+              { Class: "ServiceSubcategory", ID: "static-web-app-hosting", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" },
+            ]

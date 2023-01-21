@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  amazon-translate:
+    Fields:
+      Name: "Amazon Translate"
+      Description: "Amazon Translate is a neural machine translation service that delivers fast, high-quality, affordable, and customizable language translation."
+      Link: "https://aws.amazon.com/comprehend/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Machine-Learning/16/Arch_Amazon-Translate_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          amazon-translate-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "speech-translation", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]

@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  amazon-fraud-detector:
+    Fields:
+      Name: "Amazon Fraud Detector"
+      Description: "Amazon Fraud Detector is a fully managed service that makes it easy to identify potentially fraudulent online activities such as online payment fraud and fake account creation."
+      Link: "https://aws.amazon.com/fraud-detector/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Machine-Learning/16/Arch_Amazon-Fraud-Detector_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          amazon-fraud-detector-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "fraud-detection", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]

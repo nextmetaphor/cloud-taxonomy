@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  amazon-forecast:
+    Fields:
+      Name: "Amazon Forecast"
+      Description: "Amazon Forecast is a time-series forecasting service based on machine learning (ML) and built for business metrics analysis."
+      Link: "https://aws.amazon.com/forecast/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Machine-Learning/16/Arch_Amazon-Forecast_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          amazon-forecast-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "forecasting", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]
