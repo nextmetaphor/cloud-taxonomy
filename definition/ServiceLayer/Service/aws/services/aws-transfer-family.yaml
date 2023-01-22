@@ -1,0 +1,60 @@
+Class: "Service"
+Definitions:
+  aws-transfer-family:
+    Fields:
+      Name: "AWS Cost Explorer"
+      Description: "AWS Transfer Family securely scales your recurring business-to-business file transfers to AWS Storage services using SFTP, FTPS, FTP, and AS2 protocols."
+      Link: "https://aws.amazon.com/aws-transfer-family/"
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-transfer-family-sftp:
+            Fields:
+              Name: "AWS Transfer for SFTP"
+              Description: "AWS Transfer for SFTP"
+            FileFields:
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Migration-and-Transfer/Res_48_Light/Res_AWS-Transfer-Family_AWS-SFTP_48_Light.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+
+            References: [
+              { Class: "ServiceSubcategory", ID: "file-transfer-sftp", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]
+
+          aws-transfer-family-ftps:
+            Fields:
+              Name: "AWS Transfer for FTPS"
+              Description: "AWS Transfer for FTPS"
+            FileFields:
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Migration-and-Transfer/Res_48_Light/Res_AWS-Transfer-Family_AWS-FTPS_48_Light.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+
+            References: [
+              { Class: "ServiceSubcategory", ID: "file-transfer-ftps", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]
+
+          aws-transfer-family-ftp:
+            Fields:
+              Name: "AWS Transfer for FTP"
+              Description: "AWS Transfer for FTP"
+            FileFields:
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Migration-and-Transfer/Res_48_Light/Res_AWS-Transfer-Family_AWS-FTP_48_Light.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+
+            References: [
+              { Class: "ServiceSubcategory", ID: "file-transfer-ftp", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]
+
+          aws-transfer-family-as2:
+            Fields:
+              Name: "AWS Transfer for AS2"
+              Description: "AWS Transfer for AS2"
+
+            References: [
+              { Class: "ServiceSubcategory", ID: "file-transfer-as2", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]

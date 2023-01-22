@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-cur:
+    Fields:
+      Name: "AWS Cost and Usage Reports"
+      Description: "The AWS Cost & Usage Report is your one-stop shop for accessing the most detailed information available about your AWS costs and usage."
+      Link: "https://aws.amazon.com/aws-cost-management/aws-cost-and-usage-reporting/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_AWS-Cost-Management/16/Arch_AWS-Cost-and-Usage-Report_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          amazon-cur-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "cost-management-reporting", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]

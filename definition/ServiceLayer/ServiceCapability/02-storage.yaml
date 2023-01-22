@@ -84,3 +84,29 @@ Definitions:
                       Name: "intelligent object storage"
                       Description: "Appropriate storage for objects whose access pattern is determined automatically."
                       Order: "04"
+
+
+          hybrid-storage:
+            Fields:
+              Name: "hybrid storage"
+              Description: "Hybrid Storage"
+              Order: "05"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  nfs-hybrid-storage:
+                    Fields:
+                      Name: "nfs-based hybrid storage"
+                      Description: "NFS-based hybrid storage"
+                      Order: "01"
+                  smb-hybrid-storage:
+                    Fields:
+                      Name: "smb-based hybrid storage"
+                      Description: "SMB-based hybrid storage"
+                      Order: "02"
+                  iscsi-hybrid-storage:
+                    Fields:
+                      Name: "iSCSI-based hybrid storage"
+                      Description: "iSCSI-based hybrid storage"
+                      Order: "03"

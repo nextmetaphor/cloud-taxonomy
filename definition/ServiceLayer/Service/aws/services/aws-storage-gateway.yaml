@@ -1,0 +1,72 @@
+Class: "Service"
+Definitions:
+  aws-storage-gateway:
+    Fields:
+      Name: "AWS Storage Gateway"
+      Description: "AWS Storage Gateway is a set of hybrid cloud storage services that provide on-premises access to virtually unlimited cloud storage."
+      Link: "https://aws.amazon.com/storagegateway"
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          amazon-s3-file-gateway:
+            Fields:
+              Name: "Amazon S3 File Gateway"
+              Description: "The Amazon S3 File Gateway enables you to store and retrieve objects in Amazon Simple Storage Service (S3) using file protocols such as Network File System (NFS) and Server Message Block (SMB)."
+              Link: "https://aws.amazon.com/storagegateway/file/s3/"
+
+            FileFields:
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Storage/Res_48_Light/Res_AWS-Storage-Gateway_Amazon-S3-File-Gateway_48_Light.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+
+            References: [
+              { Class: "ServiceSubcategory", ID: "nfs-hybrid-storage", Relationship: "BELONGS_TO" },
+              { Class: "ServiceSubcategory", ID: "smb-hybrid-storage", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]
+
+          amazon-fsx-file-gateway:
+            Fields:
+              Name: "Amazon FSx File Gateway"
+              Description: "The Amazon FSx File Gateway enables you to store and retrieve files in Amazon FSx for Windows File Server using the SMB protocol."
+              Link: "https://aws.amazon.com/storagegateway/file/fsx/"
+
+            FileFields:
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Storage/Res_48_Light/Res_AWS-Storage-Gateway_Amazon-FSx-File-Gateway_48_Light.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+
+            References: [
+              { Class: "ServiceSubcategory", ID: "smb-hybrid-storage", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]
+
+          volume-gateway:
+            Fields:
+              Name: "Volume Gateway"
+              Description: "The Volume Gateway provides block storage to your on-premises applications using iSCSI connectivity."
+              Link: "https://aws.amazon.com/storagegateway/volume/"
+
+            FileFields:
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Storage/Res_48_Light/Res_AWS-Storage-Gateway_Volume-Gateway_48_Light.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+
+            References: [
+              { Class: "ServiceSubcategory", ID: "iscsi-hybrid-storage", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]
+
+
+          tape-gateway:
+            Fields:
+              Name: "Tape Gateway"
+              Description: "The Tape Gateway provides your backup application with an iSCSI virtual tape library (VTL) interface, consisting of a virtual media changer, virtual tape drives, and virtual tapes."
+              Link: "https://aws.amazon.com/storagegateway/vtl/"
+
+            FileFields:
+              ImgSrc: { Path: "../icons/Asset-Package_09172021/Resource-Icons_07302021/Res_Storage/Res_48_Light/Res_AWS-Storage-Gateway_Tape-Gateway_48_Light.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+
+            References: [
+              { Class: "ServiceSubcategory", ID: "iscsi-hybrid-storage", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]

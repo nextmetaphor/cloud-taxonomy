@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-budgets:
+    Fields:
+      Name: "AWS Budgets"
+      Description: "With AWS Budgets, set custom budgets to track your costs and usage, and respond quickly to alerts received from email or SNS notifications if you exceed your threshold."
+      Link: "https://aws.amazon.com/aws-cost-management/aws-budgets/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_AWS-Cost-Management/16/Arch_AWS-Budgets_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          amazon-budgets-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "cost-management-budgeting", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]

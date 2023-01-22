@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-compute-optimizer:
+    Fields:
+      Name: "AWS Compute Optimizer"
+      Description: "AWS Compute Optimizer helps you identify the optimal AWS resource configurations, such as Amazon Elastic Compute Cloud (EC2) instance types, Amazon Elastic Block Store (EBS) volume configurations, task sizes of Amazon Elastic Container Service (ECS) services on AWS Fargate, and AWS Lambda function memory sizes, using machine learning to analyze historical utilization metrics."
+      Link: "https://aws.amazon.com/compute-optimizer/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Compute/16/Arch_AWS-Compute-Optimizer_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-compute-optimizer-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "cost-management-optimisation", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]

@@ -84,3 +84,37 @@ Definitions:
                       Name: "api management"
                       Description: "API Management"
                       Order: "01"
+
+
+          file-transfer:
+            Fields:
+              Name: "file transfer"
+              Description: "File Transfer"
+              Order: "05"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  file-transfer-sftp:
+                    Fields:
+                      Name: "sftp"
+                      Description: "sftp"
+                      Order: "01"
+
+                  file-transfer-ftps:
+                    Fields:
+                      Name: "ftps"
+                      Description: "ftps"
+                      Order: "02"
+
+                  file-transfer-ftp:
+                    Fields:
+                      Name: "ftp"
+                      Description: "ftp"
+                      Order: "03"
+
+                  file-transfer-as2:
+                    Fields:
+                      Name: "as2"
+                      Description: "as2"
+                      Order: "04"

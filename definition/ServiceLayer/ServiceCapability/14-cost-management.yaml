@@ -1,0 +1,56 @@
+Class: "ServiceCapability"
+Definitions:
+  cost-management:
+    Fields:
+      Name: "cost management"
+      Description: "Cost Management"
+      Order: "14"
+
+    SubDefinitions:
+      PROVIDED_BY:
+        Class: "ServiceCategory"
+        Definitions:
+          visualise:
+            Fields:
+              Name: "visualise"
+              Description: "visualise"
+              Order: "01"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  cost-management-reporting:
+                    Fields:
+                      Name: "cost management reporting"
+                      Description: "cost management reporting"
+                      Order: "01"
+
+          control:
+            Fields:
+              Name: "control"
+              Description: "control"
+              Order: "02"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  cost-management-budgeting:
+                    Fields:
+                      Name: "cost management budgeting"
+                      Description: "cost management budgeting"
+                      Order: "01"
+
+          optimisation:
+            Fields:
+              Name: "optimisation"
+              Description: "optimisation"
+              Order: "03"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  cost-management-optimisation:
+                    Fields:
+                      Name: "cost management optimisation"
+                      Description: "cost management optimisation"
+                      Order: "01"
