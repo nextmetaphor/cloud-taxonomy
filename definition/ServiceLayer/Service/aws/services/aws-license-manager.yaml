@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-licence-manager:
+    Fields:
+      Name: "AWS License Manager"
+      Description: "License Manager provides you with the flexibility and control to manage license usage to match your organizational structure and processes."
+      Link: "https://aws.amazon.com/license-manager/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Management-Governance/16/Arch_AWS-License-Manager_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-licence-manager-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "licence-management", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]

@@ -1,0 +1,82 @@
+Class: "ServiceCapability"
+Definitions:
+  management-tools:
+    Fields:
+      Name: "management tools"
+      Description: "Management Tools"
+      Order: "15"
+
+    SubDefinitions:
+      PROVIDED_BY:
+        Class: "ServiceCategory"
+        Definitions:
+          account-management:
+            Fields:
+              Name: "account management"
+              Description: "account management"
+              Order: "01"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  account-management:
+                    Fields:
+                      Name: "account management"
+                      Description: "account management"
+                      Order: "01"
+                  landing-zone-management:
+                    Fields:
+                      Name: "landing-zone management"
+                      Description: "landing-zone management"
+                      Order: "02"
+
+          licence-management:
+            Fields:
+              Name: "licence management"
+              Description: "licence management"
+              Order: "02"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  licence-management:
+                    Fields:
+                      Name: "licence management"
+                      Description: "licence management"
+                      Order: "01"
+
+          health-management:
+            Fields:
+              Name: "health management"
+              Description: "health management"
+              Order: "03"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  service-status-management:
+                    Fields:
+                      Name: "service status management"
+                      Description: "service status management"
+                      Order: "01"
+
+          service-catalog-management:
+            Fields:
+              Name: "service catalog management"
+              Description: "service catalog management"
+              Order: "04"
+            SubDefinitions:
+              GROUPED_BY:
+                Class: "ServiceSubcategory"
+                Definitions:
+                  iac-service-catalog-management:
+                    Fields:
+                      Name: "iac service catalog management"
+                      Description: "iac service-catalog management"
+                      Order: "01"
+
+                  serverless-service-catalog-management:
+                    Fields:
+                      Name: "serverless service catalog management"
+                      Description: "serverless service-catalog management"
+                      Order: "02"

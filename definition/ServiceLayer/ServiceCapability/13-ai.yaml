@@ -133,3 +133,9 @@ Definitions:
                       Name: "fraud detection"
                       Description: "fraud detection"
                       Order: "04"
+
+                  sensitive-data-detection:
+                    Fields:
+                      Name: "sensitive data detection"
+                      Description: "sensitive data detection"
+                      Order: "05"

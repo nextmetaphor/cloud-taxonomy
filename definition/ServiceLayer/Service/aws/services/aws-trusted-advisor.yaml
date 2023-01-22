@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-trusted-advisor:
+    Fields:
+      Name: "AWS Trusted Advisor"
+      Description: "AWS Trusted Advisor provides recommendations that help you follow AWS best practices."
+      Link: "https://aws.amazon.com/premiumsupport/technology/trusted-advisor/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Management-Governance/16/Arch_AWS-Trusted-Advisor_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-trusted-advisor-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "cost-management-optimisation", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]

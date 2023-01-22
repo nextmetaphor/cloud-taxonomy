@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-savings-plans:
+    Fields:
+      Name: "Savings Plans"
+      Description: "Savings Plans is a flexible pricing model that can help you reduce your bill by up to 72% compared to On-Demand prices, in exchange for a one- or three-year hourly spend commitment."
+      Link: "https://aws.amazon.com/savingsplans/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_AWS-Cost-Management/16/Arch_Savings-Plans_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-savings-plans-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "cost-management-optimisation", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]
