@@ -23,6 +23,9 @@ pages:
     - yaml-graph report -f report/ServiceCapabilityJSON/fields.yaml -t report/ServiceCapabilityJSON/template.gohtml > report/ServiceCapabilityJSON/document.json
     - cp report/ServiceCapabilityJSON/document.json public/ServiceCapabilityJSON.json
 
+    - yaml-graph report -f report/ServiceByCapabilityJSON/fields.yaml -t report/ServiceByCapabilityJSON/template.gohtml > report/ServiceByCapabilityJSON/document.json
+    - cp report/ServiceByCapabilityJSON/document.json public/ServiceByCapabilityJSON.json
+
   artifacts:
     paths:
       - public

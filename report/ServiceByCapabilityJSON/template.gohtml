@@ -1,0 +1,89 @@
+[
+{{- $firstCapability := true -}}
+{{- range $capability := . }}
+    {{- if $firstCapability -}}
+        {{- $firstCapability = false -}}
+        {
+    {{- else -}}
+        ,{
+    {{- end }}
+    "ID": "{{$capability.ID | js}}",
+    "name": "{{index $capability.Fields "ServiceCapability.Name" | js }}",
+    "description": "{{index $capability.Fields "ServiceCapability.Description" | js }}",
+    "categories": [
+    {{- range $key,$value := $capability.CompositeSectionDefinitions -}}
+        {{- if eq $key "PROVIDED_BY" -}}
+            {{- $firstCategory := true -}}
+            {{- range $category := $value }}
+                {{- if $firstCategory -}}
+                    {{- $firstCategory = false -}}
+                    {
+                {{- else -}}
+                    ,{
+                {{- end }}
+                "ID": "{{$category.ID | js}}",
+                "name": "{{index $category.Fields "ServiceCategory.Name" | js }}",
+                "description": "{{index $category.Fields "ServiceCategory.Description" | js }}",
+                "subcategories": [
+                {{- range $key,$value := $category.CompositeSectionDefinitions -}}
+                    {{- if eq $key "GROUPED_BY" }}
+                        {{- $firstSubcategory := true -}}
+                        {{- range $subcategory := $value -}}
+                            {{- if $firstSubcategory -}}
+                                {{- $firstSubcategory = false -}}
+                                {
+                            {{- else -}}
+                                ,{
+                            {{- end }}
+                            "name": "{{ index $subcategory.Fields "ServiceSubcategory.Name" | js}}",
+                            "description": "{{ index $subcategory.Fields "ServiceSubcategory.Description" | js}}",
+                            "ID": "{{$subcategory.ID | js}}",
+                            "serviceConfigurations": [
+                            {{- range $key,$value := $subcategory.CompositeSectionDefinitions -}}
+                                {{- if eq $key "BELONGS_TO" -}}
+                                    {{- $firstConfiguration := true -}}
+                                    {{- range $configuration := $value -}}
+                                        {{- if $firstConfiguration -}}
+                                            {{- $firstConfiguration = false -}}
+                                            {
+                                        {{- else -}}
+                                            ,{
+                                        {{- end }}
+
+                                        {{- $configurationName := index $configuration.Fields "ServiceConfiguration.Name" -}}
+                                        {{ if $configurationName }}
+                                            "name": "{{ $configurationName | js}}",
+                                        {{- end -}}
+
+                                        {{- $configurationDescription := index $configuration.Fields "ServiceConfiguration.Description" -}}
+                                        {{ if $configurationDescription }}
+                                            "description": "{{ $configurationDescription | js }}",
+                                        {{- end -}}
+
+                                        {{- $configurationLink := index $configuration.Fields "ServiceConfiguration.Link" -}}
+                                        {{ if $configurationLink }}
+                                            "link": "{{ $configurationLink | js }}",
+                                        {{- end -}}
+
+                                        {{- $imgSrc := index $configuration.Fields "ServiceConfiguration.ImgSrc" -}}
+                                        {{ if $imgSrc }}
+                                            "imgSrc": "{{ $imgSrc | js }}",
+                                        {{- end -}}
+                                        "ID": "{{$configuration.ID | js}}"
+                                        }
+                                    {{- end }}
+                                    ]
+                                {{- end -}}
+                            {{- end }}
+                            }
+                        {{- end }}
+                        ]
+                    {{- end -}}
+                {{- end -}}
+                }
+            {{- end -}}
+        {{- end -}}
+    {{- end }}
+    ]}
+{{- end }}
+]

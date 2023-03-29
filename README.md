@@ -58,6 +58,10 @@ yaml-graph report -f report/ServiceTenancyJSON/fields.yaml -t report/ServiceTena
 
 # ServiceCapability
 yaml-graph report -f report/ServiceCapabilityJSON/fields.yaml -t report/ServiceCapabilityJSON/template.gohtml > report/ServiceCapabilityJSON/document.json
+
+# ServiceByCapabilityJSON
+yaml-graph report -f report/ServiceByCapabilityJSON/fields.yaml -t report/ServiceByCapabilityJSON/template.gohtml > report/ServiceByCapabilityJSON/document.json
+
 ```
 
 ## Licence

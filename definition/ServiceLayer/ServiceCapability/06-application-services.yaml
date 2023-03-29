@@ -75,17 +75,17 @@ Definitions:
                       Description: "Blockchain"
                       Order: "01"
 
-          chatbot:
+          marketing:
             Fields:
-              Name: "chatbot"
-              Description: "Chatbot"
+              Name: "marketing"
+              Description: "Marketing"
               Order: "08"
             SubDefinitions:
               GROUPED_BY:
                 Class: "ServiceSubcategory"
                 Definitions:
-                  chatbot:
+                  customer-communication:
                     Fields:
-                      Name: "chatbot"
-                      Description: "Chatbot"
+                      Name: "customer communication"
+                      Description: "Customer Communication"
                       Order: "01"

@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  amazon-pinpoint:
+    Fields:
+      Name: "Amazon Pinpoint"
+      Description: "Amazon Pinpoint offers marketers and developers one customizable tool to deliver customer communications across channels, segments, and campaigns at scale."
+      Link: "https://aws.amazon.com/pinpoint/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Business-Applications/16/Arch_Amazon-Pinpoint_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          amazon-pinpoint-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "customer-communication", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]
