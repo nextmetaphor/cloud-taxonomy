@@ -51,25 +51,37 @@
                                         {{- end }}
 
                                         {{- $configurationName := index $configuration.Fields "ServiceConfiguration.Name" -}}
+                                        {{- $serviceName := index $configuration.Fields "Service.Name" -}}
                                         {{ if $configurationName }}
                                             "name": "{{ $configurationName | js}}",
+                                        {{- else if $serviceName }}
+                                            "name": "{{ $serviceName | js}}",
                                         {{- end -}}
 
                                         {{- $configurationDescription := index $configuration.Fields "ServiceConfiguration.Description" -}}
+                                        {{- $serviceDescription := index $configuration.Fields "Service.Description" -}}
                                         {{ if $configurationDescription }}
                                             "description": "{{ $configurationDescription | js }}",
+                                        {{- else if $serviceDescription }}
+                                            "description": "{{ $serviceDescription | js }}",
                                         {{- end -}}
 
                                         {{- $configurationLink := index $configuration.Fields "ServiceConfiguration.Link" -}}
+                                        {{- $serviceLink := index $configuration.Fields "Service.Link" -}}
                                         {{ if $configurationLink }}
                                             "link": "{{ $configurationLink | js }}",
+                                        {{- else if $serviceLink }}
+                                            "link": "{{ $serviceLink | js }}",
                                         {{- end -}}
 
-                                        {{- $imgSrc := index $configuration.Fields "ServiceConfiguration.ImgSrc" -}}
-                                        {{ if $imgSrc }}
-                                            "imgSrc": "{{ $imgSrc | js }}",
-                                        {{- end -}}
-                                        "ID": "{{$configuration.ID | js}}"
+                                        {{- $configurationImgSrc := index $configuration.Fields "ServiceConfiguration.ImgSrc" -}}
+                                        {{- $servceImgSrc := index $configuration.Fields "Service.ImgSrc" -}}
+                                        {{ if $configurationImgSrc }}
+                                            "imgSrc": "{{ $configurationImgSrc | js }}",
+                                        {{- else if $servceImgSrc }}
+                                            "imgSrc": "{{ $servceImgSrc | js }}",
+                                        {{- end }}
+                                            "ID": "{{$configuration.ID | js}}"
                                         }
                                     {{- end }}
                                     ]
