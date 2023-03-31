@@ -24,3 +24,6 @@ CompositeSections:
               - Class: Service
                 Fields: [ ID, Name, Description, Link, ImgSrc ]
                 Relationship: CONFIGURED_IN
+              - Class: ServiceTenancy
+                Fields: [ ID, Name, Description ]
+                Relationship: HAS_TENANCY_OF

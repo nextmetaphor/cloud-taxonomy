@@ -81,6 +81,20 @@
                                         {{- else if $servceImgSrc }}
                                             "imgSrc": "{{ $servceImgSrc | js }}",
                                         {{- end }}
+
+                                        {{- $tenancyID := index $configuration.Fields "ServiceTenancy.ID" -}}
+                                        {{ if $tenancyID }}
+                                            "tenancyID": "{{ $tenancyID | js }}",
+                                        {{- end }}
+                                        {{- $tenancyName := index $configuration.Fields "ServiceTenancy.Name" -}}
+                                        {{ if $tenancyName }}
+                                            "tenancyName": "{{ $tenancyName | js }}",
+                                        {{- end }}
+                                        {{- $tenancyDescription := index $configuration.Fields "ServiceTenancy.Description" -}}
+                                        {{ if $tenancyDescription }}
+                                            "tenancyDescription": "{{ $tenancyDescription | js }}",
+                                        {{- end }}
+
                                             "ID": "{{$configuration.ID | js}}"
                                         }
                                     {{- end }}
