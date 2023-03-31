@@ -1,8 +1,0 @@
-Class: "CloudArchitecturalAttribute"
-Definitions:
-  elasticity:
-    Fields:
-      Name: "elasticity"
-      Tag: "...don't architect for peak load"
-      Description: "scale on demand using elastic autoscaling; prefer decoupled asynchronous serverless architectures
-          over IaaS for scalability"

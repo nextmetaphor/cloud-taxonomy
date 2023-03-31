@@ -1,7 +1,0 @@
-Class: "CloudArchitecturalAttribute"
-Definitions:
-  distributability:
-    Fields:
-      Name: "distributability"
-      Tag: "...access to deploy worldwide"
-      Description: "cloud-providers have points of presence all over the world"

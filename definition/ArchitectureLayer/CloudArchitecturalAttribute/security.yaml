@@ -1,8 +1,0 @@
-Class: "CloudArchitecturalAttribute"
-Definitions:
-  security:
-    Fields:
-      Name: "security"
-      Tag: "...provides multiple levels of protection"
-      Description: "built into every layer (e.g. data in transit, data at rest, intrusion protection...), plus advanced
-        tooling underpinned by specialist security departments"

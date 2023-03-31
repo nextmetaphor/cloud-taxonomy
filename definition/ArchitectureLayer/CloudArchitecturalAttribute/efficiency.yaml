@@ -1,8 +1,0 @@
-Class: "CloudArchitecturalAttribute"
-Definitions:
-  efficiency:
-    Fields:
-      Name: "efficiency"
-      Tag: "...pay only for what you use"
-      Description: "no long-term commitments: create and destroy environments only when required; only use what you
-          really need"
