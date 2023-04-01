@@ -1,11 +1,4 @@
 Class:
-  CloudArchitecturalAttribute:
-    MandatoryFields:
-      Name:
-      Tag:
-      Description:
-    OptionalFields:
-
   ServiceCapability:
     MandatoryFields:
       Name:
