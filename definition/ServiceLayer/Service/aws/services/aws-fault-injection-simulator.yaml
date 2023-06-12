@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  aws-fault-injection-simulator:
+    Fields:
+      Name: "AWS Fault Injection Simulator (FIS)"
+      Description: "Amazon Comprehend is a natural-language processing (NLP) service that uses machine learning to uncover valuable insights and connections in text."
+      Link: "https://aws.amazon.com/fis/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_04282023/Architecture-Service-Icons_04282023/Arch_Management-Governance/16/Arch_AWS-Fault-Injection-Simulator_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          aws-fault-injection-simulator-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "chaos-engineering", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]

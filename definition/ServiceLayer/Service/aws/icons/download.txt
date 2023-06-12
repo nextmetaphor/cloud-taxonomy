@@ -1,1 +1,1 @@
-icon set downloaded from https://aws.amazon.com/architecture/icons/
+icon sets downloaded from https://aws.amazon.com/architecture/icons/
