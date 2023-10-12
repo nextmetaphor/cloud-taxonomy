@@ -27,7 +27,7 @@ pages:
     - cp report/ServiceByCapabilityJSON/document.json public/ServiceByCapabilityJSON.json
 
     - yaml-graph graph > report/3dVisualisation/dataset.json
-    - cp report/3dVisualisation/index.html public/index.html
+    - cp report/3dVisualisation/index.html public/3d-visualisation.html
     - cp report/3dVisualisation/dataset.json public/3dVisualisation/dataset.json
 
   artifacts:

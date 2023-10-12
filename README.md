@@ -11,7 +11,7 @@ The following reports are automatically generated from these definitions:
 * [categories and subcategories by capability in JSON format](https://nextmetaphor.gitlab.io/cloud-taxonomy/ServiceCapabilityJSON.json)
 * [service providers in JSON format](https://nextmetaphor.gitlab.io/cloud-taxonomy/ServiceProviderJSON.json)
 * [service tenancies in JSON format](https://nextmetaphor.gitlab.io/cloud-taxonomy/ServiceTenancyJSON.json)
-* [3d visualisation of cloud taxonomy](https://nextmetaphor.gitlab.io/cloud-taxonomy/index.html)
+* [3d visualisation of cloud taxonomy](https://nextmetaphor.gitlab.io/cloud-taxonomy/3d-visualisation.html)
 
 ## Installation
 ### Install `yaml-graph`
