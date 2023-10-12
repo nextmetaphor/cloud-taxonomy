@@ -28,7 +28,7 @@ pages:
 
     - yaml-graph graph > report/3dVisualisation/dataset.json
     - cp report/3dVisualisation/index.html public/3d-visualisation.html
-    - cp report/3dVisualisation/dataset.json public/3dVisualisation/dataset.json
+    - cp report/3dVisualisation/dataset.json public/dataset.json
 
   artifacts:
     paths:
