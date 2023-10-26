@@ -1,6 +1,6 @@
 Class: "Service"
 Definitions:
-  amazon-comprehend:
+  aws-supply-chain:
     Fields:
       Name: "AWS Supply Chain"
       Description: "Mitigate risks and lower costs with an ML-powered supply chain application"
@@ -15,7 +15,7 @@ Definitions:
       CONFIGURED_IN:
         Class: "ServiceConfiguration"
         Definitions:
-          amazon-comprehend-default:
+          aws-supply-chain-default:
             References: [
               { Class: "ServiceSubcategory", ID: "insight-from-text", Relationship: "BELONGS_TO" },
               { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
