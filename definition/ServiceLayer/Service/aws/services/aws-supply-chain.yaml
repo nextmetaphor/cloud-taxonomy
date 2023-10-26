@@ -1,0 +1,22 @@
+Class: "Service"
+Definitions:
+  amazon-comprehend:
+    Fields:
+      Name: "AWS Supply Chain"
+      Description: "Mitigate risks and lower costs with an ML-powered supply chain application"
+      Link: "https://aws.amazon.com/aws-supply-chain/"
+    FileFields:
+      ImgSrc: { Path: "../icons/Asset-Package_09172021/Architecture-Service-Icons_09172021/Arch_Machine-Learning/16/Arch_Amazon-Comprehend_16.svg", Prefix: "svg+xml;base64,", Encoding: "base64" }
+    References: [
+      { Class: "ServiceProvider", ID: "aws", Relationship: "PROVIDED_BY" },
+    ]
+
+    SubDefinitions:
+      CONFIGURED_IN:
+        Class: "ServiceConfiguration"
+        Definitions:
+          amazon-comprehend-default:
+            References: [
+              { Class: "ServiceSubcategory", ID: "insight-from-text", Relationship: "BELONGS_TO" },
+              { Class: "ServiceTenancy", ID: "serverless", Relationship: "HAS_TENANCY_OF" }
+            ]
