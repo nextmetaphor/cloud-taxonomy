@@ -32,7 +32,15 @@
         .nodeThreeObjectExtend(true)
         .nodeThreeObject(node => {
             // extend node with text sprite
-            const sprite = new SpriteText(`${node.class}:\n${node.description}`);
+            let nodeDescription = ''
+            if ((node.description !== undefined) && (node.description !== '%!s(<nil>)')) {
+                nodeDescription = node.description
+            } else {
+                if ((node.id !== undefined) && (node.name !== '%!s(<nil>)')) {
+                    nodeDescription = node.id
+                }
+            }
+            const sprite = new SpriteText(`${node.class}:\n${nodeDescription}`);
             sprite.color = 'lightgrey';
             sprite.textHeight = 1.0;
             return sprite;
